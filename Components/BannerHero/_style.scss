@@ -9,11 +9,11 @@
     @include media-breakpoint-up(xs) {
       @extend .px-4;
     }
-    @include media-breakpoint-up(xxxl) {
-      @extend .px-xxxl-14;
+    @include media-breakpoint-up(3xl) {
+      @extend .px-3xl-14;
     }
-    @include media-breakpoint-up(xxxxl) {
-      @extend .px-xxxxl-24;
+    @include media-breakpoint-up(4xl) {
+      @extend .px-4xl-14;
     }
   }
 

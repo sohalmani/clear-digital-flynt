@@ -295,6 +295,5 @@ ehthumbs_vista.db
 *.lnk
 
 # Custom
-/build-config.js
 
 # End of https://www.gitignore.io/api/osx,node,linux,windows,phpstorm,composer,sublimetext,visualstudiocode

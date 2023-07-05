@@ -1,178 +1,106 @@
 h1 {
-  font-family: $font-family-proxima-sera;
-  font-size: 120px;
+  font-family: $font-family-poppins;
+  font-size: 70px;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: -2.4px;
+  line-height: 1.1;
+  letter-spacing: -0.36px;
 
-  // @include laptop {
-  //   font-size: 80px;
-  // }
-
-  // @include tablet {
-  //   font-size: 80px;
-  // }
-
-  // @include tablet-down {
-  //   font-size: 60px;
-  // }
-
-  // &.h2 {
-  //   font-family: $font-family-proxima-sera !important;
-  //   font-size: 60px !important;
-  //   font-weight: 700 !important;
-  //   line-height: 1.1 !important;
-  //   letter-spacing: normal !important;
-
-  //   @include laptop {
-  //     font-size: 50px !important;
-  //   }
-
-  //   @include tablet {
-  //     font-size: 50px !important;
-  //   }
-
-  //   @include tablet-down {
-  //     font-size: 40px !important;
-  //   }
-  // }
-
-  // &.h5 {
-  //   font-family: $font-family-proxima-nova;
-  //   font-size: 25px;
-  //   font-weight: 400;
-  //   line-height: 1.3;
-  //   letter-spacing: 0.5px;
-
-  //   @include desktop-down {
-  //     font-size: 20px;
-  //   }
-
-  //   strong {
-  //     font-family: $font-family-proxima-sera;
-  //     font-weight: 700;
-  //     line-height: 1.1;
-  //   }
-  // }
+  @include media-breakpoint-up(4xl) {
+    font-size: 180px;
+  }
+  @include media-breakpoint-up(2xl) {
+    font-size: 142px;
+  }
 }
 
 h2 {
-  font-family: $font-family-proxima-sera;
-  font-size: 60px;
+  font-family: $font-family-poppins;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: normal;
 
-  // @include laptop {
-  //   font-size: 50px;
-  // }
-
-  // @include tablet {
-  //   font-size: 50px;
-  // }
-
-  // @include tablet-down {
-  //   font-size: 40px;
-  // }
+  @include media-breakpoint-up(4xl) {
+    font-size: 90px;
+  }
+  @include media-breakpoint-up(2xl) {
+    font-size: 73px;
+  }
 }
 
 h3 {
-  font-family: $font-family-proxima-nova;
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 1.1;
+  font-family: $font-family-poppins;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
   letter-spacing: normal;
 
-  // @include laptop {
-  //   font-size: 30px;
-  // }
-
-  // @include tablet {
-  //   font-size: 30px;
-  // }
-
-  // @include tablet-down {
-  //   font-size: 24px;
-  // }
+  @include media-breakpoint-up(4xl) {
+    font-size: 70px;
+    line-height: 1.1;
+  }
+  @include media-breakpoint-up(2xl) {
+    font-size: 57px;
+    line-height: 1.1;
+    letter-spacing:normal ;
+  }
 }
 
 h4 {
-  font-size: 40px;
-  font-family: $font-family-proxima-sera;
+  font-size: 24px;
+  font-family: $font-family-poppins;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.3;
   letter-spacing: normal;
 
-  // @include laptop {
-  //   font-size: 30px;
-  // }
-
-  // @include tablet {
-  //   font-size: 30px;
-  // }
-
-  // @include tablet-down {
-  //   font-size: 24px;
-  // }
+  @include media-breakpoint-up(4xl) {
+    font-size: 33px;
+  }
+  @include media-breakpoint-up(2xl) {
+    font-size: 30px;
+  }
 }
 
 h5 {
-  font-family: $font-family-proxima-nova;
-  font-size: 25px;
+  font-family: $font-family-poppins;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: 0.5px;
+  line-height: 1;
 
-  // @include desktop-down {
-  //   font-size: 20px;
-  // }
-
-  // strong {
-  //   font-family: $font-family-proxima-sera;
-  //   font-weight: 700;
-  //   line-height: 1.1;
-  // }
+  @include media-breakpoint-up(4xl) {
+    font-size: 25px;
+  }
+  @include media-breakpoint-up(2xl) {
+    font-size: 28px;
+  }
 }
 
 h6 {
-  font-family: $font-family-proxima-nova;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1;
+  font-family: $font-family-poppins;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5;
   letter-spacing: normal;
 
-  // @include laptop {
-  //   font-size: 14px;
-  // }
-
-  // @include tablet {
-  //   font-size: 14px;
-  // }
-
-  // small {
-  //   font-family: inherit;
-  //   font-size: 14px;
-  //   font-weight: inherit;
-  //   line-height: 1.1;
-  //   letter-spacing: inherit;
-  // }
+  @include media-breakpoint-up(4xl) {
+    font-size: 22px;
+  }
+  @include media-breakpoint-up(2xl) {
+    font-size: 21px;
+  }
 }
 
 blockquote {
-  font-family: $font-family-proxima-sera;
+  font-family: $font-family-poppins;
   font-size: 35px;
   font-weight: 400;
   font-style: italic;
   line-height: 1.3;
   letter-spacing: normal;
-
-  // @include desktop-down {
-  //   font-size: 24px;
-  // }
 }
 
 small {
-  font-family: $font-family-proxima-nova;
+  font-family: $font-family-poppins;
   font-size: 12px;
   font-weight: 600;
   line-height: 1;
@@ -180,7 +108,7 @@ small {
 }
 
 label {
-  font-family: $font-family-proxima-nova;
+  font-family: $font-family-poppins;
   font-size: 12px;
   font-weight: 600;
   line-height: 1;
@@ -189,15 +117,12 @@ label {
 }
 
 p {
-  font-family: $font-family-proxima-nova;
+  font-family: $font-family-poppins;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: normal;
 
-  // @include tablet-down {
-  //   font-size: 18px;
-  // }
 
   small {
     font-family: inherit;
@@ -222,7 +147,7 @@ p {
 
 a {
   cursor: pointer;
-  font-family: $font-family-proxima-nova;
+  font-family: $font-family-poppins;
   font-size: 18px;
   font-weight: 900;
   line-height: 1;
@@ -241,7 +166,7 @@ a {
 }
 
 nav li a {
-  font-family: $font-family-proxima-nova;
+  font-family: $font-family-poppins;
   font-size: 18px;
   font-weight: bold;
   font-style: normal;
@@ -254,7 +179,7 @@ nav li a {
 }
 
 footer li a {
-  font-family: $font-family-proxima-nova;
+  font-family: $font-family-poppins;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
