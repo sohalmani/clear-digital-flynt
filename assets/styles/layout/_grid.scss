@@ -1,0 +1,13 @@
+/* stylelint-disable scss/at-extend-no-missing-placeholder */
+.container {
+  @include media-breakpoint-up(xs) {
+    @extend .px-4;
+  }
+  @include media-breakpoint-up(3xl) {
+    @extend .px-3xl-14;
+  }
+  @include media-breakpoint-up(4xl) {
+    @extend .px-4xl-14;
+  }
+}
+/* stylelint-enable scss/at-extend-no-missing-placeholder */

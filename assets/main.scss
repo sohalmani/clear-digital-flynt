@@ -32,6 +32,8 @@
 
 @import 'styles/base/typography';
 
+@import 'styles/layout/grid';
+
 // stylelint-disable-next-line scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist
 @import '../Components/**/_style.scss';
 
