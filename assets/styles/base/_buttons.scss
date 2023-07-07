@@ -1,0 +1,33 @@
+@import '../abstracts/variables';
+@import '../abstracts/button';
+
+//** Button Variants
+.btn {
+  &-primary {
+    &-pink {
+      @extend %btn;
+      background-color: $orange;
+      border-color: $orange;
+      color: $white;
+
+      &.btn-disabled {
+        background-color: transparent;
+        border-color: $grey;
+        color: $grey;
+      }
+
+      &:hover {
+        background-color: transparent;
+        border-color: $pink; 
+      }
+    }
+  }
+
+  &-disabled {
+    @extend %btn;
+    border-color: $grey;
+    color: $grey;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}
