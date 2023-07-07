@@ -30,7 +30,11 @@
 @import 'styles/variables',
   'styles/mixins';
 
+@import 'styles/base/default';
+
 @import 'styles/base/typography';
+
+@import 'styles/base/buttons';
 
 @import 'styles/layout/grid';
 

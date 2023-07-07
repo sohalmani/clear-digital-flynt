@@ -12,8 +12,8 @@
 
       &.btn-disabled {
         background-color: transparent;
-        border-color: $grey;
-        color: $grey;
+        border-color: $dark-grey;
+        color: $dark-grey;
       }
 
       &:hover {
@@ -25,8 +25,8 @@
 
   &-disabled {
     @extend %btn;
-    border-color: $grey;
-    color: $grey;
+    border-color: $dark-grey;
+    color: $dark-grey;
     opacity: 0.7;
     pointer-events: none;
   }
