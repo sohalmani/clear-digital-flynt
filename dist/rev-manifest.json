@@ -1,4 +1,8 @@
 {
+  "Components/Footer/assets/clear-digital-black-logo.svg": "Components/Footer/assets/clear-digital-black-logo-32d2738b5a.svg",
+  "Components/Footer/assets/clear-digital-logo.svg": "Components/Footer/assets/clear-digital-logo-70fe3196ed.svg",
+  "Components/Footer/assets/myrious-white-logo.svg": "Components/Footer/assets/myrious-white-logo-70fe3196ed.svg",
+  "Components/Footer/assets/radial-pink-img.png": "Components/Footer/assets/radial-pink-img-cb12981cee.png",
   "Components/NavigationBurger/Assets/logo.svg": "Components/NavigationBurger/Assets/logo-4627cdfa7d.svg",
   "Components/NavigationMain/Assets/logo.svg": "Components/NavigationMain/Assets/logo-4627cdfa7d.svg",
   "assets/admin.css": "assets/admin-c854ab75a4.css",
@@ -14,7 +18,7 @@
   "assets/fonts/montserrat-v14-latin-regular.woff2": "assets/fonts/montserrat-v14-latin-regular-bc3aa95dca.woff2",
   "assets/icons/check-circle.svg": "assets/icons/check-circle-98401bcdb9.svg",
   "assets/icons/spinner.svg": "assets/icons/spinner-2e5c842fc5.svg",
-  "assets/main.css": "assets/main-1b8a369f86.css",
+  "assets/main.css": "assets/main-15a21951a1.css",
   "assets/main.js": "assets/main-e30574ccd4.js",
   "assets/main.js.LICENSE.txt": "assets/main-538f240528.js.LICENSE.txt"
 }
