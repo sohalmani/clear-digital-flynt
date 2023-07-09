@@ -1,0 +1,7 @@
+/* stylelint-disable scss/at-extend-no-missing-placeholder */
+section {
+  @extend .d-flex, .align-items-center;
+  min-height: 100vh;
+  position: relative;
+}
+/* stylelint-enable scss/at-extend-no-missing-placeholder */

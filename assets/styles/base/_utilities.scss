@@ -14,7 +14,9 @@
 }
 
 .wrapper {
+  height: 100%;
   position: relative;
+  width: 100%;
   z-index: 5;
 }
 
@@ -30,8 +32,4 @@
     width: 100%;
     z-index: 3;
   }
-}
-
-.bg-lightgray {
-  background: rgba($black, 0.5);
 }
