@@ -1,0 +1,37 @@
+.media-wrapper {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 5;
+}
+
+.overlay-grid-white {
+  &::before {
+    background: url('../assets/images/grid-white.png');
+    background-size: cover;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+.bg-lightgray {
+  background: rgba($black, 0.5);
+}
