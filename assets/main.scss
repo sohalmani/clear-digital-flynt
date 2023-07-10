@@ -7,7 +7,6 @@
 
 // 2. Include any default variable overrides here
 @import 'styles/abstracts/variables';
-@import 'styles/abstracts/placeholders';
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import 'bootstrap/scss/variables';
@@ -31,6 +30,8 @@
 @import 'bootstrap/scss/utilities/api';
 
 // 8. Add additional custom code here
+@import 'styles/abstracts/placeholders';
+
 @import 'styles/vendors-extensions/bootstrap';
 
 // BEGIN: TBD

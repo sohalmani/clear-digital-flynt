@@ -18,10 +18,12 @@
   "assets/fonts/montserrat-v14-latin-italic.woff2": "assets/fonts/montserrat-v14-latin-italic-5cad650422.woff2",
   "assets/fonts/montserrat-v14-latin-regular.woff": "assets/fonts/montserrat-v14-latin-regular-8102c4838f.woff",
   "assets/fonts/montserrat-v14-latin-regular.woff2": "assets/fonts/montserrat-v14-latin-regular-bc3aa95dca.woff2",
+  "assets/icons/arrow-right-black.svg": "assets/icons/arrow-right-black-c9077c7800.svg",
+  "assets/icons/arrow-right-white.svg": "assets/icons/arrow-right-white-9ff9bcb172.svg",
   "assets/icons/check-circle.svg": "assets/icons/check-circle-98401bcdb9.svg",
   "assets/icons/spinner.svg": "assets/icons/spinner-2e5c842fc5.svg",
   "assets/images/grid-white.png": "assets/images/grid-white-bad3e4603a.png",
-  "assets/main.css": "assets/main-4b2e80bc8d.css",
+  "assets/main.css": "assets/main-a2c776a32e.css",
   "assets/main.js": "assets/main-3b1e0d3599.js",
   "assets/main.js.LICENSE.txt": "assets/main-538f240528.js.LICENSE.txt"
 }

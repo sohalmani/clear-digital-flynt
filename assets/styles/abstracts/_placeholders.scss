@@ -1,15 +1,107 @@
 //** Button placeholders
-%btn {  
+%btn {
   border: 2px solid transparent;
   display: inline-block;
   font-family: $font-family-poppins;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 14px;
   letter-spacing: normal;
   line-height: 1;
   min-width: 110px;
-  padding: 15px 20px;
   position: relative;
   text-align: center;
+}
+
+%btn-primary-pink {
+  @extend %btn;
+  background-color: $pink;
+  border-color: $pink;
+  color: $white;
+  font-weight: 700;
+  padding: 8px 16px;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  @include media-breakpoint-up(sm) {
+    font-size: 18px;
+    padding: 15px 20px;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border-color: $pink;
+  }
+}
+
+%btn-tertiary-black {
+  @extend %btn;
+  color: $black;
+  font-weight: 600;
+  line-height: 1;
+  padding-right: 10px;
+  transition: text-decoration 0.3s ease-in-out;
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  &::after {
+    background: url('../assets/icons/arrow-right-white.svg') no-repeat center / 100%;
+    color: $black;
+    content: '';
+    height: 16px;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    width: 16px;
+  }
+
+  &:hover {
+    color: $black;
+
+    &::after {
+      content: '';
+      right: -15px;
+    }
+  }
+}
+
+%btn-tertiary-white {
+  @extend %btn;
+  color: $white;
+  font-weight: 600;
+  line-height: 1;
+  padding-right: 10px;
+  transition: text-decoration 0.3s ease-in-out;
+  @include media-breakpoint-up(sm) {
+    font-size: 16px;
+  }
+
+  &::after {
+    background: url('../assets/icons/arrow-right-white.svg') no-repeat center / 100%;
+    color: $white;
+    content: '';
+    height: 16px;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    width: 16px;
+  }
+
+  &:hover {
+    color: $white;
+    
+    &::after {
+      content: '';
+      right: -15px;
+    }
+  }
+}
+
+%btn-disabled {
+  @extend %btn;
+  border-color: $dark-grey;
+  color: $dark-grey;
+  opacity: 0.7;
+  pointer-events: none;
 }
