@@ -1,5 +1,5 @@
 // BEGIN: TBD
-@import 'easings-css/easings';
+// @import 'easings-css/easings';
 // END: TBD
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
@@ -34,8 +34,8 @@
 @import 'styles/vendors-extensions/bootstrap';
 
 // BEGIN: TBD
-@import 'styles/variables',
-  'styles/mixins';
+// @import 'styles/variables';
+// @import 'styles/mixins';
 // END: TBD
 
 @import 'styles/base/reset';
@@ -44,8 +44,17 @@
 
 @import 'styles/modules/buttons';
 // stylelint-disable-next-line scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist
-@import '../Components/**/_style.scss';
+// @import '../Components/**/_style.scss';
+// stylelint-disable scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist
+// @import '../Components/NavigationBurger/_style.scss';
+@import '../Components/BannerHero/_style.scss';
+@import '../Components/Footer/_style.scss';
+// stylelint-enable scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-blacklist
 
 // BEGIN: TBD
-@import 'styles/print';
+// @import 'styles/print';
 // END: TBD
+footer,
+header {
+  display: none;
+}
