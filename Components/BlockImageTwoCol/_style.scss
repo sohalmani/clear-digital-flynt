@@ -1,0 +1,41 @@
+.image-two-col {
+  height: 100vh;
+
+  &__item {
+    height: 100%;
+    position: relative;
+  }
+
+  &__background {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    bottom: 30px;
+    left: 0;
+    padding: 50px 60px;
+    position: absolute;
+  }
+
+  &__logo {
+    display: inline-block;
+    height: 40px;
+    max-width: 195px;
+    overflow: hidden;
+    width: 100%;
+    
+    img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+}
