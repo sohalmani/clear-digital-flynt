@@ -20,6 +20,34 @@
   z-index: 5;
 }
 
+.icon-wrap,
+.logo-wrap {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  
+  img,
+  svg {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+.overlay-grid-black {
+  &::before {
+    background: url('../assets/images/grid-black.png');
+    background-size: cover;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
 .overlay-grid-white {
   &::before {
     background: url('../assets/images/grid-white.png');

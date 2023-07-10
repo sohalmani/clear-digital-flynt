@@ -5,6 +5,9 @@
   "Components/BlockImageTwoCol/Assets/logo-leadspace.png": "Components/BlockImageTwoCol/Assets/logo-leadspace-a4e78ef337.png",
   "Components/BlockImageTwoCol/Assets/man-holding-phone.png": "Components/BlockImageTwoCol/Assets/man-holding-phone-8c87c4278d.png",
   "Components/BlockImageTwoCol/Assets/office-discussion.png": "Components/BlockImageTwoCol/Assets/office-discussion-1926884a01.png",
+  "Components/BlockThreeColContent/Assets/icon-b2b-performance.svg": "Components/BlockThreeColContent/Assets/icon-b2b-performance-1ed80d3e23.svg",
+  "Components/BlockThreeColContent/Assets/icon-collaboration-focus.svg": "Components/BlockThreeColContent/Assets/icon-collaboration-focus-1a99e9c1b9.svg",
+  "Components/BlockThreeColContent/Assets/icon-design-development.svg": "Components/BlockThreeColContent/Assets/icon-design-development-b47def4799.svg",
   "Components/Footer/assets/clear-digital-black-logo.svg": "Components/Footer/assets/clear-digital-black-logo-32d2738b5a.svg",
   "Components/Footer/assets/clear-digital-logo.svg": "Components/Footer/assets/clear-digital-logo-70fe3196ed.svg",
   "Components/Footer/assets/myrious-white-logo.svg": "Components/Footer/assets/myrious-white-logo-70fe3196ed.svg",
@@ -26,8 +29,9 @@
   "assets/icons/arrow-right-white.svg": "assets/icons/arrow-right-white-9ff9bcb172.svg",
   "assets/icons/check-circle.svg": "assets/icons/check-circle-98401bcdb9.svg",
   "assets/icons/spinner.svg": "assets/icons/spinner-2e5c842fc5.svg",
+  "assets/images/grid-black.png": "assets/images/grid-black-e97c38ec83.png",
   "assets/images/grid-white.png": "assets/images/grid-white-bad3e4603a.png",
-  "assets/main.css": "assets/main-5f375b2d4c.css",
+  "assets/main.css": "assets/main-a3950ed81c.css",
   "assets/main.js": "assets/main-887b6891fc.js",
   "assets/main.js.LICENSE.txt": "assets/main-538f240528.js.LICENSE.txt"
 }
