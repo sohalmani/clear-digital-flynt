@@ -1,16 +1,24 @@
-/* TODO: Search how frameworks add font family to global styles and fix */
-html,
-body {
-  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+address {
+  margin-bottom: 0;
 }
 
-a {
-  text-decoration: none;
+ol,
+ul,
+dl {
+  margin-bottom: 0;
+}
+
+dd {
+  margin-bottom: 0;
+}
+
+pre {
+  margin-bottom: 0;
 }
 
 /* stylelint-disable scss/at-extend-no-missing-placeholder */
 section {
-  @extend .d-flex, .align-items-center;
+  @extend .d-flex, .flex-column;
   min-height: 100vh;
   position: relative;
 }

@@ -23,6 +23,14 @@ $colors: (
 );
 
 // Bootstrap Overrides
+$link-decoration: none;
+
+$font-family-base: 'Poppins', Arial, Helvetica, sans-serif;
+
+$headings-margin-bottom: 0;
+$paragraph-margin-bottom: 0;
+$legend-margin-bottom: 0;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -57,6 +65,7 @@ $spacers: (
   14: $spacer * 3.5,
   20: $spacer * 5,
   24: $spacer * 6,
+  34: $spacer * 8.5,
   36: $spacer * 9,
   94: $spacer * 23.5,
   114: $spacer * 28.5,
