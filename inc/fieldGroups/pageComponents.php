@@ -21,6 +21,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockImage\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
                     Components\BlockImageTwoCol\getACFLayout(),
+                    Components\BlockTextImageSlider\getACFLayout(),
                     Components\BlockThreeColContent\getACFLayout(),
                     Components\BlockVideoOembed\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),
@@ -28,6 +29,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\GridPostsLatest\getACFLayout(),
                     Components\ListComponents\getACFLayout(),
                     Components\SliderImages\getACFLayout(),
+                    Components\SliderQuote\getACFLayout(),
                 ]
             ]
         ],

@@ -20,6 +20,13 @@
   "Components/Footer/assets/radial-pink-img.png": "Components/Footer/assets/radial-pink-img-cb12981cee.png",
   "Components/NavigationBurger/Assets/logo.svg": "Components/NavigationBurger/Assets/logo-4627cdfa7d.svg",
   "Components/NavigationMain/Assets/logo.svg": "Components/NavigationMain/Assets/logo-4627cdfa7d.svg",
+  "Components/SliderQuote/Assets/logo-cisco.svg": "Components/SliderQuote/Assets/logo-cisco-8d4ea29bb3.svg",
+  "Components/SliderQuote/Assets/logo-cohesity.png": "Components/SliderQuote/Assets/logo-cohesity-453e48aab1.png",
+  "Components/SliderQuote/Assets/logo-mcafee.svg": "Components/SliderQuote/Assets/logo-mcafee-1fb9cd13ec.svg",
+  "Components/SliderQuote/Assets/logo-stanford.svg": "Components/SliderQuote/Assets/logo-stanford-5d5ca4d1b6.svg",
+  "Components/SliderQuote/Assets/logo-tenable.svg": "Components/SliderQuote/Assets/logo-tenable-0d6fda062a.svg",
+  "Components/SliderQuote/Assets/logo-vmware.svg": "Components/SliderQuote/Assets/logo-vmware-7ad6f6d146.svg",
+  "Components/SliderQuote/Assets/pattern-hexagon-green.png": "Components/SliderQuote/Assets/pattern-hexagon-green-c824f20082.png",
   "assets/admin.css": "assets/admin-c854ab75a4.css",
   "assets/admin.js": "assets/admin-b4be35d8d5.js",
   "assets/admin.js.LICENSE.txt": "assets/admin-7490f0721d.js.LICENSE.txt",
@@ -39,7 +46,7 @@
   "assets/icons/spinner.svg": "assets/icons/spinner-2e5c842fc5.svg",
   "assets/images/grid-black.png": "assets/images/grid-black-e97c38ec83.png",
   "assets/images/grid-white.png": "assets/images/grid-white-bad3e4603a.png",
-  "assets/main.css": "assets/main-44678c1d12.css",
-  "assets/main.js": "assets/main-887b6891fc.js",
+  "assets/main.css": "assets/main-c591047c46.css",
+  "assets/main.js": "assets/main-bc28d4fe35.js",
   "assets/main.js.LICENSE.txt": "assets/main-538f240528.js.LICENSE.txt"
 }
