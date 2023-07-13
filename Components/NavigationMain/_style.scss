@@ -1,60 +1,202 @@
-[is='flynt-navigation-main'] {
-  $navigation-height: 100px;
+// [is='flynt-navigation-main'] {
+//   $navigation-height: 100px;
 
-  display: none;
+//   display: none;
 
-  @media (min-width: $breakpoint-tablet-horizontal) {
-    display: block;
-  }
+//   @media (min-width: $breakpoint-tablet-horizontal) {
+//     display: block;
+//   }
 
-  .wrapper {
-    background-color: $color-background;
-    height: $navigation-height;
-  }
+//   .wrapper {
+//     background-color: $color-background;
+//     height: $navigation-height;
+//   }
 
-  .container {
-    display: flex;
-    height: 100%;
-    justify-content: space-between;
-    padding-bottom: 30px;
-    padding-top: 30px;
-  }
+//   .container {
+//     display: flex;
+//     height: 100%;
+//     justify-content: space-between;
+//     padding-bottom: 30px;
+//     padding-top: 30px;
+//   }
 
-  .logo {
-    display: block;
-    height: 100%;
+//   .logo {
+//     display: block;
+//     height: 100%;
 
-    &-image {
-      height: 100%;
-      width: auto;
-    }
-  }
+//     &-image {
+//       height: 100%;
+//       width: auto;
+//     }
+//   }
 
-  .menu {
-    @include reset-list;
+//   .menu {
+//     @include reset-list;
+//     align-items: center;
+//     display: flex;
+//     margin-right: -18px;
+//     padding-left: 36px;
+
+//     &-item--current {
+//       .menu-link {
+//         color: $color-accent;
+//       }
+//     }
+
+//     &-link {
+//       color: $color-text;
+//       display: inline-block;
+//       font-weight: 700;
+//       padding: 7px 18px;
+//       text-decoration: none;
+//       transition: color 0.2s ease-out;
+
+//       &:hover,
+//       &:focus {
+//         color: $color-accent;
+//       }
+//     }
+//   }
+// }
+
+.navigation {
+  $self: &;
+  background-color: transparent;
+  position: fixed;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+  z-index: 40;
+
+  nav {
     align-items: center;
     display: flex;
-    margin-right: -18px;
-    padding-left: 36px;
+    flex-basis: calc(100% - 111px);
+    justify-content: flex-end;
+    max-width: calc(100% - 111px);
+  }
 
-    &-item--current {
-      .menu-link {
-        color: $color-accent;
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  .nav {
+    &-links {
+      column-gap: 50px;
+      display: flex;
+    }
+    
+    &-link {
+      padding: 50px 0;
+
+      >a {
+        color: $white;
+        font-weight: 700;
+        position: relative;
+
+        &::after {
+          background-color: $pink;
+          bottom: -222%;
+          content: '';
+          height: 8px;
+          left: 0;
+          position: absolute;
+          transition: width 0.3s ease-in-out;
+          width: 0;
+          z-index: 21;
+        }
+      }
+
+      &:hover {
+        >a {
+          &::after {
+            width: 100%;
+          }
+        }
+
+        .megamenu {
+          &__dropdown {
+            opacity: 1;
+            visibility: visible;
+          }
+        } 
+      }
+    }
+    
+    &-cta {
+      padding-left: 50px;
+    }
+  }
+
+  .megamenu {
+    &__dropdown {
+      background-color: $white;
+      left: 0;
+      min-height: 400px;
+      opacity: 0;
+      padding: 50px 0;
+      position: absolute;
+      top: 100%;
+      transition: all 0.5s ease;
+      visibility: hidden;
+      width: 100%;
+      z-index: 20;
+    }
+
+    &__content {
+      h2 {
+        margin-bottom: 20px;
       }
     }
 
-    &-link {
-      color: $color-text;
-      display: inline-block;
-      font-weight: 700;
-      padding: 7px 18px;
-      text-decoration: none;
-      transition: color 0.2s ease-out;
+    &__links {
+      ul {
+        li {
+          &:not(:first-child) {
+            margin-top: 15px;
+          }
+        }
+        
+        a {
+          color: $black;
+          font-weight: 700;
+        }
+      }
+    }
 
-      &:hover,
-      &:focus {
-        color: $color-accent;
+    &__action {
+      margin-top: 30px;
+    }
+
+    &--open {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &--active {
+    background-color: $white;
+    color: $black;
+
+    .site-logo {
+      background: url('../../assets/images/logo/clear-digital-logo-black.svg') no-repeat center;
+    }
+
+    .megamenu {
+      border-top: 1px solid $light-grey;
+    }
+
+    .nav-link {
+      > a {
+        color: $black;
       }
     }
   }
+}
+
+// Tbd
+.skipLink {
+  display: none;
 }

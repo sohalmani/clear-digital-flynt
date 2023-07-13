@@ -26,6 +26,7 @@
   &:hover {
     background-color: transparent;
     border-color: $pink;
+    color: $pink;
   }
 }
 
@@ -41,7 +42,7 @@
   }
 
   &::after {
-    background: url('../assets/icons/arrow-right-white.svg') no-repeat center / 100%;
+    background: url('../assets/icons/arrow-right-black.svg') no-repeat center / 100%;
     color: $black;
     content: '';
     height: 16px;
