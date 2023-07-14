@@ -80,13 +80,14 @@
 
     @include media-breakpoint-down(lg) {
       background: $white;
-      // display: none;
+      display: none;
       display: block;
       flex: 0 0 100%;
       height: 100vh;
       left: 0;
       max-width: 100%;
       overflow-y: auto;
+      padding-bottom: 100px;
       padding-inline: 1rem;
       position: absolute;
       right: 0;
@@ -99,6 +100,40 @@
     list-style: none;
     margin-bottom: 0;
     padding-left: 0;
+  }
+
+  .expand-btn {
+    border: 4px solid $pink;
+    border-radius: 50%;
+    display: inline-block;
+    height: 35px;
+    position: relative;
+    width: 35px;
+
+    &::before {
+      background-color: $pink;
+      border-radius: 10px;
+      content: '';
+      height: 4px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 13px;
+    }
+
+    &::after {
+      background-color: $pink;
+      border-radius: 10px;
+      content: '';
+      height: 13px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease-in-out;
+      width: 4px;
+    }
   }
 
   .nav {
@@ -118,6 +153,15 @@
 
       @include media-breakpoint-up(lg) {
         padding: 50px 0;
+      }
+
+      @include media-breakpoint-down(lg) {
+        align-items: center;
+        border-bottom: 1px solid $light-grey;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
       }
 
       >a {
@@ -141,14 +185,18 @@
       &:hover {
         >a {
           &::after {
-            width: 100%;
+            @include media-breakpoint-up(lg) {
+              width: 100%;
+            }
           }
         }
 
         .megamenu {
           &__dropdown {
-            opacity: 1;
-            visibility: visible;
+            @include media-breakpoint-up(lg) {
+              opacity: 1;
+              visibility: visible;
+            }
           }
         } 
       }
@@ -162,34 +210,49 @@
         padding-left: 50px;
       }
     }
+
+    &-link--active {
+      .expand-btn {
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      .megamenu {
+        display: block;
+      }
+    }
   }
 
   .megamenu {
     &__dropdown {
       background-color: $white;
-      left: 0;
-      min-height: 400px;
-      opacity: 0;
-      padding: 50px 0;
-      position: absolute;
-      top: 100%;
-      transition: all 0.5s ease;
-      visibility: hidden;
+      padding: 15px 0 30px;
+      position: relative;
       width: 100%;
-      z-index: 20;
+
+      @include media-breakpoint-up(lg) {
+        left: 0;
+        min-height: 400px;
+        opacity: 0;
+        padding: 50px 0;
+        position: absolute;
+        top: 100%;
+        transition: all 0.5s ease;
+        visibility: hidden;
+        z-index: 20;
+      }
 
       @include media-breakpoint-down(lg) {
         animation: fadeIn 0.2s ease-in-out;
         display: none;
-        left: unset;
-        opacity: 0;
-        padding: 30px;
-        padding-bottom: 100px;
-        padding-top: 15px;
-        position: relative;
-        top: unset;
-        transition: all 0.5 ease-in-out;
-        visibility: hidden;
+      }
+
+      > .container {
+        @include media-breakpoint-down(lg) {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
       }
     }
 
@@ -204,9 +267,16 @@
     &__links {
       ul {
         li {
-          &:not(:first-child) {
-            margin-top: 15px;
+          @include media-breakpoint-down(md) {
+            margin-top: 30px;
           }
+
+          &:not(:first-child) {
+            @include media-breakpoint-up(md) {
+              margin-top: 15px;
+            }
+          }
+
         }
 
         a {
