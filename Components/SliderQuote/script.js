@@ -1,4 +1,9 @@
 import $ from 'jquery'
+import 'core-js/es/number'
+import Swiper, { Navigation, A11y, Autoplay } from 'swiper/swiper.esm'
+import 'swiper/swiper-bundle.css'
+
+Swiper.use([Navigation, A11y, Autoplay])
 
 class SliderQuote extends window.HTMLDivElement {
   constructor (...args) {
@@ -30,6 +35,7 @@ class SliderQuote extends window.HTMLDivElement {
   }
 
   resolveElements () {
+    this.$slider = $('.swiper', this)
   }
 
   bindFunctions () {
@@ -39,6 +45,16 @@ class SliderQuote extends window.HTMLDivElement {
   }
 
   connectedCallback () {
+    this.initSlider()
+  }
+
+  initSlider () {
+    const parameters = {
+      slidesPerView: 1,
+      speed: 400,
+      spaceBetween: 100
+    }
+    this.slider = new Swiper(this.$slider.get(0), parameters)
   }
 }
 
