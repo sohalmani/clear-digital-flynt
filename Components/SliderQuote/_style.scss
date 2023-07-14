@@ -1,5 +1,14 @@
 [is='flynt-slider-quote'] {
   // add your component styles here
+  .media-wrap {
+    overflow: hidden;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
   .logo-wrap {
     height: 84px;
     margin: 0 auto;
