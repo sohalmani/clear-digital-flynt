@@ -1,5 +1,6 @@
 import './scripts/publicPath'
 import 'console-polyfill'
+import 'intersection-observer'
 // import 'normalize.css/normalize.css'
 import './main.scss'
 import $ from 'jquery'
@@ -46,6 +47,61 @@ $(function () {
 
   typographySizing()
   window.addEventListener('resize', typographySizing)
+})
+
+// TODO: Find a better place to keep this code
+$(function () {
+  const textUnderlineSelector = '.graphic-effect-underline'
+  const textCrossoutSelector = '.graphic-effect-crossout'
+
+  const underlineElements = document.querySelectorAll(textUnderlineSelector)
+  const crossoutElements = document.querySelectorAll(textCrossoutSelector)
+
+  if (underlineElements.length > 0 || crossoutElements.length > 0) {
+    if (underlineElements.length > 0) {
+      for (const e of underlineElements) {
+        const underlineImage = e.dataset.underlineImage
+        if (underlineImage) {
+          const img = document.createElement('img')
+          img.src = `${window.FlyntData.templateDirectoryUri}/assets/underlines/${underlineImage}.svg`
+          console.log(img.src)
+          e.appendChild(img)
+        }
+      }
+    }
+
+    if (crossoutElements.length > 0) {
+      for (const e of crossoutElements) {
+        const crossoutImage = e.dataset.crossoutImage
+        if (crossoutImage) {
+          const img = document.createElement('img')
+          img.src = `${window.FlyntData.templateDirectoryUri}/assets/crossouts/${crossoutImage}.svg`
+          e.appendChild(img)
+        }
+      }
+    }
+
+    const options = {
+      rootMargin: '30px 0px 30px 0px',
+      threshold: 0.5
+    }
+
+    const observer = new window.IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('draw')
+        } else {
+          entry.target.classList.remove('draw')
+        }
+      })
+    }, options);
+
+    [...underlineElements, ...crossoutElements].forEach((i) => {
+      if (i) {
+        observer.observe(i)
+      }
+    })
+  }
 })
 
 function importAll (r) {

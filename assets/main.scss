@@ -59,11 +59,43 @@
 // BEGIN: TBD
 // @import 'styles/print';
 // END: TBD
+
+// TODO: Find a better place to keep this code
 header {
   display: none;
 }
 
+// TODO: Find a better place to keep this code
+[class*='graphic-effect-'] {
+  display: inline-block;
+  position: relative;
+}
 
+[class*='graphic-effect-'] > img {
+  clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: clip-path 500ms ease-in-out;
+  user-select: none;
+  width: 100%;
+}
+
+.graphic-effect-underline > img {
+  bottom: -0.25em;
+  height: 0.67em;
+}
+
+.graphic-effect-crossout > img {
+  bottom: 0;
+  height: 100%;
+  width: calc(100% + 1ch);
+}
+
+[class*='graphic-effect-'].draw > img,
+[class*='graphic-effect-']:hover > img {
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
 
 
 

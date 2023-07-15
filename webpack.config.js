@@ -1,9 +1,9 @@
 const path = require('path')
-const glob = require('glob-all')
+// const glob = require('glob-all')
 const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PurgeCSSPlugin = require('purgecss-webpack-plugin')
+// const PurgeCSSPlugin = require('purgecss-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const globImporter = require('node-sass-glob-importer')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -166,14 +166,14 @@ const multiConfig = Object.keys(config.entry).map(entry => {
         // both options are optional
         filename: `${entry}.css`,
         chunkFilename: `${entry}.css`
-      }),
-      new PurgeCSSPlugin({
-        paths: () => glob.sync([
-          path.join(__dirname, '*.php'),
-          path.join(__dirname, 'templates/**/*'),
-          path.join(__dirname, './Components/**/*.{php,twig}')
-        ])
       })
+      // new PurgeCSSPlugin({
+      //   paths: () => glob.sync([
+      //     path.join(__dirname, '*.php'),
+      //     path.join(__dirname, 'templates/**/*'),
+      //     path.join(__dirname, './Components/**/*.{php,twig}')
+      //   ])
+      // })
     ]
   }
 })
