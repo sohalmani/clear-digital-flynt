@@ -7,19 +7,14 @@ $pink: #fa198c;
 $light-grey: #e5e4e7;
 $dark-grey: #989898;
 $warm-grey: #d9dfdf;
+
 $colors: (
-  'white',
-  $white,
-  'black',
-  $black,
-  'pink',
-  $pink,
-  'light-grey',
-  $light-grey,
-  'dark-grey',
-  $dark-grey,
-  'warm-grey',
-  $warm-grey,
+  'white':            $white,
+  'black':            $black,
+  'pink':             $pink,
+  'light-grey':       $light-grey,
+  'dark-grey':        $dark-grey,
+  'warm-grey':        $warm-grey,
 );
 
 // Bootstrap Overrides
@@ -28,6 +23,7 @@ $link-decoration: none;
 $font-family-base: 'Poppins', Arial, Helvetica, sans-serif;
 
 $headings-margin-bottom: 0;
+$headings-font-weight: revert;
 $paragraph-margin-bottom: 0;
 $legend-margin-bottom: 0;
 

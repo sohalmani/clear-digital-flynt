@@ -31,6 +31,7 @@
 
 // 8. Add additional custom code here
 @import 'styles/abstracts/placeholders';
+@import 'styles/abstracts/mixins';
 
 @import 'styles/vendors-extensions/bootstrap';
 
@@ -97,6 +98,101 @@
   clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
 }
 
+// TODO: Find a better place to keep this code
+body {
+  cursor: default;
+  overflow-x: hidden;
+  @include media-breakpoint-up(md) {
+    cursor: none;
+  }
+}
 
+.cursor {
+  align-items: center;
+  display: none;
+  height: 80px;
+  justify-content: center;
+  // left: 27px;
+  position: fixed;
+  // top: 27px;
+  width: 80px;
+  z-index: 999;
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
+}
 
+.cursor,
+.cursor * {
+  pointer-events: none;
+}
 
+.cursor.hidden {
+  display: none;
+}
+
+.cursorCircle {
+  border: 8px solid $pink;
+  border-radius: 100%;
+  display: block;
+  height: 25px;
+  transition: width 200ms ease-in-out, height 200ms ease-in-out, transform 100ms ease-out;
+  width: 25px;
+}
+
+.cursor.click .cursorCircle {
+  transform: scale(0.63);
+}
+
+.cursor[data-circle-expand='true'] .cursorCircle {
+  display: none;
+  height: 100%;
+  width: 100%;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+.cursor[data-circle-expand='true'].click .cursorCircle {
+  transform: scale(0.75);
+}
+
+.cursorIcon {
+  height: 35px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  transition: transform 300ms ease-out;
+  width: 35px;
+}
+
+.cursor:not([data-icon='']) .cursorIcon {
+  background-position: center;
+  background-size: contain;
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.cursor:not([data-icon='']).click .cursorIcon {
+  transform: translateX(-50%) translateY(-50%) scale(0.75);
+}
+
+.cursor[data-icon='play'] .cursorIcon {
+  background-image: url('./../assets/cursors/play.svg');
+  background-size: 100%;
+}
+
+.cursor[data-icon='plus'] .cursorIcon {
+  background-image: url('./../assets/cursors/plus.svg');
+  background-size: 100%;
+}
+
+.cursor[data-icon='left'] .cursorIcon {
+  background-image: url('./../assets/cursors/arrow-left-pink.svg');
+  background-size: 100%;
+}
+
+.cursor[data-icon='right'] .cursorIcon {
+  background-image: url('./../assets/cursors/arrow-right-pink.svg');
+  background-size: 100%;
+}

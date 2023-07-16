@@ -64,7 +64,6 @@ $(function () {
         if (underlineImage) {
           const img = document.createElement('img')
           img.src = `${window.FlyntData.templateDirectoryUri}/assets/underlines/${underlineImage}.svg`
-          console.log(img.src)
           e.appendChild(img)
         }
       }
@@ -101,6 +100,66 @@ $(function () {
         observer.observe(i)
       }
     })
+  }
+})
+
+// TODO: Find a better place to keep this code
+$(function () {
+  $('body').prepend('<div class="cursor" data-circle-expand="false" data-icon=""><div class="cursorCircle"></div><div class="cursorIcon"></div></div>')
+  const cursor = document.querySelector('.cursor')
+
+  if (cursor) {
+    let cursorX = -100
+    let cursorY = -100
+    let hoveredElementsExpand = []
+    let iconElementsExpand = []
+
+    const cursorSizeOffset = 0.5 * cursor.clientWidth
+
+    const initializeCursor = function () {
+      document.addEventListener('mousemove', (event) => {
+        cursorX = event.clientX - cursorSizeOffset
+        cursorY = event.clientY - cursorSizeOffset
+      })
+
+      document.documentElement.addEventListener('mousedown', () => {
+        cursor.classList.add('click')
+      })
+
+      document.documentElement.addEventListener('mouseup', () => {
+        cursor.classList.remove('click')
+      })
+
+      document.documentElement.addEventListener('mouseleave', () => {
+        cursor.classList.add('hidden')
+      })
+
+      document.documentElement.addEventListener('mouseenter', () => {
+        cursor.classList.remove('hidden')
+      })
+
+      const moveCursor = function () {
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`
+        hoveredElementsExpand = document.querySelectorAll(
+          '[data-cursor-expand]:hover'
+        )
+        iconElementsExpand = document.querySelectorAll(
+          '[data-cursor-icon]:hover'
+        )
+        cursor.dataset.circleExpand =
+          hoveredElementsExpand.length > 0 ? 'true' : 'false'
+        cursor.dataset.icon =
+          iconElementsExpand.length > 0
+            ? iconElementsExpand[0].dataset.cursorIcon
+            : ''
+
+        window.requestAnimationFrame(moveCursor)
+      }
+
+      window.requestAnimationFrame(moveCursor)
+    }
+
+    initializeCursor()
   }
 })
 
