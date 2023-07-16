@@ -1,9 +1,9 @@
 import $ from 'jquery'
 import 'core-js/es/number'
-import Swiper, { Navigation, A11y, Autoplay } from 'swiper/swiper.esm'
+import Swiper, { Navigation, A11y, Autoplay, Pagination } from 'swiper/swiper.esm'
 import 'swiper/swiper-bundle.css'
 
-Swiper.use([Navigation, A11y, Autoplay])
+Swiper.use([Navigation, A11y, Autoplay, Pagination])
 
 class SliderQuote extends window.HTMLDivElement {
   constructor (...args) {
@@ -52,7 +52,11 @@ class SliderQuote extends window.HTMLDivElement {
     const parameters = {
       slidesPerView: 1,
       speed: 400,
-      spaceBetween: 100
+      spaceBetween: 100,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'progressbar'
+      }
     }
     this.slider = new Swiper(this.$slider.get(0), parameters)
   }
