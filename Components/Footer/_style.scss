@@ -118,6 +118,7 @@
     &--logo {
       height: 75px;
       max-width: 115px;
+      position: relative;
 
       @include media-breakpoint-down(md) {
         height: 65px;
@@ -133,6 +134,7 @@
 
   &__icon {
     height: 38px;
+    position: relative;
     width: 40px;
 
     img {
