@@ -55,14 +55,14 @@
 
       &--location {
         &::before {
-          background: url('../../assets/icons/map-pin-icon-pink.svg') no-repeat center;
+          background: url('./../assets/icons/map-pin-icon-pink.svg') no-repeat center;
           background-size: contain;
         }
       }
 
       &--phone {
         &::before {
-          background: url('../../assets/icons/smartphone-icon-pink.svg') no-repeat center;
+          background: url('./../assets/icons/smartphone-icon-pink.svg') no-repeat center;
           background-size: contain;
         }
       }
