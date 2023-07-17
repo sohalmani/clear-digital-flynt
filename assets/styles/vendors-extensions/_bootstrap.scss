@@ -1,5 +1,8 @@
 /* stylelint-disable scss/at-extend-no-missing-placeholder */
 .container {
+  @extend .position-relative;
+  z-index: 5;
+  
   @include media-breakpoint-up(xs) {
     @extend .px-4;
   }
