@@ -88,3 +88,26 @@
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: $pink !important;
 }
+
+.position-md-absolute {
+  @include media-breakpoint-up(md) {
+    position: absolute !important;
+  }
+}
+
+.inset-md-0 {
+  @include media-breakpoint-up(md) {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+.z-index-5 {
+  z-index: 5;
+}
+
+header {
+  display: none;
+}

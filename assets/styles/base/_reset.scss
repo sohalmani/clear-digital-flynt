@@ -18,7 +18,7 @@ pre {
 
 /* stylelint-disable scss/at-extend-no-missing-placeholder */
 section {
-  @extend .d-flex, .flex-column, .py-36;
+  @extend .d-flex, .flex-column, .py-md-36, .py-12;
   min-height: 100vh;
   position: relative;
 }
