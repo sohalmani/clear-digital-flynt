@@ -63,7 +63,8 @@
   $self: &;
   background-color: transparent;
   position: fixed;
-  transition: background-color 0.3s ease-in-out;
+  top: 0;
+  transition: background-color 0.3s ease-in-out, top 0.3s linear;
   width: 100%;
   z-index: 40;
 
