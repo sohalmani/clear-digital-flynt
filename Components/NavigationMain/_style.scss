@@ -267,8 +267,12 @@
     &__content {
       max-width: 450px;
 
-      h2 {
+      > h2 {
         margin-bottom: 20px;
+        
+        @include media-breakpoint-down(lg) {
+          display: none;
+        }
       }
     }
 
