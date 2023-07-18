@@ -39,21 +39,37 @@
   }
 
   .tab {
-    &__title {
+    &__head {
       border-bottom: 1px solid rgba($black, 0.5);
       padding: 50px 0;
     }
-    
+
     &__body {
       background-color: $light-grey;
-      border-top: 1px solid $black;
+      border-bottom: 1px solid rgba($black, 0.5);
       display: none;
       height: 100%;
-      inset: 0;
-      padding: 50px 0;
-      position: absolute;
+      padding-bottom: 50px;
+      position: relative;
       width: 100%;
+
+      @include media-breakpoint-up(md) {
+        border-top: 1px solid $black;
+        padding: 50px 0;
+      }
     } 
+
+    &--open {
+      .tab__head {
+        border-bottom: 0;
+      }
+
+      .expand-btn {
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
   }
 
   .img-wrapper {
