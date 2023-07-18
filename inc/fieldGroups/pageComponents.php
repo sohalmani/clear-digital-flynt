@@ -22,6 +22,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockImageText\getACFLayout(),
                     Components\BlockImageTwoCol\getACFLayout(),
                     Components\BlockTextImageSlider\getACFLayout(),
+                    Components\BlockTabsWithContent\getACFLayout(),
                     Components\BlockThreeColContent\getACFLayout(),
                     Components\BlockVideoOembed\getACFLayout(),
                     Components\BlockWysiwyg\getACFLayout(),

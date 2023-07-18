@@ -1,6 +1,29 @@
-[is='flynt-block-tabs-with-content'] {
-  // add your component styles here
+// [is='flynt-block-tabs-with-content'] {
+//   .tabs-with-content{
+//     .close-btn {
+//       background: url('./../assets/icons/map-pin-pink.svg') no-repeat center;
+//       background-size: contain;
+//       display: inline-block;
+//       height: 30px;
+//       width: 30px;
+//     }
 
+//     .tab {
+//       border-bottom: 1px solid rgba($black, 0.5);
+//       padding: 50px 0;
+      
+
+//       &__body {
+//         background-color: $dark-grey;
+//         border-top: 1px solid $black;
+//         display: none;
+//         padding: 50px 0;
+//       } 
+//     }
+//   }
+// }
+
+.tabs-with-content {
   .close-btn {
     background: url('./../assets/icons/map-pin-pink.svg') no-repeat center;
     background-size: contain;
@@ -17,7 +40,9 @@
     &__body {
       background-color: $dark-grey;
       border-top: 1px solid $black;
+      display: none;
       padding: 50px 0;
     } 
   }
 }
+
