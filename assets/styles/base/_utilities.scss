@@ -136,6 +136,24 @@
   z-index: 3;
 }
 
+.play {
+  @include media-breakpoint-down(md) {
+    height: 80px;
+    margin-left: 16px;
+    width: 80px;
+  }
+
+  &::before {
+    @include media-breakpoint-down(md) {
+      background: url('../assets/icons/play-circle-pink.svg') no-repeat center;
+      content: '';
+      height: 80px;
+      position: absolute;
+      width: 80px;
+    }
+  }
+}
+
 .swiper-pagination-progressbar {
   background: transparent !important;
   height: 8px !important;
