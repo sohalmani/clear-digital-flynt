@@ -136,6 +136,22 @@
   z-index: 3;
 }
 
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-  background: $pink !important;
+.swiper-pagination-progressbar {
+  height: 8px !important;
+  position: relative !important;
+
+  &::before {
+    background-color: $white;
+    content: '';
+    display: block;
+    height: 1px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  
+  &-fill {
+    background: $pink !important;
+  }
 }
