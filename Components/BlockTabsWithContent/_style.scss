@@ -24,21 +24,28 @@
 // }
 
 .tabs-with-content {
+  background-color: $light-grey;
+
   .close-btn {
-    background: url('./../assets/icons/map-pin-pink.svg') no-repeat center;
+    background: url('./../assets/icons/cross-black.svg') no-repeat center;
     background-size: contain;
     display: inline-block;
     height: 30px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50px;
     width: 30px;
   }
 
   .tab {
-    border-bottom: 1px solid rgba($black, 0.5);
-    padding: 50px 0;
+    &__title {
+      border-bottom: 1px solid rgba($black, 0.5);
+      padding: 50px 0;
+    }
     
-
     &__body {
-      background-color: $dark-grey;
+      background-color: $light-grey;
       border-top: 1px solid $black;
       display: none;
       height: 100%;
