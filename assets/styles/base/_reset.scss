@@ -22,4 +22,24 @@ section {
   min-height: 100vh;
   position: relative;
 }
+
+blockquote {
+  @extend .pt-md-24, .pt-16;
+  position: relative;
+
+  &::before {
+    background: url('../assets/icons/quotes-white.svg') no-repeat center / 100%;
+    content: '';
+    height: 45px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 55px;
+    z-index: 1;
+    @include media-breakpoint-up(md) {
+      height: 61px;
+      width: 72px;
+    }
+  }
+}
 /* stylelint-enable scss/at-extend-no-missing-placeholder */
