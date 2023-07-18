@@ -4,7 +4,7 @@ import Swiper, { Navigation, A11y, Autoplay, Pagination } from 'swiper/swiper.es
 
 Swiper.use([Navigation, A11y, Autoplay, Pagination])
 
-class SliderQuote extends window.HTMLDivElement {
+class BlockTextImageSlider extends window.HTMLDivElement {
   constructor (...args) {
     const self = super(...args)
     self.init()
@@ -49,9 +49,9 @@ class SliderQuote extends window.HTMLDivElement {
 
   initSlider () {
     const parameters = {
-      slidesPerView: 1,
+      slidesPerView: 'auto',
       speed: 400,
-      spaceBetween: 100,
+      spaceBetween: 0,
       pagination: {
         el: '.swiper-pagination',
         type: 'progressbar'
@@ -61,4 +61,4 @@ class SliderQuote extends window.HTMLDivElement {
   }
 }
 
-window.customElements.define('flynt-slider-quote', SliderQuote, { extends: 'div' })
+window.customElements.define('flynt-block-text-image-slider', BlockTextImageSlider, { extends: 'div' })

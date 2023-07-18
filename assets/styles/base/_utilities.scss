@@ -137,11 +137,12 @@
 }
 
 .swiper-pagination-progressbar {
+  background: transparent !important;
   height: 8px !important;
   position: relative !important;
 
   &::before {
-    background-color: $white;
+    background-color: $black;
     content: '';
     display: block;
     height: 1px;
@@ -153,5 +154,11 @@
   
   &-fill {
     background: $pink !important;
+  }
+}
+
+.bg-black .swiper-pagination-progressbar {
+  &::before {
+    background-color: $white;
   }
 }
