@@ -1,7 +1,6 @@
 import './scripts/publicPath'
 import 'console-polyfill'
 import 'intersection-observer'
-// import 'normalize.css/normalize.css'
 import './main.scss'
 import $ from 'jquery'
 import feather from 'feather-icons'

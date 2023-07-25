@@ -1,5 +1,4 @@
 const path = require('path')
-// const glob = require('glob-all')
 const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -54,21 +53,27 @@ const webpackConfig = {
           {
             loader: 'css-loader',
             options: {
-              url: false
+              url: false,
+              sourceMap: !production
             }
           },
           {
             loader: 'postcss-loader',
             options: {
               ident: 'postcss',
+              sourceMap: !production,
               plugins: [
                 require('autoprefixer')
               ]
             }
           },
+          // {
+          //   loader: 'resolve-url-loader'
+          // },
           {
             loader: 'sass-loader',
             options: {
+              sourceMap: true,
               sassOptions: {
                 importer: globImporter()
               }
@@ -121,6 +126,18 @@ if (production) {
       }
     })
   )
+  // if (config.purgeCss.usePurgeCss) {
+  //   webpackConfig.plugins.push(
+  //     new PurgeCSSPlugin({
+  //       paths: () => require('glob-all').sync(config.purgeCss.options.paths),
+  //       only: config.purgeCss.options.only,
+  //       safelist: {
+  //         greedy: [/^swiper.*$/]
+  //       },
+  //       skippedContentGlobs: ['node_modules/**', 'vendor/**']
+  //     })
+  //   )
+  // }
   webpackConfig.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
   webpackConfig.optimization.minimizer = [
     new TerserPlugin({
@@ -145,12 +162,6 @@ if (production) {
 }
 
 const multiConfig = Object.keys(config.entry).map(entry => {
-  // console.log(glob.sync([
-  //   path.join(__dirname, '*.php'),
-  //   path.join(__dirname, 'templates/**/*'),
-  //   path.join(__dirname, './Components/**/*.{php,twig}')
-  // ]))
-
   return {
     ...webpackConfig,
     entry: config.entry[entry],
@@ -167,13 +178,6 @@ const multiConfig = Object.keys(config.entry).map(entry => {
         filename: `${entry}.css`,
         chunkFilename: `${entry}.css`
       })
-      // new PurgeCSSPlugin({
-      //   paths: () => glob.sync([
-      //     path.join(__dirname, '*.php'),
-      //     path.join(__dirname, 'templates/**/*'),
-      //     path.join(__dirname, './Components/**/*.{php,twig}')
-      //   ])
-      // })
     ]
   }
 })

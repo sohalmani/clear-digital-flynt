@@ -1,3 +1,24 @@
+/**
+* 1.0 Typography
+*
+* Styling all likely used content flow elements.
+*/
+
+#{$heading-selectors} {
+  color: $color-headline;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-bottom: 0.9rem;
+  margin-top: 0;
+
+  a,
+  a:hover,
+  a:focus {
+    color: $color-headline;
+    text-decoration: none;
+  }
+}
+
 :root {
   --window-size-anim-delay: 0s;
   --typography-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
@@ -15,6 +36,8 @@ h1,
   animation-play-state: paused;
   letter-spacing: -0.05em;
   line-height: 1.1;
+  margin-bottom: 1.5rem;
+  padding-top: 2rem;
 }
 
 h2,
@@ -25,6 +48,7 @@ h2,
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  padding-top: 1rem;
 }
 
 h3,
@@ -34,6 +58,7 @@ h3,
   animation-play-state: paused;
   letter-spacing: -0.02em;
   line-height: 1.1;
+  padding-top: 1rem;
 }
 
 h4,
@@ -43,6 +68,7 @@ h4,
   animation-play-state: paused;
   letter-spacing: 0;
   line-height: 1.3;
+  padding-top: 0.5rem;
 }
 
 h5,
@@ -52,6 +78,7 @@ h5,
   animation-play-state: paused;
   letter-spacing: 0;
   line-height: 1.3;
+  padding-top: 0.5rem;
 }
 
 h6,
@@ -61,6 +88,7 @@ h6,
   animation-play-state: paused;
   letter-spacing: 0;
   line-height: 1.3;
+  padding-top: 0.5rem;
 }
 
 .subtitle {

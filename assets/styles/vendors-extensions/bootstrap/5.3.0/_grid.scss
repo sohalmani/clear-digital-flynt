@@ -1,0 +1,13 @@
+// Grid properties overrides
+
+.row {
+  --#{$prefix}gutter-x: #{map-get($spacers, 4)};
+
+  @include media-breakpoint-up(3xl) {
+    --#{$prefix}gutter-x: #{map-get($spacers, 4)};
+  }
+
+  @include media-breakpoint-up(4xl) {
+    --#{$prefix}gutter-x: #{map-get($spacers, 4)};
+  }
+}
