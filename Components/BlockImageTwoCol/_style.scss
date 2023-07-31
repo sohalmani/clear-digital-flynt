@@ -1,9 +1,14 @@
 .image-two-col {
-  height: 100vh;
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+  }
 
   &__item {
-    height: 100%;
+    height: 100vh;
     position: relative;
+    @include media-breakpoint-up(md) {
+      height: 100%;
+    }
   }
 
   &__background {
@@ -19,10 +24,23 @@
   }
 
   &__content {
-    bottom: 30px;
-    left: 0;
-    padding: 50px 60px;
+    bottom: 70px;
+    left: 50%;
+    padding: 0 20px;
     position: absolute;
+    transform: translateX(-50%);
+    transition: width 0.2s ease-in-out, transform 0.2s ease-in-out;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      bottom: 150px;
+    }
+    @include media-breakpoint-up(xl) {
+      left: 0;
+      padding: 0;
+      transform: none;
+      width: auto;
+    }
   }
 
   &__logo {
@@ -36,6 +54,33 @@
       height: 100%;
       object-fit: contain;
       width: 100%;
+    }
+  }
+
+  .swiper {
+    .swiper-slide {
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      height: 100%;
+      margin-top: 0;
+      top: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+    }
+
+    .swiper-button-prev {
+      left: 0;
     }
   }
 }
