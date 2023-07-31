@@ -41,6 +41,9 @@ class BlockTextImageSlider extends window.HTMLDivElement {
   }
 
   bindEvents () {
+    $(window).on('load', () => {
+      this.slider.init()
+    })
   }
 
   connectedCallback () {
@@ -49,15 +52,60 @@ class BlockTextImageSlider extends window.HTMLDivElement {
 
   initSlider () {
     const parameters = {
+      init: false,
       slidesPerView: 'auto',
       speed: 400,
       spaceBetween: 0,
       pagination: {
         el: '.swiper-pagination',
         type: 'progressbar'
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      breakpoints: {
+        // when window width is >= 1200
+        1200: {
+          noSwiping: true,
+          noSwipingClass: 'swiper-slide'
+        }
       }
     }
     this.slider = new Swiper(this.$slider.get(0), parameters)
+    this.setSlideButtonWidth()
+  }
+
+  setSlideButtonWidth () {
+    this.slider.on('init resize', () => {
+      this.slider.navigation.nextEl.style.width = `${this.getSlideButtonRightWidth()}px`
+      this.slider.navigation.nextEl.style.right = `-${this.getSlideButtonRightPos()}px`
+      this.slider.navigation.prevEl.style.width = `${this.getSlideButtonLeftWidth()}px`
+    })
+  }
+
+  getSlideButtonLeftWidth () {
+    const sliderOffsetLeft = parseInt(this.$slider.offset().left, 10) - parseInt(this.$slider.css('padding-left'), 10)
+    const sliderParentOffsetLeft = parseInt(this.$slider.parent().offset().left, 10)
+    const slidePaddingLeft = parseInt($(this.slider.slides[0]).css('padding-left'), 10) * 2
+
+    return sliderParentOffsetLeft - sliderOffsetLeft + slidePaddingLeft
+  }
+
+  getSlideButtonRightWidth () {
+    const mainOffsetRight = parseInt($('main').offset().left, 10) + parseInt($('main').outerWidth(), 10)
+    const sliderOffsetRight = parseInt(this.$slider.offset().left, 10) + parseInt(this.$slider.outerWidth(), 10)
+    const slidePaddingRight = parseInt($(this.slider.slides[0]).css('padding-left'), 10) * 2
+
+    return mainOffsetRight - sliderOffsetRight + slidePaddingRight
+  }
+
+  getSlideButtonRightPos () {
+    const mainOffsetRight = parseInt($('main').offset().left, 10) + parseInt($('main').outerWidth(), 10)
+    const sliderOffsetRight = parseInt(this.$slider.offset().left, 10) + parseInt(this.$slider.outerWidth(), 10)
+    const slidePaddingRight = parseInt($(this.slider.slides[0]).css('padding-left'), 10)
+
+    return mainOffsetRight - sliderOffsetRight - slidePaddingRight
   }
 }
 

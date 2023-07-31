@@ -44,7 +44,6 @@ class SliderQuote extends window.HTMLDivElement {
   bindEvents () {
     $(window).on('load', () => {
       this.slider.init()
-      console.log('init')
     })
   }
 
