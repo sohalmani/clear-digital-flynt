@@ -1,5 +1,19 @@
 [is='flynt-slider-quote'] {
   // add your component styles here
+  .container {
+    position: static !important;
+  }
+
+  .logo-wrap {
+    height: 60px;
+    margin: 0 auto;
+    max-width: 149px;
+    @include media-breakpoint-up(lg) {
+      height: 84px;
+      max-width: 210px;
+    }
+  }
+
   .media-wrap {
     overflow: hidden;
 
@@ -11,11 +25,40 @@
 
   .swiper {
     overflow-x: hidden;
+    
+    .swiper-slide {
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      height: 100%;
+      margin-top: 0;
+      top: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+    }
+
+    .swiper-button-prev {
+      left: 0;
+    }
   }
 
-  .logo-wrap {
-    height: 84px;
+
+  figure + .logo-wrap {
+    height: 27px;
     margin: 0 auto;
-    max-width: 193px;
+    max-width: 140px;
+    @include media-breakpoint-up(lg) {
+      max-width: 193px;
+    }
   }
 }

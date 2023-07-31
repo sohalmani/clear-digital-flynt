@@ -34,6 +34,7 @@ class SliderQuote extends window.HTMLDivElement {
   }
 
   resolveElements () {
+    this.$container = $('.container', this)
     this.$slider = $('.swiper', this)
   }
 
@@ -41,6 +42,10 @@ class SliderQuote extends window.HTMLDivElement {
   }
 
   bindEvents () {
+    $(window).on('load', () => {
+      this.slider.init()
+      console.log('init')
+    })
   }
 
   connectedCallback () {
@@ -49,15 +54,42 @@ class SliderQuote extends window.HTMLDivElement {
 
   initSlider () {
     const parameters = {
+      init: false,
       slidesPerView: 1,
       speed: 400,
       spaceBetween: 100,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
       pagination: {
         el: '.swiper-pagination',
         type: 'progressbar'
+      },
+      breakpoints: {
+        // when window width is >= 1200
+        1200: {
+          noSwiping: true,
+          noSwipingClass: 'swiper-slide'
+        }
       }
     }
     this.slider = new Swiper(this.$slider.get(0), parameters)
+    this.setSlideButtonWidth()
+  }
+
+  setSlideButtonWidth () {
+    this.slider.on('init resize', () => {
+      this.slider.navigation.nextEl.style.width = `${this.getSlideButtonWidth()}px`
+      this.slider.navigation.prevEl.style.width = `${this.getSlideButtonWidth()}px`
+    })
+  }
+
+  getSlideButtonWidth () {
+    const containerOffsetLeft = parseInt(this.$container.offset().left, 10)
+    const containerPaddingLeft = parseInt(this.$container.css('padding-left'), 10)
+
+    return containerOffsetLeft + containerPaddingLeft
   }
 }
 

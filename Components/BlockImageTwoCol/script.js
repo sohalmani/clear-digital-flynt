@@ -47,7 +47,13 @@ class BlockImageTwoCol extends window.HTMLDivElement {
   bindEvents () {
     $(window).on('load resize', () => {
       if ($(window).width() < 768) {
-        this.slider.destroy(false)
+        if (this.slider.$el) {
+          this.slider.destroy(false)
+        }
+
+        this.$content.each((i, el) => {
+          $(el).removeAttr('style')
+        })
       } else {
         this.slider.init()
       }
@@ -89,10 +95,11 @@ class BlockImageTwoCol extends window.HTMLDivElement {
 
   alignContent () {
     this.slider.on('init resize slideChangeTransitionStart', () => {
-      if ($(window).width() >= 1200) {
-        this.$content.each((i, el) => {
-          this.$el = $(el)
-          this.$el.width(this.getContentWidth())
+      this.$content.each((i, el) => {
+        const $el = $(el)
+
+        if ($(window).width() >= 1200) {
+          $el.width(this.getContentWidth())
 
           if ($(el).closest('.swiper-slide').hasClass('swiper-slide-active')) {
             $(el).css('transform', `translateX(${this.getContentLeftPos()}px)`)
@@ -101,10 +108,10 @@ class BlockImageTwoCol extends window.HTMLDivElement {
           if ($(el).closest('.swiper-slide').hasClass('swiper-slide-next')) {
             $(el).css('transform', `translateX(${this.getContentRightPos()}px)`)
           }
-        })
-      } else {
-        this.$content.removeAttr('style')
-      }
+        } else {
+          $el.removeAttr('style')
+        }
+      })
     })
   }
 
