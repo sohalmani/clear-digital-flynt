@@ -39,9 +39,16 @@
   }
 
   .tab {
-    &__head {
+    @include media-breakpoint-down(md) {
       border-bottom: 1px solid rgba($black, 0.5);
+    }
+
+    &__head {
       padding: 50px 0;
+
+      @include media-breakpoint-up(md) {
+        border-bottom: 1px solid rgba($black, 0.5);
+      }
     }
 
     &__body {
@@ -60,10 +67,6 @@
     } 
 
     &--open {
-      .tab__head {
-        border-bottom: 0;
-      }
-
       .expand-btn {
         &::after {
           opacity: 0;
