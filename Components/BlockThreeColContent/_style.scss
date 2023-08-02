@@ -1,10 +1,47 @@
 .three-col-content {
   .intro {
     max-width: 1140px;
+    position: relative;
   }
 
   .icon-wrap {
     height: 80px;
     max-width: 80px;
+  }
+
+  .row {
+    position: relative;
+  }
+
+  .artwork {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &--rocket-black {
+      max-height: 158px;
+      max-width: 108px;
+      right: 0;
+      top: -15%;
+    }
+
+    &--arrow-black {
+      max-height: 92px;
+      max-width: 24px;
+      padding: 0;
+      right: 20px;
+      transform: scaleX(-1);
+
+      @include media-breakpoint-up(lg) {
+        left: -15px;
+        max-height: 104px;
+        max-width: 26px;
+      }
+    }
   }
 }
