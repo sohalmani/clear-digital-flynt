@@ -1,0 +1,43 @@
+// stylelint-disable number-leading-zero, order/properties-alphabetical-order, scss/dollar-variable-colon-space-after, string-quotes
+
+// Container mixins
+
+@mixin make-container-fluid-ready() {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin make-container-ready($max-widths: $container-max-widths) {
+  @include make-container-fluid-ready();
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+}
+
+@mixin make-container-fluid() {
+  max-width: 100%;
+}
+
+@mixin make-container($gutter: null) {
+  @if $gutter == null {
+    @if variable-exists(container-paddings-x) and type-of($container-paddings-x) == map {
+      @each $breakpoint, $gutter in $container-paddings-x {
+        @include media-breakpoint-up($breakpoint) {
+          --#{$prefix}gutter-x: #{$gutter};
+          --#{$prefix}gutter-y: 0;
+          padding-right: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+          padding-left: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+        }
+      }
+    }
+  } @else {
+    --#{$prefix}gutter-x: if($gutter == null, $container-padding-x, $gutter);
+    --#{$prefix}gutter-y: 0;
+    padding-right: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+    padding-left: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+  }
+}

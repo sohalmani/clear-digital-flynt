@@ -1,0 +1,62 @@
+// Redefine Bootstrap's 'make-container-max-widths' mixin and just remove deprecation message
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+  // @include deprecate("The `make-container-max-widths` mixin", "v4.5.2", "v5");
+}
+
+// Define the custom make-container-padding mixin
+// This mixin sets the custom padding for the container
+// This mixin can be used within specific media query as well
+// Parameters:
+//   $gutter: The custom padding to be applied to the container
+@mixin make-container-padding($gutter: $grid-gutter-width) {
+  // Apply the custom padding value
+  padding-left: $gutter * 0.5;
+  padding-right: $gutter * 0.5;
+}
+
+// Container Mixin
+//
+// This mixin creates a responsive container with custom paddings and max-widths. 
+// It utilizes the Bootstrap mixins 'make-container-max-widths' and 'make-container-padding'
+// to apply the container max-widths and paddings at different breakpoints.
+//
+// Parameters:
+//   $paddings-x: A map containing custom container paddings for each breakpoint. 
+//                The map should have breakpoint names as keys and padding values as values.
+//   $breakpoints: Bootstrap's grid breakpoints map. This parameter specifies the breakpoints
+//                 at which the container paddings should be applied.
+//
+// Example usage:
+// @include container($paddings-x: (
+//   sm: 20px,
+//   md: 30px,
+//   lg: 40px,
+//   xl: 50px
+// ), $breakpoints: $grid-breakpoints);
+//
+// This will create a responsive container with custom paddings of 20px, 30px, 40px, and 50px
+// at the 'sm', 'md', 'lg', and 'xl' breakpoints respectively.
+@mixin container($paddings-x: $container-paddings-x, $breakpoints: $grid-breakpoints) {
+  // Apply the container max-widths using the mixin provided by Bootstrap
+  @include make-container-max-widths($container-max-widths, $breakpoints);
+  
+  // Set margin-left and margin-right to 'auto' once
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  // Loop through each breakpoint and its gutter value
+  @each $breakpoint, $padding-x in $paddings-x {
+    // Apply the padding value for the specific breakpoint using make-container-padding mixin
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      @include make-container-padding($padding-x);
+    }
+  }
+}
+

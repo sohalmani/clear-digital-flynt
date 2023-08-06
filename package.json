@@ -163,7 +163,9 @@
       }
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.6.2"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",

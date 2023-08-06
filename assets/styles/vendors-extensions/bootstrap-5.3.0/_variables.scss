@@ -1,0 +1,120 @@
+// stylelint-disable number-leading-zero, order/properties-alphabetical-order, scss/dollar-variable-colon-space-after, string-quotes
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Links
+//
+// Style anchor elements.
+
+$link-decoration:                         none;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$headings-margin-bottom:      0;
+$headings-font-weight:        revert;
+
+$legend-margin-bottom:        0;
+
+// Paragraphs
+//
+// Style p element.
+
+$paragraph-margin-bottom:   0;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacings map, should you need more variation.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 2260px,
+) !default;
+
+$container-max-widths: (
+  xs: 100%,
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1410px,
+  xxl: 2000px
+) !default;
+
+$container-padding-x: 1rem !default;
+$container-paddings-x: (
+  xs: 16px,
+  sm: 16px,
+  md: 40px,
+  lg: 80px,
+  xl: 55px,
+  xxl: 96px
+) !default;
+
+$grid-gutter-width: 2rem !default;
+$grid-gutter-width: (
+  xs: 16px,
+  sm: 16px,
+  md: 16px,
+  lg: 16px,
+  xl: 30px,
+  xxl: 24px
+) !default;
+
+$spacing: 1rem !default;
+$spacings: (
+  xs: (
+    xs: 10px,
+    sm: 10px,
+    md: 10px,
+    lg: 10px,
+    xl: 10px,
+    xxl: 10px
+  ),
+  sm: (
+    xs: 20px,
+    sm: 20px,
+    md: 20px,
+    lg: 20px,
+    xl: 20px,
+    xxl: 20px
+  ),
+  md: (
+    xs: 30px,
+    sm: 30px,
+    md: 30px,
+    lg: 30px,
+    xl: 30px,
+    xxl: 30px
+  ),
+  lg: (
+    xs: 50px,
+    sm: 50px,
+    md: 50px,
+    lg: 50px,
+    xl: 80px,
+    xxl: 80px
+  ),
+  xl: (
+    xs: 50px,
+    sm: 50px,
+    md: 50px,
+    lg: 50px,
+    xl: 80px,
+    xxl: 80px
+  )
+) !default;
+$default-spacing-size: lg !default;

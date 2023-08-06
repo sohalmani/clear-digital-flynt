@@ -1,0 +1,121 @@
+// Import Bootstrap's functions and variables
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+
+// Links
+$link-decoration: none;
+
+// Typography
+$headings-margin-bottom: 0;
+$headings-font-weight: revert;
+
+$legend-margin-bottom: 0;
+
+// Paragraphs
+$paragraph-margin-bottom: 0;
+
+// NOTE: The variables used below like $grid-breakpoints, $container-max-widths, $container-padding-x,
+// and $grid-gutter-width are related to the Bootstrap framework and have specific purposes
+// in creating responsive layouts. They are not directly related to these extension and are used in the
+// Bootstrap mixins for container and row layouts.
+
+// Bootstrap Grid Breakpoints
+//
+// These breakpoints define the screen sizes for different devices.
+// They are used in various media queries to create responsive layouts.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 2260px
+);
+
+// Bootstrap Container Max Widths
+//
+// These variables define the maximum width of the container for each breakpoint.
+// Containers will not exceed these widths.
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+// Custom Container Paddings
+//
+// These variables define the left and right padding of the container for each breakpoint.
+// The container will have these padding values on the left and right sides.
+$container-padding-x: 1rem; // Set padding value that you want for smallest device
+$container-paddings-x: (
+  sm: 10px,
+  md: 20px,
+  lg: 30px,
+  xl: 40px
+) !default;
+
+// Custom Grid Gutter Widths
+//
+// These variables define the gutter width used for rows in the grid system.
+// Gutters are the spacing between columns and are used to create responsive layouts.
+$grid-gutter-width: 2rem; // Set gutter value that you want for smallest device
+$grid-gutter-widths: (
+  sm: 10px,
+  md: 20px,
+  lg: 30px,
+  xl: 40px
+) !default;
+
+// Spacing Variants
+//
+// These variables define different spacing variants that can be used throughout the project.
+// Each variant has different spacing values for each breakpoint, making it easy to customize
+// the spacing based on the design requirements.
+// There can be numerous variants such as tiny, small, compact, medium, comfortable, large, spacious, huge,
+// depending on the spacing size of the variant. You can add more entries to the $spacings map, 
+// should you need more variation. 
+$spacing: 1rem !default;
+$default-spacing-variant: 'medium' !default; // Set your default spacing variant here
+$spacings: (
+  'tiny': (
+    xs: 10px,
+    sm: 10px,
+    md: 10px,
+    lg: 10px,
+    xl: 10px,
+    xxl: 10px
+  ),
+  'small': (
+    xs: 20px,
+    sm: 20px,
+    md: 20px,
+    lg: 20px,
+    xl: 20px,
+    xxl: 20px
+  ),
+  'medium': (
+    xs: 30px,
+    sm: 30px,
+    md: 30px,
+    lg: 30px,
+    xl: 30px,
+    xxl: 30px
+  ),
+  'large': (
+    xs: 50px,
+    sm: 50px,
+    md: 50px,
+    lg: 50px,
+    xl: 50px,
+    xxl: 50px
+  ),
+  'huge': (
+    xs: 50px,
+    sm: 50px,
+    md: 50px,
+    lg: 50px,
+    xl: 80px,
+    xxl: 80px
+  )
+) !default;

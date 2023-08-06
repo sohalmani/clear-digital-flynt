@@ -1,0 +1,67 @@
+// Spacing Mixin
+//
+// This mixin applies custom spacing values (margin or padding) for different
+// breakpoints based on the chosen spacing variant.
+//
+// Note: The $spacings map should be defined in your project containing the
+// different spacing variants and their corresponding values for each breakpoint.
+//
+// Parameters:
+//   $properties: A list of properties to apply spacing to. It is possible to
+//                set spacing for specific properties such as 'margin-top',
+//                'margin-bottom', 'margin-left', 'margin-right', 'padding-top',
+//                'padding-bottom','padding-left', 'padding-right', or apply the
+//                spacing to all sides by using 'margin' or 'padding'. If multiple
+//                properties are required, pass them as a space-separated string
+//                (e.g., 'margin margin-top margin-bottom').
+//   $variant: The spacing variant to be applied. This should correspond to
+//             one of the keys in the $spacings map.
+//   $negative: If true, it applies negative spacing (margin or padding) as
+//              specified in the spacing map.
+//   $breakpoints: Bootstrap's grid breakpoints map.
+//
+// Example usage:
+// @include spacing('margin', 'medium', true, $grid-breakpoints);
+//
+@mixin spacing(
+  $properties: margin-top,
+  $variant: $default-spacing-variant,
+  $negative: false,
+  $breakpoints: $grid-breakpoints
+) {
+  // List of valid property names
+  $valid-properties: (
+    margin, margin-top, margin-bottom, margin-left, margin-right,
+    padding, padding-top, padding-bottom, padding-left, padding-right
+  );
+
+  // Check if the variant exists in the spacing map
+  @if map-has-key($spacings, $variant) {
+    $spacing-variant: map-get($spacings, $variant);
+
+    // Multiple properties are possible, for example with vertical or horizontal margins or paddings
+    @if type-of($properties) == 'string' {
+      $properties: append((), $properties);
+    }
+
+    // Loop through each property and its spacing value
+    @each $property in $properties {
+      // Apply the spacing based on the property (margin or padding)
+      @each $breakpoint, $value in $spacing-variant {
+        $value: if($negative, $value * -1, $value); // Apply negative value if specified
+
+        @if index($valid-properties, $property) {
+          @include media-breakpoint-up($breakpoint, $breakpoints) {
+            #{$property}: $value;
+          }
+        } @else {
+          // Provide a warning for invalid property values
+          @warn 'Invalid property value! Use only "margin" or "padding" properties.';
+        }
+      }
+    }
+  } @else {
+    // Provide a warning for invalid spacing variant
+    @warn 'Invalid spacing variant! Check the spacing map.';
+  }
+}

@@ -1,0 +1,8 @@
+// Import Bootstrap's mixins and optionally, reboot
+@import 'bootstrap/scss/mixins';
+// @import 'bootstrap/scss/reboot'; // Optional: Uncomment this line to include reboot styles.
+
+// Custom Container, Grid and Spacings Mixins
+@import 'mixins/container';
+@import 'mixins/grid';
+@import 'mixins/spacings';

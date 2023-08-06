@@ -1,0 +1,168 @@
+// Define the custom make-row-gutter mixin
+// This mixin sets the custom negative margin for rows, creating gutters between columns
+// Parameters:
+//   $gutter: The custom gutter value to be applied to the row
+@mixin make-row-gutter($gutter: $grid-gutter-width) {
+  // Apply the custom gutter value to row
+  margin-left: -($gutter / 2);
+  margin-right: -($gutter / 2);
+}
+
+// Define the custom make-col-gutter mixin
+// This mixin applies custom gutter padding to columns, using half of the specified gutter width.
+// Parameters:
+//   $gutter: The custom gutter width to be applied.
+@mixin make-col-gutter($gutter: $grid-gutter-width) {
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
+// Row Mixin
+//
+// This mixin creates a responsive flexbox row with custom gutters.
+// It applies the necessary flex properties to create a flexible row layout,
+// and sets custom gutter widths for each breakpoint specified in the $gutters map.
+//
+// Parameters:
+//   $gutters: A map containing custom gutter widths for rows at each breakpoint.
+//             The keys in the map should correspond to Bootstrap's breakpoint names (e.g., 'sm', 'md').
+//             The values should be the gutter widths in pixels or any valid CSS length unit.
+//             Defaults to the value of $grid-gutter-widths.
+//   $breakpoints: Bootstrap's grid breakpoints map. Defaults to the value of $grid-breakpoints.
+//
+// Example usage:
+// @include row($grid-gutter-widths, $grid-breakpoints);
+//
+// This will create a responsive flexbox row with custom gutters defined in the $grid-gutter-widths map.
+//
+// @include row($custom-gutters, $grid-breakpoints);
+//
+// This will create a responsive flexbox row with custom gutters defined in the $custom-gutters map,
+// which can provide different gutter widths for specific breakpoints.
+//
+@mixin row($gutters: $grid-gutter-widths, $breakpoints: $grid-breakpoints) {
+  // Set flex properties once
+  display: flex;
+  flex-wrap: wrap;
+
+  // Loop through each breakpoint and its gutter value
+  @each $breakpoint, $gutter in $gutters {
+    // Apply the margin value for the specific breakpoint using make-row-gutter mixin
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      @include make-row-gutter($gutter);
+    }
+  }
+
+  > * {
+    // Add box sizing if only the grid is loaded
+    box-sizing: border-box;
+    // Prevent columns from becoming too narrow when at smaller grid tiers by
+    // always setting `width: 100%;`. This works because we set the width
+    // later on to override this initial width.
+    flex-shrink: 0;
+    max-width: 100%;
+    width: 100%;
+
+    // Loop through each breakpoint and its gutter value
+    @each $breakpoint, $gutter in $gutters {
+      // Apply the gutter value for the specific breakpoint using make-col-gutter mixin
+      @include media-breakpoint-up($breakpoint, $breakpoints) {
+        @include make-col-gutter($gutter);
+      }
+    }
+  }
+}
+
+// Column Mixin
+//
+// This mixin creates a responsive column with custom width and gutters in a flexbox row.
+//
+// Parameters:
+//   $size: The number of columns the column should occupy. If set to `auto`, the column
+//          will have an auto width. If set to `false`, the column will be flexible
+//          and occupy the remaining space in the row.
+//   $gutters: A map containing custom gutter widths for columns at each breakpoint.
+//   $columns: The total number of columns in the grid.
+//   $breakpoints: Bootstrap's grid breakpoints map.
+//
+// Note: The `$grid-gutter-widths` variable should be defined in your project.
+//
+// Example usage:
+// To create a column that occupies 4 grid columns with gutters at medium breakpoint:
+// @include media-breakpoint-up(md) {
+//   @include col(4);
+// }
+//
+// To create a flexible column that occupies the remaining space in the row:
+// @include col;
+// This will create a flexible column that takes up the remaining available space in the row.
+@mixin col($size: false, $gutters: $grid-gutter-widths, $columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+  @if $size {
+    @if $size == auto {
+      // Column with auto width
+      flex: 0 0 auto;
+      width: auto;
+    } @else if $size == 0 {
+      @warn 'Number of columns cannot be zero.';
+    } @else if $size > $columns {
+      @warn 'Number of columns cannot exceed the total number of specified grid columns.';
+    } @else {
+      // Column with specified width
+      flex: 0 0 auto;
+      width: percentage(divide($size, $columns));
+    }
+  } @else {
+    // Flexible column with remaining space
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
+
+// Offset Mixin
+//
+// This mixin creates an offset for a column, allowing you to shift a column
+// to the right by a specified number of grid units. The offset is calculated based
+// on the number of grid columns and the desired offset size.
+//
+// Parameters:
+//   $size: The number of grid units to offset the column. For example, if $size is 2,
+//          the column will be shifted 2 grid units to the right.
+//   $columns: The total number of grid columns in the layout. Defaults to the value of $grid-columns.
+//
+// Example usage:
+// @include offset(2);
+//
+// This will create an offset of 2 grid units for the column.
+//
+@mixin offset($size, $columns: $grid-columns) {
+  @if $size >= $columns {
+    @warn 'Offsetting by the width of an entire row isn\'t possible.';
+  } @else {
+    $num: divide($size, $columns);
+    margin-left: if($num == 0, 0, percentage($num));
+  }
+}
+
+// Row Columns Mixin
+//
+// This mixin creates a responsive row where immediate children are forced into
+// a specified number of columns.
+//
+// Parameters:
+//   $count: The number of columns the row should have.
+//   $columns: The total number of columns in the grid. Defaults to Bootstrap's grid columns.
+//
+// Example usage:
+// To create a row with 3 columns:
+// @include row-cols(3);
+// This will create a row where immediate children are equally divided into 3 columns.
+@mixin row-cols($count, $columns: $grid-columns) {
+  @if $count > $columns {
+    @warn 'Number of columns cannot exceed the total number of specified grid columns.';
+  } @else {
+    > * {
+      flex: 0 0 divide(100%, $count);
+      max-width: divide(100%, $count);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+// .example-container {
+//   @include container();
+// }
+
+// .example-row {
+//   @include row();
+// }
+
+// .example-row-cols {
+//   @include row();
+//   @include row-cols(6);
+// }
+
+// .example-col {
+//   @include col();
+
+//   @include media-breakpoint-up(md) {
+//     @include col(6);
+//   }
+// }
+
+// .example-col-auto {
+//   @include col();
+
+//   @include media-breakpoint-up(md) {
+//     @include col(auto);
+//   }
+// }
+
+// .example-col-offset {
+//   @include col();
+
+//   @include media-breakpoint-up(md) {
+//     @include col(6);
+//     @include offset(6);
+//   }
+// }
+
+// .example-paddingTop--large {
+//   @include spacing('padding-top', 'large');
+// }
+
+// .example-negativeMarginTop--medium {
+//   @include spacing('margin-top', 'medium', true);
+// }
