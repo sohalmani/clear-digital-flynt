@@ -1,31 +1,41 @@
-@import 'abstracts/variables';
-
-$breakpoint-mobile-horizontal: 480px;
+$breakpoint-mobile-horizontal: 576px;
 $breakpoint-tablet: 768px;
-$breakpoint-tablet-horizontal: 1024px;
-$breakpoint-desktop: 1280px;
-$breakpoint-desktop-wide: 1440px;
+$breakpoint-tablet-horizontal: 992px;
+$breakpoint-desktop: 1200px;
+$breakpoint-desktop-wide: 2500px;
 
-$container-max-width: 1440px;
-$container-padding-desktop: 60px;
-$container-padding-tablet: 40px;
-$container-padding-mobile: 15px;
+$container-max-width-desktop-wide: 1410px;
+$container-max-width-desktop: 1410px;
+$container-max-width-tablet-horizontal: 1410px;
+$container-max-width: 100%;
+$container-padding-desktop-wide: 65px;
+$container-padding-desktop: 45px;
+$container-padding-tablet-horizontal: 45px;
+$container-padding-tablet: 16px;
+$container-padding-mobile: 16px;
 $content-max-width: 600px;
-$component-spacing-desktop: 120px;
-$component-spacing-tablet: 80px;
-$component-spacing-mobile: 40px;
-$gutter-width: 24px;
+$component-spacing-desktop-wide: 170px;
+$component-spacing-desktop: 150px;
+$component-spacing-tablet: 70px;
+$component-spacing-mobile: 70px;
+$gutter-width: 30px;
 
-$color-brand: #0d8eff;
-$color-accent: #f96417;
+$color-brand: #fa198c;
+$color-accent: #fa198c;
 $color-background: #fff;
-$color-contrast: #414751;
-$color-text: $color-contrast;
-$color-headline: #0b1016;
-$color-border: #d8d8d8;
+$color-contrast: #e5e4e7;
+$color-text: #000;
+$color-headline: #000;
+$color-border: #000;
 
-$color-background-light: #f2f6fe;
-$color-background-dark: #091a41;
+$color-background-light: #e5e4e7;
+
+$color-background-dark: #000;
+$color-contrast-dark: #989898;
+$color-text-dark: #fff;
+$color-headline-dark: #fff;
+$color-border-dark: #fff;
+
 $color-background-hero: $color-brand;
 
 $heading-selectors: 'h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6';

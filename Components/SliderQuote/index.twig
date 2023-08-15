@@ -1,94 +1,826 @@
-<div class="flyntComponent componentSpacing {{ options.theme }} bg-black" is="flynt-slider-quote">
+<div class="flyntComponent componentSpacing {{ options.theme }}" is="flynt-block-image-two-col">
+	<div class="slider">
+		<div class="slider-track swiper-wrapper">
+			<article class="swiper-slide">
+				<figure class="figure">
+					<img class="figure-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/man-holding-phone.png" alt="Background Image">
+				</figure>
+				<div class="content">
+					<div class="logo">
+						<img class="logo-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/logo-digimarc.png" alt="Logo">
+					</div>
+					<h3>
+						<span class="marker marker--circleWhite">27%</span>
+						increase on click-through rates.</h3>
+					<div class="buttons">
+						<a href="/" class="btn-tertiary-white" data-cursor-expand>View case study</a>
+					</div>
+				</div>
+			</article>
+			<article class="swiper-slide">
+				<figure class="figure">
+					<img class="figure-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/office-discussion.png" alt="Background Image">
+				</figure>
+				<div class="content">
+					<div class="logo">
+						<img class="logo-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/logo-leadspace.png" alt="Logo">
+					</div>
+					<h3>53%
+						<span class="marker">increase</span>
+						on engagement metrics.</h3>
+					<div class="buttons">
+						<a href="/" class="btn-tertiary-white mt-5 mt-lg-8" data-cursor-expand>View case study</a>
+					</div>
+				</div>
+			</article>
+			<article class="swiper-slide">
+				<figure class="figure">
+					<img class="figure-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/man-holding-phone.png" alt="Background Image">
+				</figure>
+				<div class="content">
+					<div class="logo">
+						<img class="logo-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/logo-digimarc.png" alt="Logo">
+					</div>
+					<h3>
+						<span class="marker marker--circleWhite">27%</span>
+						increase on click-through rates.</h3>
+					<div class="buttons">
+						<a href="/" class="btn-tertiary-white" data-cursor-expand>View case study</a>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="slider-arrow slider-arrow--prev swiper-button-prev" data-cursor-expand data-cursor-icon="left"></div>
+		<div class="slider-arrow slider-arrow--next swiper-button-next" data-cursor-expand data-cursor-icon="right"></div>
+	</div>
+</div>
+
+<div
+	class="flyntComponent componentSpacing {{ options.theme }} themeDark" is="flynt-slider-quote">
 	{# <script type="application/json">{{ jsonData|json_encode }}</script> #}
-	<section>
 	<div class="container">
-		<div class="intro">
-			<h3 class="text-white">Our clients.</h3>
+		<div class="preContent preContent--textAlignLeft">
+			<h3>Our clients.</h3>
 		</div>
-		<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 mt-5 mt-lg-8">
-			<div class="col mt-5">
-				<div class="logo-wrap">
-					<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-cisco.svg" alt="Logo">
-				</div>
-			</div>
-			<div class="col mt-5">
-				<div class="logo-wrap">
-					<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-vmware.svg" alt="Logo">
-				</div>
-			</div>
-			<div class="col mt-5">
-				<div class="logo-wrap">
-					<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-mcafee.svg" alt="Logo">
-				</div>
-			</div>
-			<div class="col mt-5">
-				<div class="logo-wrap">
-					<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-tenable.svg" alt="Logo">
-				</div>
-			</div>
-			<div class="col mt-5">
-				<div class="logo-wrap">
-					<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-stanford.svg" alt="Logo">
-				</div>
-			</div>
+		<div class="logos">
+			<ul class="logos-list">
+				<li class="logos-item">
+					<div class="logo">
+						<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-cisco.svg" alt="Logo">
+					</div>
+				</li>
+				<li class="logos-item">
+					<div class="logo">
+						<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-vmware.svg" alt="Logo">
+					</div>
+				</li>
+				<li class="logos-item">
+					<div class="logo">
+						<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-mcafee.svg" alt="Logo">
+					</div>
+				</li>
+				<li class="logos-item">
+					<div class="logo">
+						<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-tenable.svg" alt="Logo">
+					</div>
+				</li>
+				<li class="logos-item">
+					<div class="logo">
+						<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-stanford.svg" alt="Logo">
+					</div>
+				</li>
+			</ul>
 		</div>
-		<div class="swiper">
-			<div class="row flex-nowrap g-0 swiper-wrapper">
-				<div class="col-12 swiper-slide">
-					<div class="row mt-14">
-						<div class="col-12 col-lg-7">
-							<div class="media-wrap">
-								<img src="{{ theme.link }}/Components/SliderQuote/Assets/pattern-hexagon-green.png" alt="Quote Image">
-							</div>
-						</div>
-						<div class="col mt-8">
-							<figure class="text-white">
-								<blockquote>
-									<h4 class="text-white">Aenean aliquet malesuada quam et placerat. Suspendisse pellentesque. Interdum et malesuada fames ac ante ipsum
-										primis in faucibus lorem ipsum.</h4>
-								</blockquote>
-								<figcaption>
-									<p>Jane Doe, <span>CEO</span></p>
-								</figcaption>
+		<div class="slider swiper">
+			<div class="slider-track swiper-wrapper">
+				<div class="slider-item swiper-slide">
+					<div class="quote">
+						<div class="quote-image">
+							<figure class="quote-figure">
+								<img class="quote-figureImage" src="{{ theme.link }}/Components/SliderQuote/Assets/pattern-hexagon-green.png" alt="Quote Image">
 							</figure>
-							<div class="logo-wrap">
-								<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-cohesity.png" alt="Author Company">
+						</div>
+						<div class="quote-content">
+							<blockquote class="quote-text">
+								<h4>Aenean aliquet malesuada quam et placerat. Suspendisse pellentesque. Interdum et malesuada fames ac ante ipsum
+																		primis in faucibus lorem ipsum.</h4>
+							</blockquote>
+							<p class="quote-author">Jane Doe,
+								<span>CEO</span>
+							</p>
+							<div class="quote-logo">
+								<img class="quote-logoImage" src="{{ theme.link }}/Components/SliderQuote/Assets/logo-cohesity.png" alt="Author Company">
 							</div>
-							<div class="action-wrap">
-								<a href="/" class="button button--link">View case study</a>
-							</div>
+							<a href="/" class="quote-link button button--link">View case study</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-12 swiper-slide">
-					<div class="row mt-14">
-						<div class="col-12 col-lg-7">
-							<div class="media-wrap">
-								<img src="{{ theme.link }}/Components/SliderQuote/Assets/pattern-hexagon-green.png" alt="Quote Image">
-							</div>
-						</div>
-						<div class="col mt-8">
-							<figure class="text-white">
-								<blockquote>
-									<h4 class="text-white">Aenean aliquet malesuada quam et placerat. Suspendisse pellentesque. Interdum et malesuada fames ac ante ipsum
-										primis in faucibus lorem ipsum.</h4>
-								</blockquote>
-								<figcaption>
-									<p>Jane Doe, <span>CEO</span></p>
-								</figcaption>
+				<div class="slider-item col-12 swiper-slide">
+					<div class="quote">
+						<div class="quote-image">
+							<figure class="quote-figure">
+								<img class="quote-figureImage" src="{{ theme.link }}/Components/SliderQuote/Assets/pattern-hexagon-green.png" alt="Quote Image">
 							</figure>
-							<div class="logo-wrap">
-								<img src="{{ theme.link }}/Components/SliderQuote/Assets/logo-cohesity.png" alt="Author Company">
+						</div>
+						<div class="quote-content">
+							<blockquote class="quote-text">
+								<h4>Aenean aliquet malesuada quam et placerat. Suspendisse pellentesque. Interdum et malesuada fames ac ante ipsum
+																		primis in faucibus lorem ipsum.</h4>
+							</blockquote>
+							<p class="quote-author">Jane Doe,
+								<span>CEO</span>
+							</p>
+							<div class="quote-logo">
+								<img class="quote-logoImage" src="{{ theme.link }}/Components/SliderQuote/Assets/logo-cohesity.png" alt="Author Company">
 							</div>
-							<div class="action-wrap">
-								<a href="/" class="button button--link">View case study</a>
-							</div>
+							<a href="/" class="quote-link button button--link">View case study</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="swiper-pagination mt-5 mt-lg-8"></div>
+			<div class="slider-progress swiper-pagination mt-5 mt-lg-8"></div>
 		</div>
 	</div>
-	</section>
+</div>
+
+<div
+	class="flyntComponent componentSpacing {{ options.theme }}" is="flynt-slider-posts">
+	{# <script type="application/json">{{ jsonData|json_encode }}</script> #}
+	<div class="container">
+		<div class="content">
+			<div class="text">
+				<h3>Clear Digital news, thoughts, and
+					<span class="text-pink marker-underline-black graphic-effect-underline" data-underline-image="black-1">insights</span>.
+				</h3>
+				<p class="body-lg mt-5 mt-lg-8">Torem ipsum dolor sit amet, consectetur adipiscing at elit. Nunc vulputate libero dolore aliqua et.</p>
+				<a href="#" class="btn-primary-pink mt-5 mt-lg-8" data-cursor-expand>Let's Talk</a>
+			</div>
+			<div class="posts slider swiper">
+				<div class="slider-track row flex-nowrap mt-10 mt-lg-0 swiper-wrapper">
+					<div class="slider-item swiper-slide">
+						<article class="post">
+							<picture class="post-image">
+								<img src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/pattern-wavy-blue.png" alt="Post Image">
+							</picture>
+							<div class="post-content">
+								<h4 class="text-white">Google Analytics 4 is Coming. Is Your B2B Ready?</h4>
+								<p class="body-default text-white mt-4 mt-lg-5">Sed sollicitudin odio ac ornare consequat. Ut massa justo, hendrerit vel nunc non, tempus blandit enim. Vivamus gravida velit lorem ipsum dolor sit amet.</p>
+								<a href="#" class="btn-tertiary-white mt-4 mt-lg-5" data-cursor-expand>Read more</a>
+							</div>
+						</article>
+					</div>
+					<div class="slider-item swiper-slide">
+						<article class="post">
+							<picture class="post-image">
+								<img src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/pattern-circle-pink.png" alt="Post Image">
+							</picture>
+							<div class="post-content">
+								<h4 class="text-white">Google Analytics 4 is Coming. Is Your B2B Ready?</h4>
+								<p class="body-default text-white mt-4 mt-lg-5">Sed sollicitudin odio ac ornare consequat. Ut massa justo, hendrerit vel nunc non, tempus blandit enim. Vivamus gravida velit lorem ipsum dolor sit amet.</p>
+								<div class="buttons">
+									<a href="#" class="btn-tertiary-white mt-4 mt-lg-5" data-cursor-expand>Read more</a>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider-item swiper-slide">
+						<article class="post">
+							<picture class="post-image">
+								<img src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/pattern-wavy-blue.png" alt="Post Image">
+							</picture>
+							<div class="post-content">
+								<h4 class="text-white">Google Analytics 4 is Coming. Is Your B2B Ready?</h4>
+								<p class="body-default text-white mt-4 mt-lg-5">Sed sollicitudin odio ac ornare consequat. Ut massa justo, hendrerit vel nunc non, tempus blandit enim. Vivamus gravida velit lorem ipsum dolor sit amet.</p>
+								<div class="buttons">
+									<a href="#" class="btn-tertiary-white mt-4 mt-lg-5" data-cursor-expand>Read more</a>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider-item swiper-slide">
+						<article class="post">
+							<picture class="post-image">
+								<img src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/pattern-circle-pink.png" alt="Post Image">
+							</picture>
+							<div class="post-content">
+								<h4 class="text-white">Google Analytics 4 is Coming. Is Your B2B Ready?</h4>
+								<p class="body-default text-white mt-4 mt-lg-5">Sed sollicitudin odio ac ornare consequat. Ut massa justo, hendrerit vel nunc non, tempus blandit enim. Vivamus gravida velit lorem ipsum dolor sit amet.</p>
+								<div class="buttons">
+									<a href="#" class="btn-tertiary-white mt-4 mt-lg-5" data-cursor-expand>Read more</a>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+				<div class="slider-progress swiper-pagination mt-5 mt-lg-8"></div>
+				<div class="slider-arrow slider-arrow--prev swiper-button-prev" data-cursor-expand data-cursor-icon="left"></div>
+				<div class="slider-arrow slider-arrow--next swiper-button-next" data-cursor-expand data-cursor-icon="right"></div>
+			</div>
+		</div>
+		<div class="content content--logos row align-items-center mt-15 mt-lg-36">
+			<div class="logos-heading">
+				<h3 class="star">Featured in:</h3>
+			</div>
+			<div class="logos">
+				<ul class="logos-list">
+					<li class="logos-item">
+						<div class="logo">
+							<img class="logo-image" src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/logo-forbes.svg" alt="Logo">
+						</div>
+					</li>
+					<li class="logos-item">
+						<div class="logo">
+							<img class="logo-image" src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/logo-medium.svg" alt="Logo">
+						</div>
+					</li>
+					<li class="logos-item">
+						<div class="logo">
+							<img class="logo-image" src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/logo-logoipsum.svg" alt="Logo">
+						</div>
+					</li>
+					<li class="logos-item">
+						<div class="logo">
+							<img class="logo-image" src="{{ theme.link }}/Components/BlockTextImageSlider/Assets/logo-hyperbest.svg" alt="Logo">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div
+	class="flyntComponent componentSpacing {{ options.theme }} themeLight tabs-with-content" is="flynt-block-tabs-with-content">
+	{# <script type="application/json">{{ jsonData|json_encode }}</script> #}
+	<div class="container">
+		<div class="intro">
+			<h3>Our services.</h3>
+		</div>
+		<div class="tabs-with-content-items">
+			<div class="tabs-list">
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Brand strategy</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img class="tab-figureImage" src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Website design</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Motion graphics</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Creative services</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Digital strategy</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Web development</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Website design</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>UX/UI design</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Digital marketing</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tabs-item">
+					<div class="tab">
+						<div class="tab-head" data-cursor-icon="plus" data-cursor-expand>
+							<h4>Support subscriptions</h4>
+							<span class="tab-expandButton"></span>
+						</div>
+						<div class="tab-body">
+							<div class="tab-bodyInner">
+								<div class="tab-image">
+									<figure class="tab-figure">
+										<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+									</figure>
+								</div>
+								<div class="tab-content">
+									<h4>Content development</h4>
+									<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+									<ul>
+										<li>Content Strategy</li>
+										<li>Copywriting / Copyediting</li>
+										<li>Infographics</li>
+										<li>Collateral</li>
+										<li>Ebooks</li>
+									</ul>
+									<div class="tab-contentAction">
+										<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+									</div>
+								</div>
+								<span class="tab-closeButton" aria-label="close button"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tabs-with-content-content">
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-bodyInner">
+					<div class="tab-image">
+						<figure class="tab-figure">
+							<img src="{{ theme.link }}/Components/BlockTabsWithContent/Assets/development-circle-pink-and-black.png" alt="black pink">
+						</figure>
+					</div>
+					<div class="tab-content">
+						<h4>Content development</h4>
+						<p class="body-default">Our content creators help you develop messaging and imagery that connect, engage, and guide your B2B customers to your solutions</p>
+						<ul>
+							<li>Content Strategy</li>
+							<li>Copywriting / Copyediting</li>
+							<li>Infographics</li>
+							<li>Collateral</li>
+							<li>Ebooks</li>
+						</ul>
+						<div class="tab-contentAction">
+							<a data-cursor-expand href="/" class="btn-primary-pink">Learn more</a>
+						</div>
+					</div>
+					<span class="tab-closeButton" aria-label="close button"></span>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

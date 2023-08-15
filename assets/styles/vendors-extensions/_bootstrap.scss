@@ -1,0 +1,474 @@
+// Import Bootstrap's functions
+@import 'bootstrap/scss/functions';
+
+@function breakpoint-prev($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n != null and $n > 1, nth($breakpoint-names, $n - 1), null);
+}
+
+// Links
+$link-decoration: none;
+
+// Typography
+$headings-margin-bottom: 0;
+$headings-font-weight: revert;
+
+$legend-margin-bottom: 0;
+
+// Paragraphs
+$paragraph-margin-bottom: 0;
+
+// NOTE: The variables used below like $grid-breakpoints, $container-max-widths, $container-padding-x,
+// and $grid-gutter-width are related to the Bootstrap framework and have specific purposes
+// in creating responsive layouts. They are not directly related to these extension and are used in the
+// Bootstrap mixins for container and row layouts.
+
+// Bootstrap Grid Breakpoints
+//
+// These breakpoints define the screen sizes for different devices.
+// They are used in various media queries to create responsive layouts.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 2500px
+);
+
+// Bootstrap Container Max Widths
+//
+// These variables define the maximum width of the container for each breakpoint.
+// Containers will not exceed these widths.
+$container-max-widths: (
+  xl: 1410px,
+  xxl: 2240px
+);
+
+// Custom Container Paddings
+//
+// These variables define the left and right padding of the container for each breakpoint.
+// The container will have these padding values on the left and right sides.
+$container-padding-x: 1rem; // Set padding value that you want for smallest device
+$container-paddings-x: (
+  xs: 16px,
+  lg: 90px,
+  xxl: 130px
+) !default;
+
+// Custom Grid Gutter Widths
+//
+// These variables define the gutter width used for rows in the grid system.
+// Gutters are the spacing between columns and are used to create responsive layouts.
+$grid-gutter-width: 2rem; // Set gutter value that you want for smallest device
+$grid-gutter-widths: (
+  md: 16px,
+  lg: 30px,
+  xxl: 40px
+) !default;
+
+// Spacing Variants
+//
+// These variables define different spacing variants that can be used throughout the project.
+// Each variant has different spacing values for each breakpoint, making it easy to customize
+// the spacing based on the design requirements.
+// There can be numerous variants such as tiny, small, compact, medium, comfortable, large, spacious, huge,
+// depending on the spacing size of the variant. You can add more entries to the $spacings map, 
+// should you need more variation. 
+$spacing: 1rem;
+$default-spacing-variant: 'medium' !default; // Set your default spacing variant here
+$spacings: (
+  'tiny': (
+    xs: 5px,
+    sm: 5px,
+    md: 5px,
+    lg: 5px,
+    xl: 5px,
+    xxl: 5px
+  ),
+  'small': (
+    xs: 10px,
+    sm: 10px,
+    md: 10px,
+    lg: 10px,
+    xl: 10px,
+    xxl: 10px
+  ),
+  'compact': (
+    xs: 15px,
+    sm: 15px,
+    md: 15px,
+    lg: 15px,
+    xl: 20px,
+    xxl: 20px
+  ),
+  'medium': (
+    xs: 20px,
+    sm: 20px,
+    md: 20px,
+    lg: 20px,
+    xl: 30px,
+    xxl: 40px
+  ),
+  'comfortable': (
+    xs: 40px,
+    sm: 40px,
+    md: 40px,
+    lg: 40px,
+    xl: 50px,
+    xxl: 60px
+  ),
+  'large': (
+    xs: 50px,
+    sm: 50px,
+    md: 50px,
+    lg: 50px,
+    xl: 80px,
+    xxl: 80px
+  ),
+  'spacious': (
+    xs: 70px,
+    sm: 70px,
+    md: 70px,
+    lg: 70px,
+    xl: 150px,
+    xxl: 170px
+  ),
+  'huge': (
+    xs: 50px,
+    sm: 375px,
+    md: 375px,
+    lg: 375px,
+    xl: 450px,
+    xxl: 450px
+  )
+) !default;
+
+// Import Bootstrap's variables, mixins and optionally, reboot
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+// Redefine Bootstrap's 'make-container-max-widths' mixin and just remove deprecation message
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+  // @include deprecate("The `make-container-max-widths` mixin", "v4.5.2", "v5");
+}
+
+// Define the custom make-container-padding mixin
+// This mixin sets the custom padding for the container
+// This mixin can be used within specific media query as well
+// Parameters:
+//   $gutter: The custom padding to be applied to the container
+@mixin make-container-padding($gutter: $grid-gutter-width) {
+  // Apply the custom padding value
+  padding-left: $gutter * 0.5;
+  padding-right: $gutter * 0.5;
+}
+
+// Container Mixin
+//
+// This mixin creates a responsive container with custom paddings and max-widths. 
+// It utilizes the Bootstrap mixins 'make-container-max-widths' and 'make-container-padding'
+// to apply the container max-widths and paddings at different breakpoints.
+//
+// Parameters:
+//   $paddings-x: A map containing custom container paddings for each breakpoint. 
+//                The map should have breakpoint names as keys and padding values as values.
+//   $breakpoints: Bootstrap's grid breakpoints map. This parameter specifies the breakpoints
+//                 at which the container paddings should be applied.
+//
+// Example usage:
+// @include container($paddings-x: (
+//   sm: 20px,
+//   md: 30px,
+//   lg: 40px,
+//   xl: 50px
+// ), $breakpoints: $grid-breakpoints);
+//
+// This will create a responsive container with custom paddings of 20px, 30px, 40px, and 50px
+// at the 'sm', 'md', 'lg', and 'xl' breakpoints respectively.
+@mixin container($paddings-x: $container-paddings-x, $breakpoints: $grid-breakpoints) {
+  // Apply the container max-widths using the mixin provided by Bootstrap
+  @include make-container-max-widths($container-max-widths, $breakpoints);
+  
+  // Set margin-left and margin-right to 'auto' once
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  // Loop through each breakpoint and its gutter value
+  @each $breakpoint, $padding-x in $paddings-x {
+    // Apply the padding value for the specific breakpoint using make-container-padding mixin
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      @include make-container-padding($padding-x);
+    }
+  }
+}
+
+// Define the custom make-row-gutter mixin
+// This mixin sets the custom negative margin for rows, creating gutters between columns
+// Parameters:
+//   $gutter: The custom gutter value to be applied to the row
+@mixin make-row-gutter($gutter: $grid-gutter-width) {
+  // Apply the custom gutter value to row
+  margin-left: -($gutter / 2);
+  margin-right: -($gutter / 2);
+}
+
+// Define the custom make-col-gutter mixin
+// This mixin applies custom gutter padding to columns, using half of the specified gutter width.
+// Parameters:
+//   $gutter: The custom gutter width to be applied.
+@mixin make-col-gutter($gutter: $grid-gutter-width) {
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+}
+
+// Row Mixin
+//
+// This mixin creates a responsive flexbox row with custom gutters.
+// It applies the necessary flex properties to create a flexible row layout,
+// and sets custom gutter widths for each breakpoint specified in the $gutters map.
+//
+// Parameters:
+//   $gutters: A map containing custom gutter widths for rows at each breakpoint.
+//             The keys in the map should correspond to Bootstrap's breakpoint names (e.g., 'sm', 'md').
+//             The values should be the gutter widths in pixels or any valid CSS length unit.
+//             Defaults to the value of $grid-gutter-widths.
+//   $breakpoints: Bootstrap's grid breakpoints map. Defaults to the value of $grid-breakpoints.
+//
+// Example usage:
+// @include row($grid-gutter-widths, $grid-breakpoints);
+//
+// This will create a responsive flexbox row with custom gutters defined in the $grid-gutter-widths map.
+//
+// @include row($custom-gutters, $grid-breakpoints);
+//
+// This will create a responsive flexbox row with custom gutters defined in the $custom-gutters map,
+// which can provide different gutter widths for specific breakpoints.
+//
+@mixin row($gutters: $grid-gutter-widths, $breakpoints: $grid-breakpoints) {
+  // Set flex properties once
+  display: flex;
+  flex-wrap: wrap;
+
+  @if (type-of($gutters) == 'map') {
+    @each $breakpoint, $value in $grid-breakpoints {
+      $gutter: map-get($grid-gutter-widths, $breakpoint);
+
+      @if $breakpoint == xs and not $gutter {
+        $gutter: $grid-gutter-width;
+      }
+  
+      @if not $gutter {
+        $prev-breakpoint: $breakpoint;
+        @while $gutter == null {
+          $prev-breakpoint: breakpoint-prev($prev-breakpoint);
+          $gutter: if($prev-breakpoint == xs and not map-has-key($grid-gutter-widths, $prev-breakpoint), $grid-gutter-width, map-get($grid-gutter-widths, $prev-breakpoint));
+        }
+      }
+  
+      @include media-breakpoint-between($breakpoint, $breakpoint, $grid-breakpoints) {
+        @include make-row-gutter($gutter);
+      }
+    }
+  } @else {
+    $gutter: if($gutters == null, $grid-gutter-width, $gutters);
+    @include make-row-gutter($gutter);
+  }
+
+  > * {
+    @if (type-of($gutters) == 'map') {
+      @each $breakpoint, $value in $grid-breakpoints {
+        $gutter: map-get($grid-gutter-widths, $breakpoint);
+  
+        @if $breakpoint == xs and not $gutter {
+          $gutter: $grid-gutter-width;
+        }
+    
+        @if not $gutter {
+          $prev-breakpoint: $breakpoint;
+          @while $gutter == null {
+            $prev-breakpoint: breakpoint-prev($prev-breakpoint);
+            $gutter: if($prev-breakpoint == xs and not map-has-key($grid-gutter-widths, $prev-breakpoint), $grid-gutter-width, map-get($grid-gutter-widths, $prev-breakpoint));
+          }
+        }
+    
+        @include media-breakpoint-between($breakpoint, $breakpoint, $grid-breakpoints) {
+          @include make-col-gutter($gutter);
+        }
+      }
+    } @else {
+      $gutter: if($gutters == null, $grid-gutter-width, $gutters);
+      @include make-col-gutter($gutter);
+    }
+  }
+}
+
+// Column Mixin
+//
+// This mixin creates a responsive column with custom width and gutters in a flexbox row.
+//
+// Parameters:
+//   $size: The number of columns the column should occupy. If set to `auto`, the column
+//          will have an auto width. If set to `false`, the column will be flexible
+//          and occupy the remaining space in the row.
+//   $gutters: A map containing custom gutter widths for columns at each breakpoint.
+//   $columns: The total number of columns in the grid.
+//   $breakpoints: Bootstrap's grid breakpoints map.
+//
+// Note: The `$grid-gutter-widths` variable should be defined in your project.
+//
+// Example usage:
+// To create a column that occupies 4 grid columns with gutters at medium breakpoint:
+// @include media-breakpoint-up(md) {
+//   @include col(4);
+// }
+//
+// To create a flexible column that occupies the remaining space in the row:
+// @include col;
+// This will create a flexible column that takes up the remaining available space in the row.
+@mixin col($size: false, $gutters: $grid-gutter-widths, $columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+  @if $size {
+    @if $size == auto {
+      @include make-col-auto();
+    } @else if $size == 0 {
+      @warn 'Number of columns cannot be zero.';
+    } @else if $size > $columns {
+      @warn 'Number of columns cannot exceed the total number of specified grid columns.';
+    } @else {
+      @include make-col($size, $columns);
+      width: 100%;
+    }
+  } @else {
+    // Flexible column with remaining space
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+// Offset Mixin
+//
+// This mixin creates an offset for a column, allowing you to shift a column
+// to the right by a specified number of grid units. The offset is calculated based
+// on the number of grid columns and the desired offset size.
+//
+// Parameters:
+//   $size: The number of grid units to offset the column. For example, if $size is 2,
+//          the column will be shifted 2 grid units to the right.
+//   $columns: The total number of grid columns in the layout. Defaults to the value of $grid-columns.
+//
+// Example usage:
+// @include offset(2);
+//
+// This will create an offset of 2 grid units for the column.
+//
+@mixin offset($size, $columns: $grid-columns) {
+  @if $size >= $columns {
+    @warn 'Offsetting by the width of an entire row isn\'t possible.';
+  } @else {
+    $num: divide($size, $columns);
+    margin-left: if($num == 0, 0, percentage($num));
+  }
+}
+
+// Row Columns Mixin
+//
+// This mixin creates a responsive row where immediate children are forced into
+// a specified number of columns.
+//
+// Parameters:
+//   $count: The number of columns the row should have.
+//   $columns: The total number of columns in the grid. Defaults to Bootstrap's grid columns.
+//
+// Example usage:
+// To create a row with 3 columns:
+// @include row-cols(3);
+// This will create a row where immediate children are equally divided into 3 columns.
+@mixin row-cols($count, $columns: $grid-columns) {
+  @if $count > $columns {
+    @warn 'Number of columns cannot exceed the total number of specified grid columns.';
+  } @else {
+    > * {
+      flex: 0 0 divide(100%, $count);
+      max-width: divide(100%, $count);
+    }
+  }
+}
+
+// Spacing Mixin
+//
+// This mixin applies custom spacing values (margin or padding) for different
+// breakpoints based on the chosen spacing variant.
+//
+// Note: The $spacings map should be defined in your project containing the
+// different spacing variants and their corresponding values for each breakpoint.
+//
+// Parameters:
+//   $properties: A list of properties to apply spacing to. It is possible to
+//                set spacing for specific properties such as 'margin-top',
+//                'margin-bottom', 'margin-left', 'margin-right', 'padding-top',
+//                'padding-bottom','padding-left', 'padding-right', or apply the
+//                spacing to all sides by using 'margin' or 'padding'. If multiple
+//                properties are required, pass them as a space-separated string
+//                (e.g., 'margin margin-top margin-bottom').
+//   $variant: The spacing variant to be applied. This should correspond to
+//             one of the keys in the $spacings map.
+//   $negative: If true, it applies negative spacing (margin or padding) as
+//              specified in the spacing map.
+//   $breakpoints: Bootstrap's grid breakpoints map.
+//
+// Example usage:
+// @include spacing('margin', 'medium', true, $grid-breakpoints);
+//
+@mixin spacing(
+  $properties: margin-top,
+  $variant: $default-spacing-variant,
+  $negative: false,
+  $breakpoints: $grid-breakpoints
+) {
+  // List of valid property names
+  $valid-properties: (
+    margin, margin-top, margin-bottom, margin-left, margin-right,
+    padding, padding-top, padding-bottom, padding-left, padding-right
+  );
+
+  // Check if the variant exists in the spacing map
+  @if map-has-key($spacings, $variant) {
+    $spacing-variant: map-get($spacings, $variant);
+
+    // Multiple properties are possible, for example with vertical or horizontal margins or paddings
+    @if type-of($properties) == 'string' {
+      $properties: append((), $properties);
+    }
+
+    // Loop through each property and its spacing value
+    @each $property in $properties {
+      // Apply the spacing based on the property (margin or padding)
+      @each $breakpoint, $value in $spacing-variant {
+        $value: if($negative, $value * -1, $value); // Apply negative value if specified
+
+        @if index($valid-properties, $property) {
+          @include media-breakpoint-up($breakpoint, $breakpoints) {
+            #{$property}: $value;
+          }
+        } @else {
+          // Provide a warning for invalid property values
+          @warn 'Invalid property value! Use only "margin" or "padding" properties.';
+        }
+      }
+    }
+  } @else {
+    // Provide a warning for invalid spacing variant
+    @warn 'Invalid spacing variant! Check the spacing map.';
+  }
+}
+
+// @import 'bootstrap/scss/reboot'; // Optional: Uncomment this line to include reboot styles.
