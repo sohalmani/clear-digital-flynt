@@ -197,7 +197,11 @@ class SliderQuote extends window.HTMLDivElement {
     const parameters = {
       slidesPerView: 1,
       speed: 400,
-      spaceBetween: 100,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
       pagination: {
         el: '.swiper-pagination',
         type: 'progressbar'
@@ -260,7 +264,7 @@ class SliderPosts extends window.HTMLDivElement {
       init: false,
       slidesPerView: 'auto',
       speed: 400,
-      spaceBetween: 0,
+      spaceBetween: 30,
       pagination: {
         el: '.swiper-pagination',
         type: 'progressbar'

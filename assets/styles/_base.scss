@@ -598,7 +598,7 @@ select {
   }
 
   @media (min-width: $breakpoint-desktop) {
-    padding: $component-spacing-desktop 0;	
+    padding: $component-spacing-desktop 0;
   }
 }
 
@@ -611,7 +611,7 @@ select {
   }
 
   @media (min-width: $breakpoint-desktop) {
-    @include center($max-width: $container-max-width-desktop);
+    @include center($max-width: $container-max-width-desktop, $padding: $container-padding-desktop);
   }
 }
 
@@ -735,6 +735,101 @@ select {
 }
 
 /**
+* 2.1 Asset Helpers
+*
+* Global asset classes for a consistent appearance.
+*/
+
+/* Overlays */
+
+.overlay-grid {
+  &::before {
+    background: url('./../assets/images/grid-black.png');
+    background-size: cover;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+/* Markers */
+
+.marker {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: clip-path 600ms ease-in-out;
+    user-select: none;
+    width: 100%;
+  }
+
+  &:hover,
+  &.draw {
+    &::before {
+      clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
+  }
+
+  &--crossout {
+    background-image: url('../assets/icons/marker-crossout.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    height: 100%;
+    width: calc(100% + 1ch);
+  }
+
+  &--underline {
+    &::before {
+      background-image: url('../assets/icons/marker-underline-black-1.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: -0.25em;
+      height: 0.67em;
+    }
+  }
+}
+
+/**
+* 2.2 Plugin Overrides
+*
+* Global styling for third-party plugins for a consistent appearance.
+*/
+
+/* Swiper styling overrides */
+
+.swiper {
+  --swiper-theme-color: #{$color-brand};
+}
+
+.swiper-pagination-progressbar {
+  background: transparent !important;
+  height: 0.8rem !important;
+  position: relative !important;
+
+  &::before {
+    background-color: $color-background-dark;
+    content: '';
+    display: block;
+    height: 0.1rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}
+
+/**
 * 3.0 Themes
 *
 * Color themes for backgrounds and content elements.
@@ -794,6 +889,18 @@ select {
   .pill {
     background-color: $color-background;
     color: $color-background-dark;
+  }
+
+  .overlay-grid {
+    &::before {
+      background: url('./../assets/images/grid-black.png');
+    }
+  }
+
+  .swiper-pagination-progressbar {
+    &::before {
+      background-color: $color-background;
+    }
   }
 }
 
@@ -904,7 +1011,7 @@ select {
       background-color: transparent;
       border-color: $color-background-dark;
       color: $color-background-dark;
-  
+
       &:hover,
       &:focus {
         background-color: $color-background-dark;
@@ -916,12 +1023,12 @@ select {
     &--link {
       background-color: transparent;
       color: $color-background-dark;
-  
+
       &:hover,
       &:focus {
         background-color: transparent;
         color: $color-background-dark;
-  
+
         &::after {
           background-position: left center;
         }

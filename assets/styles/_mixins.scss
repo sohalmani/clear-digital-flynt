@@ -110,3 +110,76 @@
     }
   }
 }
+
+@mixin row($gutter: null) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: if($gutter != null, $gutter, $gutter-width * -1);
+  margin-right: if($gutter != null, $gutter, $gutter-width * -1);
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: if($gutter != null, $gutter, $gutter-width-tablet * -1);
+    margin-right: if($gutter != null, $gutter, $gutter-width-tablet * -1);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-left: if($gutter != null, $gutter, $gutter-width-desktop * -1);
+    margin-right: if($gutter != null, $gutter, $gutter-width-desktop * -1);
+  }
+
+  > * {
+    padding-left: $gutter-width;
+    padding-right: $gutter-width;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding-left: if($gutter != null, $gutter, $gutter-width-tablet);
+      padding-right: if($gutter != null, $gutter, $gutter-width-tablet);
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      padding-left: if($gutter != null, $gutter, $gutter-width-desktop);
+      padding-right: if($gutter != null, $gutter, $gutter-width-desktop);
+    }
+  }
+}
+
+@mixin col($size: false, $gutters: $grid-gutter-widths, $columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+  @if $size {
+    @if $size == auto {
+      @include make-col-auto();
+    } @else if $size == 0 {
+      @warn 'Number of columns cannot be zero.';
+    } @else if $size > $columns {
+      @warn 'Number of columns cannot exceed the total number of specified grid columns.';
+    } @else {
+      @include make-col($size, $columns);
+      width: 100%;
+    }
+  } @else {
+    // Flexible column with remaining space
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@mixin offset($size, $columns: $grid-columns) {
+  @if $size >= $columns {
+    @warn 'Offsetting by the width of an entire row isn\'t possible.';
+  } @else {
+    $num: divide($size, $columns);
+    margin-left: if($num == 0, 0, percentage($num));
+  }
+}
+
+@mixin row-cols($count, $columns: $grid-columns) {
+  @if $count > $columns {
+    @warn 'Number of columns cannot exceed the total number of specified grid columns.';
+  } @else {
+    > * {
+      flex: 0 0 divide(100%, $count);
+      max-width: divide(100%, $count);
+    }
+  }
+}

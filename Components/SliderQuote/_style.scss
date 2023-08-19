@@ -95,21 +95,6 @@
 }
 
 [is='flynt-slider-quote'] {
-  .container {
-    @include container;
-  }
-
-  .preContent {
-    h3 {
-      color: $white;
-    }
-
-    &--textLeft {
-      max-width: 100%;
-      text-align: left;
-    }
-  }
-
   .logos {
     @include spacing(margin-top, 'comfortable');
 
@@ -138,37 +123,10 @@
   }
 
   .slider {
-    overflow-x: hidden;
     position: relative;
 
-    @include media-breakpoint-up(md) {
-      clip-path: inset(-100vw -100vw -100vw 2px);
-    }
-
-    &-arrow {
-      &--next,
-      &--prev {
-        height: 100%;
-        margin-top: 0;
-        top: 0;
-
-        &::after {
-          display: none;
-        }
-      }
-
-      &--next {
-        right: 0;
-      }
-
-      &--prev {
-        left: -1px;
-        top: -1px;
-      }
-    }
-
-    .slider-track {
-      @include row;
+    &-track {
+      @include row(0);
       flex-wrap: nowrap;
 
       .slider-item {
@@ -176,10 +134,27 @@
       }
     }
 
-    .swiper-button-prev,
-    .swiper-button-prev.swiper-button-disabled {
-      // background: $white;
-      opacity: 1;
+    &-arrow {
+      &--next,
+      &--prev {
+        background-color: $color-background-dark !important;
+        height: 100%;
+        margin-top: 0;
+        top: 0;
+        width: 100%;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &--next {
+        right: -100%;
+      }
+
+      &--prev {
+        left: -100%;
+      }
     }
   }
 
@@ -303,7 +278,7 @@
     }
 
     .slider-track {
-      @include row;
+      @include row(0);
       flex-wrap: nowrap;
 
       .slider-item {
@@ -391,6 +366,12 @@
     @include media-breakpoint-up(md) {
       max-width: 153px;
     }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-prev.swiper-button-disabled {
+    // background: $white;
+    opacity: 1;
   }
 }
 
