@@ -472,3 +472,21 @@ $spacings: (
 }
 
 // @import 'bootstrap/scss/reboot'; // Optional: Uncomment this line to include reboot styles.
+
+address {
+  margin-bottom: 0;
+}
+
+ol,
+ul,
+dl {
+  margin-bottom: 0;
+}
+
+dd {
+  margin-bottom: 0;
+}
+
+pre {
+  margin-bottom: 0;
+}
