@@ -320,6 +320,7 @@ class SliderPosts extends window.HTMLDivElement {
 
 window.customElements.define('flynt-slider-posts', SliderPosts, { extends: 'div' })
 
+// TODO: Make Class Based
 $(function () {
   var $tabsWithContent = $('[is="flynt-block-tabs-with-content"]')
   if ($tabsWithContent) {
@@ -352,7 +353,7 @@ $(function () {
     }
     var handleCloseButton = function (e) {
       $(this).closest('.tab-body').fadeOut()
-      $(this).closest($tabsWithContent).find('.tabs-with-content-items').fadeIn()
+      $(this).closest('[is="flynt-block-tabs-with-content"]').find('.tabs-with-content-items').fadeIn()
     }
     addIdOnInnerMenu($tabTitle, 'data-tab', 'tab-')
     addIdOnInnerMenu($tabBody, 'data-tab-body', 'tab-')

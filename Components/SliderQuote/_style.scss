@@ -382,6 +382,13 @@
     @include container;
   }
 
+  .intro {
+    h3 {
+      margin-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
   .tabs-with-content {
     &-items {
       position: relative;
@@ -480,6 +487,10 @@
         object-fit: contain;
         width: 100%;
       }
+    }
+
+    &-contentAction {
+      @include spacing('margin-top', 'compact');
     }
 
     &-closeButton {

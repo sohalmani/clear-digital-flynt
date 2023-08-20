@@ -153,6 +153,7 @@
       @warn 'Number of columns cannot exceed the total number of specified grid columns.';
     } @else {
       @include make-col($size, $columns);
+      // TODO: Add width: 100% if col-12
       // width: 100%;
     }
   } @else {
