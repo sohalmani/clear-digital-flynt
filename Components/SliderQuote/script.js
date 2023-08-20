@@ -321,7 +321,7 @@ class SliderPosts extends window.HTMLDivElement {
 window.customElements.define('flynt-slider-posts', SliderPosts, { extends: 'div' })
 
 $(function () {
-  var $tabsWithContent = $('.tabs-with-content')
+  var $tabsWithContent = $('[is="flynt-block-tabs-with-content"]')
   if ($tabsWithContent) {
     var $tabTitle = $tabsWithContent.find('.tab-head')
     var $tabBody = $tabsWithContent.find('.tabs-with-content-content .tab-body')
@@ -337,7 +337,7 @@ $(function () {
 
       if (windowWidth > 767) {
         $(this).closest('.tabs-with-content-items').fadeOut()
-        $(this).closest('.tabs-with-content').find('.tabs-with-content-content .tab-body[data-tab-body=' + tabId + ']').fadeIn()
+        $(this).closest('[is="flynt-block-tabs-with-content"]').find('.tabs-with-content-content .tab-body[data-tab-body=' + tabId + ']').fadeIn()
       } else {
         if (!$(this).closest('.tab').hasClass('tab-isOpen')) {
           $('.tab').removeClass('tab-isOpen')
@@ -352,7 +352,7 @@ $(function () {
     }
     var handleCloseButton = function (e) {
       $(this).closest('.tab-body').fadeOut()
-      $(this).closest('.tabs-with-content').find('.tabs-with-content-items').fadeIn()
+      $(this).closest($tabsWithContent).find('.tabs-with-content-items').fadeIn()
     }
     addIdOnInnerMenu($tabTitle, 'data-tab', 'tab-')
     addIdOnInnerMenu($tabBody, 'data-tab-body', 'tab-')
@@ -360,3 +360,47 @@ $(function () {
     $closeButton.on('click', handleCloseButton)
   }
 })
+
+class TabsWithContent extends window.HTMLDivElement {
+  constructor (...args) {
+    const self = super(...args)
+    self.init()
+    return self
+  }
+
+  init () {
+    this.$ = $(this)
+    this.props = this.getInitialProps()
+    this.state = this.getInitialState()
+    this.resolveElements()
+    this.bindFunctions()
+    this.bindEvents()
+  }
+
+  bindFunctions () {
+
+  }
+
+  bindEvents () {
+
+  }
+
+  getInitialProps () {
+    // eslint-disable-next-line prefer-const
+    let data = {}
+    // try {
+    //   data = JSON.parse($('script[type="application/json"]', this).text())
+    // } catch (e) {}
+    return data
+  }
+
+  getInitialState () {
+    return {}
+  }
+
+  resolveElements () {
+    this.$tabHead = $('.tab-head', this)
+  }
+}
+
+window.customElements.define('flyunt-tabs-with-content', TabsWithContent, { extends: 'div' })

@@ -153,7 +153,7 @@
       @warn 'Number of columns cannot exceed the total number of specified grid columns.';
     } @else {
       @include make-col($size, $columns);
-      width: 100%;
+      // width: 100%;
     }
   } @else {
     // Flexible column with remaining space
