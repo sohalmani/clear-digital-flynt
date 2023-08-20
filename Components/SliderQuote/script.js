@@ -337,8 +337,8 @@ $(function () {
       var windowWidth = $(window).width()
 
       if (windowWidth > 767) {
-        $(this).closest('.tabs-with-content-items').fadeOut()
-        $(this).closest('[is="flynt-block-tabs-with-content"]').find('.tabs-with-content-content .tab-body[data-tab-body=' + tabId + ']').fadeIn()
+        $(this).closest('.tabs-with-content-items').css('display', 'none')
+        $(this).closest('[is="flynt-block-tabs-with-content"]').find('.tabs-with-content-content .tab-body[data-tab-body=' + tabId + ']').css('display', 'block')
       } else {
         if (!$(this).closest('.tab').hasClass('tab-isOpen')) {
           $('.tab').removeClass('tab-isOpen')
@@ -352,8 +352,8 @@ $(function () {
       }
     }
     var handleCloseButton = function (e) {
-      $(this).closest('.tab-body').fadeOut()
-      $(this).closest('[is="flynt-block-tabs-with-content"]').find('.tabs-with-content-items').fadeIn()
+      $(this).closest('.tab-body').css('display', 'none')
+      $(this).closest('[is="flynt-block-tabs-with-content"]').find('.tabs-with-content-items').css('display', 'block')
     }
     addIdOnInnerMenu($tabTitle, 'data-tab', 'tab-')
     addIdOnInnerMenu($tabBody, 'data-tab-body', 'tab-')
