@@ -20,6 +20,10 @@
   "Components/Footer/Assets/myrious-white-logo.svg": "Components/Footer/Assets/myrious-white-logo-f2bb44d927.svg",
   "Components/Footer/Assets/radial-pink-img.png": "Components/Footer/Assets/radial-pink-img-cb12981cee.png",
   "Components/NavigationBurger/Assets/logo.svg": "Components/NavigationBurger/Assets/logo-4627cdfa7d.svg",
+  "Components/NavigationFooterColumns/Assets/clear-digital-black-logo.svg": "Components/NavigationFooterColumns/Assets/clear-digital-black-logo-32d2738b5a.svg",
+  "Components/NavigationFooterColumns/Assets/clear-digital-logo.svg": "Components/NavigationFooterColumns/Assets/clear-digital-logo-70fe3196ed.svg",
+  "Components/NavigationFooterColumns/Assets/myrious-white-logo.svg": "Components/NavigationFooterColumns/Assets/myrious-white-logo-f2bb44d927.svg",
+  "Components/NavigationFooterColumns/Assets/radial-pink-img.png": "Components/NavigationFooterColumns/Assets/radial-pink-img-cb12981cee.png",
   "Components/NavigationMain/Assets/logo.svg": "Components/NavigationMain/Assets/logo-4627cdfa7d.svg",
   "Components/SliderQuote/Assets/logo-cisco.svg": "Components/SliderQuote/Assets/logo-cisco-bfaf80366a.svg",
   "Components/SliderQuote/Assets/logo-cohesity.png": "Components/SliderQuote/Assets/logo-cohesity-453e48aab1.png",
@@ -61,7 +65,7 @@
   "assets/icons/spinner.svg": "assets/icons/spinner-2e5c842fc5.svg",
   "assets/images/grid-black.png": "assets/images/grid-black-e97c38ec83.png",
   "assets/images/grid-white.png": "assets/images/grid-white-bad3e4603a.png",
-  "assets/main.css": "assets/main-7e528d48fb.css",
-  "assets/main.js": "assets/main-d9ca46aed2.js",
+  "assets/main.css": "assets/main-c7473a80b9.css",
+  "assets/main.js": "assets/main-d7cb1f324f.js",
   "assets/main.js.LICENSE.txt": "assets/main-538f240528.js.LICENSE.txt"
 }
