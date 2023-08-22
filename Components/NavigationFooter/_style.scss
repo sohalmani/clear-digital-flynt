@@ -1,210 +1,44 @@
 [is='flynt-navigation-footer'] {
+  min-height: 0;
+  padding: 30px 0;
+
   .content {
     @include row;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  @import 'Partials/menu';
-}
-
-.footer {
-  padding-top: 50px;
-
-  @media (min-width: $breakpoint-tablet) {
-    padding-top: 100px;
-  }
-
-  @media (min-width: $breakpoint-tablet-horizontal) {
-    padding-top: 150px;
-  }
-
-  ul {
-    list-style: none;
-    margin-bottom: 0;
-    padding-left: 0;
-  }
-
-  .report-card {
-    position: relative;
-
-    &__img {
-      height: 253px;
-      max-width: 210px;
-      width: 100%;
-
-      img {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
-    }
-  }
-
-  .contact-links {
-    &__item {
-      cursor: pointer;
-      padding-left: 40px;
-      position: relative;
-      transition: color 0.3s ease-in-out;
-
-      &:not(:first-child) {
-        margin-top: 25px;
-      }
-
-      &::before {
-        content: '';
-        height: 24px;
-        left: 0;
-        position: absolute;
-        width: 24px;
-      }
-
-      &:hover {
-        color: $pink;
-      }
-
-      &--location {
-        &::before {
-          background: url('./../assets/icons/map-pin-pink.svg') no-repeat center;
-          background-size: contain;
-        }
-      }
-
-      &--phone {
-        &::before {
-          background: url('./../assets/icons/smartphone-pink.svg') no-repeat center;
-          background-size: contain;
-        }
-      }
-    }
-  }
-
-  .social {
-    &-icons {
-      column-gap: 20px;
-    }
-
-    &__icon {
-      border-radius: 50%;
-      display: inline-block;
-      height: 25px;
-      width: 25px;
-
-      svg {
-        path {
-          fill: $dark-grey;
-          transition: fill 0.3s ease-in-out;
-        }
-      }
-
-      &:hover {
-        svg {
-          path {
-            fill: $pink;
-          }
-        }
-      }
-    }
-  }
-
-  &__links {
-    li {
-      &:not(:first-child) {
-        margin-top: 30px;
-      }
-    }
-  }
-
-  &__link {
-    color: $white;
-    transition: color 0.3s ease-in-out;
-
-    &:hover {
-      color: $pink;
-    }
-  }
-
-  &__external {
-    &--logo {
-      height: 75px;
-      max-width: 115px;
-      position: relative;
-
-      @media (max-width: $breakpoint-tablet) {
-        height: 65px;
-        max-width: 100px;
-      }
-
-      img {
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-  }
-
-  &__icon {
+  .logo {
     height: 38px;
     position: relative;
     width: 40px;
+
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 2rem;
+    }
 
     img {
       height: 100%;
       object-fit: contain;
     }
-  }
 
-  &__main {
-    color: $white;
-    padding-bottom: 94px;
+    &-item {
+      @include col(12);
+
+      @media (min-width: $breakpoint-tablet) {
+        @include col(2);
+      }
+    }
+    
+  }
+  
+  .navigation {
+    @include col(12);
 
     @media (min-width: $breakpoint-tablet) {
-      padding-bottom: 144px;
-    }
-    @media (min-width: $breakpoint-tablet-horizontal) {
-      padding-bottom: 256px;
+      @include col(10);
     }
   }
 
-  &__primary {
-    color: $white;
-
-    .content-wrapper {
-      @media (min-width: $breakpoint-tablet-horizontal) {
-        max-width: 73%;
-      }
-    }
-  }
-
-  &__primary--wrapper {
-    border-top: 1px solid $white;
-    padding: 50px 0;
-  }
-
-  &__secondary {
-    padding: 30px 0;
-
-    ul {
-      column-gap: 15px;
-
-      @media (min-width: $breakpoint-tablet-horizontal) {
-        column-gap: 20px;
-      } 
-
-      li {
-        &:not(:first-child) {
-          @media (max-width: $breakpoint-tablet) {
-            margin-top: 16px;          
-          }
-        }
-
-        a {
-          color: $dark-grey;
-          transition: color 0.3s ease-in-out;
-
-          &:hover {
-            color: $pink;
-          }
-        }
-      }
-    }
-  }
+  @import 'Partials/menu';
 }

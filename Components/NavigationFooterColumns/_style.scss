@@ -148,14 +148,17 @@
 
     &-content {
       @include col(12);
+      margin-top: 3rem;
 
       @media (min-width: $breakpoint-tablet) {
         @include col(8);
+        margin-top: 0;
       }
 
       @media (min-width: $breakpoint-tablet-horizontal) {
         @include col(7);
       }
+
     }
   }
 
