@@ -1,6 +1,46 @@
-@import 'vendors-extensions/bootstrap';
-
 // Shorthands to help writing easier to understand code.
+
+@function divide($dividend, $divisor, $precision: 10) {
+  $sign: if($dividend > 0 and $divisor > 0 or $dividend < 0 and $divisor < 0, 1, -1);
+  $dividend: abs($dividend);
+  $divisor: abs($divisor);
+  @if $dividend == 0 {
+    @return 0;
+  }
+  @if $divisor == 0 {
+    @error 'Cannot divide by 0';
+  }
+  $remainder: $dividend;
+  $result: 0;
+  $factor: 10;
+  @while ($remainder > 0 and $precision >= 0) {
+    $quotient: 0;
+    @while ($remainder >= $divisor) {
+      $remainder: $remainder - $divisor;
+      $quotient: $quotient + 1;
+    }
+    $result: $result * 10 + $quotient;
+    $factor: $factor * 0.1;
+    $remainder: $remainder * 10;
+    $precision: $precision - 1;
+    @if ($precision < 0 and $remainder >= $divisor * 5) {
+      $result: $result + 1;
+    }
+  }
+  $result: $result * $factor * $sign;
+  $dividend-unit: unit($dividend);
+  $divisor-unit: unit($divisor);
+  $unit-map: (
+    'px': 1px,
+    'rem': 1rem,
+    'em': 1em,
+    '%': 1%
+  );
+  @if ($dividend-unit != $divisor-unit and map-has-key($unit-map, $dividend-unit)) {
+    $result: $result * map-get($unit-map, $dividend-unit);
+  }
+  @return $result;
+}
 
 @mixin font-face(
   $family,
@@ -143,18 +183,23 @@
   }
 }
 
-@mixin col($size: false, $gutters: $grid-gutter-widths, $columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+@mixin col($size: false, $columns: 12) {
   @if $size {
     @if $size == auto {
-      @include make-col-auto();
+      flex: 0 0 auto;
+      max-width: 100%; // Reset earlier grid tiers
+      width: auto;
     } @else if $size == 0 {
       @warn 'Number of columns cannot be zero.';
     } @else if $size > $columns {
       @warn 'Number of columns cannot exceed the total number of specified grid columns.';
     } @else {
-      @include make-col($size, $columns);
-      // TODO: Add width: 100% if col-12
-      // width: 100%;
+      flex: 0 0 percentage(divide($size, $columns));
+      // Add a `max-width` to ensure content within each column does not blow out
+      // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+      // do not appear to require this.
+      max-width: percentage(divide($size, $columns));
+      width: 100%;
     }
   } @else {
     // Flexible column with remaining space
@@ -165,8 +210,10 @@
   }
 }
 
-@mixin offset($size, $columns: $grid-columns) {
-  @if $size >= $columns {
+@mixin offset($size, $columns: 12) {
+  @if $size == 0 {
+    @warn '';
+  } @else if $size >= $columns {
     @warn 'Offsetting by the width of an entire row isn\'t possible.';
   } @else {
     $num: divide($size, $columns);
@@ -174,13 +221,98 @@
   }
 }
 
-@mixin row-cols($count, $columns: $grid-columns) {
-  @if $count > $columns {
+@mixin row-cols($count, $columns: 12) {
+  @if $count == 0 {
+    @warn '';
+  } @else if $count > $columns {
     @warn 'Number of columns cannot exceed the total number of specified grid columns.';
   } @else {
     > * {
       flex: 0 0 divide(100%, $count);
       max-width: divide(100%, $count);
     }
+  }
+}
+
+@mixin spacing(
+  $size: 'medium',
+  $properties: margin-top,
+  $negative: false
+) {
+  $valid-properties: (
+    margin, margin-top, margin-bottom, margin-left, margin-right,
+    padding, padding-top, padding-bottom, padding-left, padding-right
+  );
+
+  @if type-of($properties) == 'string' {
+    $properties: append((), $properties);
+  }
+
+  @each $property in $properties {
+    @if str-index($property, 'padding') {
+      $negative: false;
+    }
+
+    @if index($valid-properties, $property) {
+      $value: $spacing-medium;
+
+      @if $size == large {
+        $value: $spacing-large;
+      } @else if $size == small {
+        $value: $spacing-small;
+      }
+
+      #{$property}: if($negative, $value * -1, $value);
+
+      @media (min-width: $breakpoint-tablet) {
+        $value: $spacing-medium-tablet;
+
+        @if $size == large {
+          $value: $spacing-large-tablet;
+        } @else if $size == small {
+          $value: $spacing-small-tablet;
+        }
+
+        #{$property}: if($negative, $value * -1, $value);
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        $value: $spacing-medium-desktop;
+
+        @if $size == large {
+          $value: $spacing-large-desktop;
+        } @else if $size == small {
+          $value: $spacing-small-desktop;
+        }
+
+        #{$property}: if($negative, $value * -1, $value);
+      }
+    } @else {
+      @warn 'Invalid property value! Use only "margin" or "padding" properties.';
+    }
+  }
+}
+
+@mixin typography-eyebrow() {
+  font-size: 2rem;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@mixin typography-blurb() {
+  font-size: 1.8rem;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin-top: 1.5rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 2rem;
+    margin-top: 2rem;
   }
 }

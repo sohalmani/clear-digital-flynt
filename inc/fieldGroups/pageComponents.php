@@ -30,6 +30,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\GridPostsLatest\getACFLayout(),
                     Components\ListComponents\getACFLayout(),
                     Components\SliderImages\getACFLayout(),
+                    Components\SliderPosts\getACFLayout(),
                     Components\SliderQuote\getACFLayout(),
                 ]
             ]

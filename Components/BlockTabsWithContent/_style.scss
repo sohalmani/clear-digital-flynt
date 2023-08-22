@@ -11,14 +11,14 @@
 //     .tab {
 //       border-bottom: 1px solid rgba($black, 0.5);
 //       padding: 50px 0;
-      
+
 
 //       &__body {
 //         background-color: $dark-grey;
 //         border-top: 1px solid $black;
 //         display: none;
 //         padding: 50px 0;
-//       } 
+//       }
 //     }
 //   }
 // }
@@ -53,11 +53,11 @@
       position: relative;
       width: 100%;
 
-      @include media-breakpoint-up(md) {
+      @media (min-width: $breakpoint-tablet) {
         border-top: 1px solid $black;
         padding: 50px 0;
       }
-    } 
+    }
 
     &--open {
       .tab__head {

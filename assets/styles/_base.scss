@@ -13,7 +13,7 @@ html {
   background-color: $color-background;
   box-sizing: border-box;
   color: $color-text;
-  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Verdana, sans-serif;
   font-size: 62.5%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -52,7 +52,7 @@ body {
   color: $color-headline;
   font-weight: 700;
   line-height: 1.45;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0;
   margin-top: 0;
 
   a,
@@ -68,8 +68,8 @@ h1,
   font-size: 8rem;
   letter-spacing: -0.05em;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
-  padding-top: 2rem;
+  margin-bottom: 0;
+  padding-top: 0;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 12rem;
@@ -86,7 +86,7 @@ h2,
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  padding-top: 1rem;
+  padding-top: 0;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 6.5rem;
@@ -102,7 +102,7 @@ h3,
   font-size: 4rem;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  padding-top: 1rem;
+  padding-top: 0;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 5rem;
@@ -118,7 +118,7 @@ h4,
   font-size: 2.4rem;
   letter-spacing: 0;
   line-height: 1.3;
-  padding-top: 0.5rem;
+  padding-top: 0;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 3rem;
@@ -130,7 +130,7 @@ h5,
   font-size: 2rem;
   letter-spacing: 0;
   line-height: 1.3;
-  padding-top: 0.5rem;
+  padding-top: 0;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 2.5rem;
@@ -142,7 +142,7 @@ h6,
   font-size: 1.8rem;
   letter-spacing: 0;
   line-height: 1.3;
-  padding-top: 0.5rem;
+  padding-top: 0;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 2rem;
@@ -163,7 +163,7 @@ p,
 .paragraph,
 table,
 figure {
-  margin: 0 0 1.2rem;
+  margin: 2rem 0 0;
 }
 
 hr {
@@ -171,7 +171,15 @@ hr {
   border: 0;
   display: block;
   height: 1px;
-  margin: 2.4rem 0;
+  margin: 4rem 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 5rem 0;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin: 5rem 0;
+  }
 }
 
 img {
@@ -181,14 +189,14 @@ img {
 }
 
 figcaption {
-  font-size: 0.875rem;
-  margin-top: 0.625rem;
+  font-size: 1.4rem;
+  margin-top: 1rem;
 }
 
 code {
   background-color: rgba(0, 0, 0, 0.05);
   display: inline-block;
-  padding: 0 0.3rem;
+  padding: 0 0.5rem;
 }
 
 blockquote,
@@ -198,8 +206,8 @@ blockquote,
   font-style: italic;
   font-weight: 700;
   line-height: 1.3;
-  margin: 2.4rem auto;
-  padding: 0.8rem 1.5rem;
+  margin: 3rem auto;
+  padding: 1rem 2rem;
 
   p {
     font-size: inherit;
@@ -222,12 +230,12 @@ blockquote,
 
 ul,
 ol {
-  margin: 0 0 1.2rem;
-  padding-left: 1.5rem;
+  margin: 2rem 0 0;
+  padding-left: 2rem;
 
   ul,
   ol {
-    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 
@@ -238,8 +246,8 @@ ol {
   padding: 0;
 
   li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
+    margin-top: 1rem;
+    padding-left: 2rem;
     position: relative;
 
     &::before {
@@ -271,7 +279,7 @@ table {
 
 td,
 th {
-  padding: 1.25rem;
+  padding: 2rem;
   text-align: inherit;
   vertical-align: top;
 }
@@ -320,6 +328,7 @@ button {
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1;
+  margin: 3rem 0 0;
   padding: 1.5rem 2rem;
   text-align: center;
   text-decoration: none;
@@ -407,7 +416,7 @@ button {
   font-size: 1.2rem;
   max-width: 100%;
   overflow: hidden;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 2rem;
   text-decoration: none;
   text-overflow: ellipsis;
   vertical-align: middle;
@@ -440,17 +449,17 @@ form {
 
 fieldset {
   border: 0;
-  margin: 0 0 1.5rem;
+  margin: 2rem 0 0;
   padding: 0;
 
   *:last-child {
-    margin-bottom: 0;
+    margin-top: 0;
   }
 
   input,
   select,
   textarea {
-    margin: 0 0 1.875rem;
+    margin: 3rem 0 0;
   }
 }
 
@@ -458,14 +467,14 @@ legend {
   display: inline-block;
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 2rem;
 }
 
 label {
   display: inline-block;
   font-weight: 700;
   line-height: 1.5;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 #{$input-selectors} {
@@ -482,7 +491,7 @@ label {
 input,
 select,
 textarea {
-  margin: 0 0 1rem;
+  margin: 2rem 0 0;
   padding: 10px 20px;
 }
 
@@ -525,7 +534,7 @@ select {
 
   + label {
     display: inline-block;
-    padding-left: 1.875rem;
+    padding-left: 3rem;
     position: relative;
     width: 100%;
 
@@ -670,10 +679,10 @@ select {
 
 .boxPadding {
   @include reset-content-margins;
-  padding: 20px;
+  padding: 4rem;
 
-  @media (min-width: $breakpoint-tablet-horizontal) {
-    padding: 30px;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 5rem;
   }
 }
 
@@ -759,6 +768,7 @@ select {
 /* Markers */
 
 .marker {
+  color: $color-brand;
   display: inline-block;
   position: relative;
 
@@ -794,8 +804,8 @@ select {
       background-image: url('../assets/icons/marker-underline-black-1.svg');
       background-repeat: no-repeat;
       background-size: contain;
-      bottom: -0.25em;
-      height: 0.67em;
+      bottom: -0.3em;
+      height: 0.5em;
     }
   }
 }
@@ -810,12 +820,22 @@ select {
 
 .swiper {
   --swiper-theme-color: #{$color-brand};
+  position: relative;
+}
+
+.swiper-wrapper {
+  height: auto !important;
 }
 
 .swiper-pagination-progressbar {
   background: transparent !important;
   height: 0.8rem !important;
+  margin-top: 4rem;
   position: relative !important;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 5rem;
+  }
 
   &::before {
     background-color: $color-background-dark;
@@ -827,6 +847,32 @@ select {
     transform: translateY(-50%);
     width: 100%;
   }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  height: 100% !important;
+  margin-top: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+
+  &::after {
+    display: none !important;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 1 !important;
+  }
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  left: -100% !important;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: -100% !important;
 }
 
 /**

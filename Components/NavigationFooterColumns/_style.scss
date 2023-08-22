@@ -1,10 +1,10 @@
 .footer {
   padding-top: 50px;
 
-  @include media-breakpoint-up(md) {
+  @media (min-width: $breakpoint-tablet) {
     padding-top: 100px;
   }
-  @include media-breakpoint-up(lg) {
+  @media (min-width: $breakpoint-tablet-horizontal) {
     padding-top: 150px;
   }
 
@@ -120,7 +120,7 @@
       max-width: 115px;
       position: relative;
 
-      @include media-breakpoint-down(md) {
+      @media (max-width: $breakpoint-tablet) {
         height: 65px;
         max-width: 100px;
       }
@@ -147,10 +147,10 @@
     color: $white;
     padding-bottom: 94px;
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: $breakpoint-tablet) {
       padding-bottom: 144px;
     }
-    @include media-breakpoint-up(lg) {
+    @media (min-width: $breakpoint-tablet-horizontal) {
       padding-bottom: 256px;
     }
   }
@@ -159,7 +159,7 @@
     color: $white;
 
     .content-wrapper {
-      @include media-breakpoint-up(lg) {
+      @media (min-width: $breakpoint-tablet-horizontal) {
         max-width: 73%;
       }
     }
@@ -176,14 +176,14 @@
     ul {
       column-gap: 15px;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: $breakpoint-tablet-horizontal) {
         column-gap: 20px;
-      } 
+      }
 
       li {
         &:not(:first-child) {
-          @include media-breakpoint-down(md) {
-            margin-top: 16px;          
+          @media (max-width: $breakpoint-tablet) {
+            margin-top: 16px;
           }
         }
 
