@@ -1,11 +1,6 @@
-.footer {
-  padding-top: 50px;
-
-  @media (min-width: $breakpoint-tablet) {
-    padding-top: 100px;
-  }
-  @media (min-width: $breakpoint-tablet-horizontal) {
-    padding-top: 150px;
+[is='flynt-navigation-footer-columns'] {
+  .content {
+    @include row;
   }
 
   ul {
@@ -14,24 +9,12 @@
     padding-left: 0;
   }
 
-  .report-card {
-    position: relative;
-
-    &__img {
-      height: 253px;
-      max-width: 210px;
-      width: 100%;
-
-      img {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
-    }
+  a {
+    text-decoration: none;
   }
 
   .contact-links {
-    &__item {
+    &-item {
       cursor: pointer;
       padding-left: 40px;
       position: relative;
@@ -69,134 +52,173 @@
     }
   }
 
-  .social {
-    &-icons {
+  .menu {
+    &-socialPlatforms {
       column-gap: 20px;
+      display: flex;
     }
 
-    &__icon {
+    &--level-1 {
+      @media (max-width: $breakpoint-tablet) {
+        margin-top: 40px;
+      }
+    }
+
+    .item {
+      @include spacing('medium');
       border-radius: 50%;
-      display: inline-block;
       height: 25px;
       width: 25px;
-
-      svg {
-        path {
-          fill: $dark-grey;
-          transition: fill 0.3s ease-in-out;
-        }
+      
+      path {
+        fill: $dark-grey;
+        transition: fill 0.3s ease-in-out;
       }
 
       &:hover {
-        svg {
-          path {
-            fill: $pink;
-          }
+        path {
+          fill: $pink;
         }
       }
     }
-  }
 
-  &__links {
-    li {
+    &-item {
       &:not(:first-child) {
         margin-top: 30px;
       }
     }
   }
 
-  &__link {
-    color: $white;
-    transition: color 0.3s ease-in-out;
+  .logo-with-links {
+    @include col(12);
 
-    &:hover {
-      color: $pink;
+    @media (min-width: $breakpoint-tablet) {
+      @include col(6);
+    }
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      @include col(4);
     }
   }
 
-  &__external {
-    &--logo {
-      height: 75px;
-      max-width: 115px;
-      position: relative;
+  .navigation {
+    @include col(12);
 
-      @media (max-width: $breakpoint-tablet) {
-        height: 65px;
-        max-width: 100px;
+    @media (min-width: $breakpoint-tablet) {
+      @include col(6);
+    }
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      @include col(2);
+    }
+  }
+
+  .post {
+    @include col(12);
+    margin-top: 40px;
+    
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      @include col(6);
+      margin-top: 0;
+    }
+
+    &-img {
+      @include col(12);
+
+      @media (min-width: $breakpoint-tablet) {
+        @include col(4);
       }
+
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        @include col(5);
+      }
+    }
+
+    &-figure {
+      height: 253px;
+      max-width: 210px;
+      width: 100%;
 
       img {
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        width: 100%;
       }
     }
-  }
 
-  &__icon {
-    height: 38px;
-    position: relative;
-    width: 40px;
+    &-content {
+      @include col(12);
 
-    img {
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-
-  &__main {
-    color: $white;
-    padding-bottom: 94px;
-
-    @media (min-width: $breakpoint-tablet) {
-      padding-bottom: 144px;
-    }
-    @media (min-width: $breakpoint-tablet-horizontal) {
-      padding-bottom: 256px;
-    }
-  }
-
-  &__primary {
-    color: $white;
-
-    .content-wrapper {
-      @media (min-width: $breakpoint-tablet-horizontal) {
-        max-width: 73%;
+      @media (min-width: $breakpoint-tablet) {
+        @include col(8);
       }
-    }
-  }
-
-  &__primary--wrapper {
-    border-top: 1px solid $white;
-    padding: 50px 0;
-  }
-
-  &__secondary {
-    padding: 30px 0;
-
-    ul {
-      column-gap: 15px;
 
       @media (min-width: $breakpoint-tablet-horizontal) {
-        column-gap: 20px;
+        @include col(7);
+      }
+    }
+  }
+
+  .footer {
+    &--level-0 {
+      .logo-item {
+        @include spacing('large', margin-bottom);
+        height: 35px;
+        width: 111px;
+        
+        img {
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &--level-1 {
+      padding-top: 80px;
+
+      @media (min-width: $breakpoint-tablet) {
+        padding-top: 130px;
+      }
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        padding-top: 150px;
+      }
+      @media (min-width: $breakpoint-desktop) {
+        padding-top: 260px;
       }
 
-      li {
-        &:not(:first-child) {
-          @media (max-width: $breakpoint-tablet) {
-            margin-top: 16px;
-          }
+      .intro {
+        @include spacing('large', padding-bottom);
+        border-bottom: 1px solid $white;
+      }
+
+      .logo-item {
+        @include col(12);
+        @include spacing('large');
+
+        @media (min-width: $breakpoint-tablet) {
+          @include col(2);
         }
 
-        a {
-          color: $dark-grey;
-          transition: color 0.3s ease-in-out;
+        .logo {
+          height: 75px;
+          max-width: 115px;
+          position: relative;
+        }
 
-          &:hover {
-            color: $pink;
-          }
+        img {
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .text {
+        @include col(12);
+        @include spacing('large');
+
+        @media (min-width: $breakpoint-tablet) {
+          @include col(10);
         }
       }
     }
   }
 }
-

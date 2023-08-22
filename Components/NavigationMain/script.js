@@ -51,7 +51,7 @@ window.customElements.define('flynt-navigation-main', NavigationMain, {
 })
 
 // TODO: Convert code into ES6 classes base
-var $navigation = $('.navigation')
+var $navigation = $('header .navigation')
 
 if ($navigation) {
   var $menu = $('.megamenu')

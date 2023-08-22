@@ -32,6 +32,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\SliderImages\getACFLayout(),
                     Components\SliderPosts\getACFLayout(),
                     Components\SliderQuote\getACFLayout(),
+                    Components\NavigationFooterColumns\getACFLayout(),
                 ]
             ]
         ],
