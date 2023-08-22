@@ -48,7 +48,7 @@ class SliderPosts extends window.HTMLDivElement {
   }
 
   connectedCallback () {
-    // this.initSlider()
+    this.initSlider()
   }
 
   initSlider () {

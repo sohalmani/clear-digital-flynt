@@ -1,20 +1,54 @@
 [is='flynt-block-image-two-col'] {
   padding: 0 !important;
 
-  @media (min-width: $breakpoint-tablet) {
-    height: 100vh;
-  }
-
-  .slider-track {
+  .columns {
     @include row(0);
-    width: unset;
 
-    @media (min-width: $breakpoint-tablet) {
-      flex-wrap: nowrap;
+    &-outer {
+      &.swiper {
+        .swiper-wrapper {
+          @media (min-width: $breakpoint-tablet) {
+            flex-wrap: nowrap;
+          }
+        }
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+
+        @media (min-width: $breakpoint-tablet-horizontal) {
+          display: block;
+        }
+      }
+
+      .swiper-button-next {
+        right: calc(-100% + #{$container-padding-mobile}) !important;
+
+        @media (min-width: $breakpoint-tablet) {
+          right: calc(-100% + #{$container-padding-tablet}) !important;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+          right: calc(-100% + #{$container-padding-desktop}) !important;
+        }
+      }
+
+      .swiper-button-prev {
+        left: calc(-100% + #{$container-padding-mobile}) !important;
+
+        @media (min-width: $breakpoint-tablet) {
+          left: calc(-100% + #{$container-padding-tablet}) !important;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+          left: calc(-100% + #{$container-padding-desktop}) !important;
+        }
+      }
     }
   }
 
-  article {
+  .column {
     @include col(12);
     height: 100vh;
 
@@ -23,30 +57,9 @@
     }
   }
 
-  .slider-arrow {
-    height: 100%;
-    margin-top: 0;
-    top: 0;
-
-    @media (min-width: $breakpoint-tablet-horizontal) {
-      display: none;
-    }
-
-    &::after {
-      display: none;
-    }
-
-    &--next {
-      right: 0;
-    }
-
-    &--prev {
-      left: 0;
-    }
-  }
-
   .figure {
     height: 100%;
+    margin: 0;
     overflow: hidden;
     position: relative;
 
@@ -58,23 +71,24 @@
   }
 
   .content {
-    bottom: 40px;
-    left: 50%;
-    padding: 0 20px;
+    bottom: $component-spacing-mobile;
+    left: 0;
+    padding-left: $container-padding-mobile;
+    padding-right: $container-padding-mobile;
     position: absolute;
-    transform: translateX(-50%);
-    transition: width 0.2s ease-in-out, transform 0.2s ease-in-out;
-    width: 100%;
+    width: auto;
 
     @media (min-width: $breakpoint-tablet) {
-      bottom: 150px;
+      bottom: $component-spacing-tablet;
+      padding-left: $container-padding-tablet;
+      padding-right: $container-padding-tablet;
     }
 
     @media (min-width: $breakpoint-desktop) {
-      left: 0;
-      padding: 0;
-      transform: none;
-      width: auto;
+      bottom: $component-spacing-desktop;
+      max-width: 66.66667%;
+      padding-left: $container-padding-desktop;
+      padding-right: $container-padding-desktop;
     }
   }
 

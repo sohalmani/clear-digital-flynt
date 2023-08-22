@@ -168,8 +168,8 @@
   }
 
   > * {
-    padding-left: $gutter-width;
-    padding-right: $gutter-width;
+    padding-left: if($gutter != null, $gutter, $gutter-width);
+    padding-right: if($gutter != null, $gutter, $gutter-width);
 
     @media (min-width: $breakpoint-tablet) {
       padding-left: if($gutter != null, $gutter, $gutter-width-tablet);

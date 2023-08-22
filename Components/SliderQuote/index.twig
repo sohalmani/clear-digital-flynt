@@ -1,7 +1,7 @@
 <div class="flyntComponent componentSpacing {{ options.theme }} themeDark" is="flynt-block-image-two-col">
-	<div class="slider">
-		<div class="slider-track swiper-wrapper">
-			<article class="swiper-slide">
+	<div class="columns-outer swiper">
+		<div class="columns swiper-wrapper">
+			<div class="column swiper-slide">
 				<figure class="figure">
 					<img class="figure-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/man-holding-phone.png" alt="Background Image">
 				</figure>
@@ -12,12 +12,10 @@
 					<h3>
 						<span class="marker marker--circleWhite">27%</span>
 						increase on click-through rates.</h3>
-					<div class="buttons">
-						<a href="/" class="btn-tertiary-white" data-cursor-expand>View case study</a>
-					</div>
+          <a href="/" class="button button--link">View case study</a>
 				</div>
-			</article>
-			<article class="swiper-slide">
+			</div>
+			<div class="column swiper-slide">
 				<figure class="figure">
 					<img class="figure-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/office-discussion.png" alt="Background Image">
 				</figure>
@@ -28,12 +26,10 @@
 					<h3>53%
 						<span class="marker">increase</span>
 						on engagement metrics.</h3>
-					<div class="buttons">
-						<a href="/" class="btn-tertiary-white mt-5 mt-lg-8" data-cursor-expand>View case study</a>
-					</div>
+          <a href="/" class="button button--link">View case study</a>
 				</div>
-			</article>
-			<article class="swiper-slide">
+			</div>
+			<div class="column swiper-slide">
 				<figure class="figure">
 					<img class="figure-image" src="{{ theme.link }}/Components/BlockImageTwoCol/Assets/man-holding-phone.png" alt="Background Image">
 				</figure>
@@ -44,14 +40,12 @@
 					<h3>
 						<span class="marker marker--circleWhite">27%</span>
 						increase on click-through rates.</h3>
-					<div class="buttons">
-						<a href="/" class="btn-tertiary-white" data-cursor-expand>View case study</a>
-					</div>
+          <a href="/" class="button button--link">View case study</a>
 				</div>
-			</article>
+			</div>
 		</div>
-		<div class="slider-arrow slider-arrow--prev swiper-button-prev" data-cursor-expand data-cursor-icon="left"></div>
-		<div class="slider-arrow slider-arrow--next swiper-button-next" data-cursor-expand data-cursor-icon="right"></div>
+		<div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 	</div>
 </div>
 
