@@ -295,6 +295,8 @@
 
 @mixin typography-eyebrow() {
   font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 1.3;
   margin-bottom: 1.5rem;
@@ -307,6 +309,8 @@
 
 @mixin typography-blurb() {
   font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 1.3;
   margin-top: 1.5rem;
