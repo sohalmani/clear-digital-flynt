@@ -16,8 +16,6 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
                     Components\BlockCollapse\getACFLayout(),
-                    Components\BlockCta\getACFLayout(),
-                    Components\BlockHero\getACFLayout(),
                     Components\BlockImage\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
                     Components\BlockImageTwoCol\getACFLayout(),
@@ -28,6 +26,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockWysiwyg\getACFLayout(),
                     Components\GridImageText\getACFLayout(),
                     Components\GridPostsLatest\getACFLayout(),
+                    Components\HeroImageCta\getACFLayout(),
                     Components\ListComponents\getACFLayout(),
                     Components\SliderImages\getACFLayout(),
                     Components\SliderPosts\getACFLayout(),

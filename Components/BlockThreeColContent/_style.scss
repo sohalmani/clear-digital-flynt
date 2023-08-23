@@ -1,10 +1,10 @@
 [is='flynt-block-three-col-content'] {
   .intro {
-    h6 {
+    &-eyebrow {
       @include typography-eyebrow;
     }
 
-    p {
+    &-blurb {
       @include typography-blurb;
       @include spacing('large');
     }
