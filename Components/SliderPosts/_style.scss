@@ -62,24 +62,12 @@
     }
 
     &-button {
-      &-next,
-      &-prev {
-        height: 100%;
-        margin-top: 0;
-        top: 0;
-
-        &::after {
-          display: none;
-        }
-      }
-
       &-next {
-        right: -100%;
+        right: calc(-100% + 16.66667%) !important;
       }
 
       &-prev {
-        background: $white;
-        left: -100%;
+        left: calc(-100% + 8.33333%) !important;
       }
 
       &-prev {
