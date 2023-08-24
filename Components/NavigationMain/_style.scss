@@ -59,9 +59,11 @@
 //   }
 // }
 
-[is='flynt-navigation-main'].navigation {
+[is='flynt-navigation-main'] {
   $self: &;
-  background-color: transparent;
+  background-color: $white;
+  min-height: 0;
+  padding: 20px 0;
   position: fixed;
   top: 0;
   transition: background-color 0.3s ease-in-out, top 0.3s linear;
@@ -76,6 +78,50 @@
     @media (min-width: $breakpoint-desktop) {
       position: static !important;
     } 
+  }
+
+  .main-navigation-items {
+    align-items: center;
+    display: flex;
+  }
+
+  .main-menu {
+    display: flex;
+    margin: 0;
+
+    &-item {
+      margin-left: 5rem;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    &-action {
+      a {
+        margin-left: 5rem;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .site-logo {
+    height: 35px;
+    max-width: 111px;
+    width: 100%;
+
+    &-black {
+      display: block;
+    }
+
+    &-white {
+      display: none;
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
   }
 
   nav {
@@ -199,7 +245,9 @@
   }
 
   .megamenu {
-    &__dropdown {
+    display: none;
+
+    &-dropdown {
       background-color: $white;
       padding: 15px 0 30px;
       position: relative;
@@ -237,7 +285,7 @@
       }
     }
 
-    &__content {
+    &-content {
       max-width: 450px;
 
       > h2 {
@@ -249,7 +297,7 @@
       }
     }
 
-    &__links {
+    &-links {
       ul {
         li {
           @media (max-width: $breakpoint-tablet) {
@@ -276,7 +324,7 @@
       }
     }
 
-    &__action {
+    &-action {
       margin-top: 30px;
     }
 
@@ -352,7 +400,7 @@
     color: $black;
 
     .site-logo {
-      background: url('./../assets/images/logo/clear-digital-logo-black.svg') no-repeat center;
+      background: url('/Assets/images/logo/logo.svg') no-repeat center;
     }
 
     nav {
@@ -392,4 +440,9 @@
 // Tbd
 .skipLink {
   display: none;
+}
+
+// TBD
+.pageWrapper {
+  display: block;
 }
