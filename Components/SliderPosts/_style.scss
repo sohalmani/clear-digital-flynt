@@ -186,5 +186,10 @@
     @media (min-width: $breakpoint-tablet) {
       max-width: 15.3rem;
     }
+
+    &-image {
+      object-fit: contain;
+      overflow: hidden;
+    }
   }
 }
