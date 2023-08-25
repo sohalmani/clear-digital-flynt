@@ -1,38 +1,106 @@
-[is='flynt-image-two-col'] {
-  height: 100vh;
+[is='flynt-block-image-two-col'] {
+  padding: 0 !important;
 
-  &__item {
-    height: 100%;
-    position: relative;
+  .columns {
+    @include row(0);
+
+    &-outer {
+      &.swiper {
+        .swiper-wrapper {
+          @media (min-width: $breakpoint-tablet) {
+            flex-wrap: nowrap;
+          }
+        }
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+
+        @media (min-width: $breakpoint-tablet-horizontal) {
+          display: block;
+        }
+      }
+
+      .swiper-button-next {
+        right: calc(-100% + #{$container-padding-mobile}) !important;
+
+        @media (min-width: $breakpoint-tablet) {
+          right: calc(-100% + #{$container-padding-tablet}) !important;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+          right: calc(-100% + #{$container-padding-desktop}) !important;
+        }
+      }
+
+      .swiper-button-prev {
+        left: calc(-100% + #{$container-padding-mobile}) !important;
+
+        @media (min-width: $breakpoint-tablet) {
+          left: calc(-100% + #{$container-padding-tablet}) !important;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+          left: calc(-100% + #{$container-padding-desktop}) !important;
+        }
+      }
+    }
   }
 
-  &__background {
+  .column {
+    @include col(12);
+    height: 100vh;
+
+    @media (min-width: $breakpoint-tablet) {
+      @include col(6);
+    }
+  }
+
+  .figure {
     height: 100%;
+    margin: 0;
     overflow: hidden;
     position: relative;
 
-    img {
+    .figure-image {
       height: 100%;
       object-fit: cover;
       width: 100%;
     }
   }
 
-  &__content {
-    bottom: 30px;
+  .content {
+    bottom: $component-spacing-mobile;
     left: 0;
-    padding: 50px 60px;
+    padding-left: $container-padding-mobile;
+    padding-right: $container-padding-mobile;
     position: absolute;
+    width: auto;
+
+    @media (min-width: $breakpoint-tablet) {
+      bottom: $component-spacing-tablet;
+      padding-left: $container-padding-tablet;
+      padding-right: $container-padding-tablet;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      bottom: $component-spacing-desktop;
+      max-width: 66.66667%;
+      padding-left: $container-padding-desktop;
+      padding-right: $container-padding-desktop;
+    }
   }
 
-  &__logo {
+  .logo {
+    @include spacing('medium');
     display: inline-block;
     height: 40px;
     max-width: 195px;
     overflow: hidden;
     width: 100%;
-    
-    img {
+
+    .logo-image {
       height: 100%;
       object-fit: contain;
       width: 100%;
