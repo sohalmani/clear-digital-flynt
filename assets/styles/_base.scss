@@ -366,7 +366,7 @@ button {
   }
 
   &--small {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   &--link {
@@ -386,7 +386,7 @@ button {
       color: $color-background-dark;
 
       &::after {
-        background-position: left center;
+        background-position: right center;
       }
     }
 
@@ -394,14 +394,15 @@ button {
       $color-background-dark-rgb: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
 
       background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16663 10H15.8333" stroke="rgb(#{$color-background-dark-rgb})" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4.16675L15.8333 10.0001L10 15.8334" stroke="rgb(#{$color-background-dark-rgb})" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-      background-position: right center;
+      background-position: left center;
       background-repeat: no-repeat;
+      background-size: contain;
       content: '';
       display: inline-block;
-      height: 1.5rem;
-      margin-left: 1rem;
+      height: 2rem;
+      margin-left: 0.5rem;
       transition: background-position 0.2s ease-out;
-      width: 1.7rem;
+      width: 2.2rem;
     }
   }
 }
@@ -947,6 +948,14 @@ select {
   .overlay-grid {
     &::before {
       background-image: url('data:image/svg+xml,<svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 140 140" style="enable-background:new 0 0 140 140;" xml:space="preserve"><style type="text/css">.st0{fill:%23FFFFFF;}</style><g><g><g><path class="st0" d="M73.4,70c0,1.9-1.5,3.4-3.4,3.4c-1.9,0-3.4-1.5-3.4-3.4c0-1.9,1.5-3.4,3.4-3.4C71.9,66.6,73.4,68.1,73.4,70z"/></g></g><path class="st0" d="M84,68.3c0.9,0,1.7,0.8,1.7,1.7s-0.8,1.7-1.7,1.7c-0.9,0-1.7-0.8-1.7-1.7S83.1,68.3,84,68.3z"/><path class="st0" d="M98,68.3c0.9,0,1.7,0.8,1.7,1.7s-0.8,1.7-1.7,1.7c-0.9,0-1.7-0.8-1.7-1.7S97.1,68.3,98,68.3z"/><path class="st0" d="M112,68.3c0.9,0,1.7,0.8,1.7,1.7s-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7S111.1,68.3,112,68.3z"/><circle class="st0" cx="126" cy="70" r="1.7"/><path class="st0" d="M140,68.3c0,1.9,0,1.5,0,3.4c-0.9,0-1.7-0.8-1.7-1.7S139.1,68.3,140,68.3z"/><path class="st0" d="M71.7,0c0,0.9-0.8,1.7-1.7,1.7S68.3,0.9,68.3,0C69.7,0,69.6,0,71.7,0z"/><path class="st0" d="M71.7,14c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7c0-0.9,0.8-1.7,1.7-1.7S71.7,13.1,71.7,14z"/><path class="st0" d="M71.7,28c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7S71.7,27.1,71.7,28z"/><path class="st0" d="M71.7,42c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7c0-0.9,0.8-1.7,1.7-1.7S71.7,41.1,71.7,42z"/><path class="st0" d="M71.7,56c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7S71.7,55.1,71.7,56z"/><path class="st0" d="M0,68.3c0.9,0,1.7,0.8,1.7,1.7S0.9,71.7,0,71.7C0,70.6,0,70,0,68.3z"/><circle class="st0" cx="14" cy="70" r="1.7"/><path class="st0" d="M28,68.3c0.9,0,1.7,0.8,1.7,1.7s-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7S27.1,68.3,28,68.3z"/><circle class="st0" cx="42" cy="70" r="1.7"/><path class="st0" d="M56,68.3c0.9,0,1.7,0.8,1.7,1.7s-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7S55.1,68.3,56,68.3z"/><path class="st0" d="M71.7,84c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7S71.7,83.1,71.7,84z"/><path class="st0" d="M71.7,98c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7S71.7,97.1,71.7,98z"/><path class="st0" d="M71.7,112c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7S71.7,111.1,71.7,112z"/><path class="st0" d="M71.7,126c0,0.9-0.8,1.7-1.7,1.7s-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7S71.7,125.1,71.7,126z"/><path class="st0" d="M71.7,140c-1.7,0-1.7,0-3.4,0c0-0.9,0.8-1.7,1.7-1.7S71.7,139.1,71.7,140z"/></g></svg>');
+    }
+  }
+
+  .marker {
+    &--underline {
+      &::before {
+        background-image: url('../assets/icons/marker-underline-white-1.svg');
+      }
     }
   }
 
