@@ -1,6 +1,9 @@
 {
   "Components/BlockCta/Assets/cleardigital-office.png": "Components/BlockCta/Assets/cleardigital-office-3f92e4f332.png",
   "Components/BlockCta/Assets/cleardigital-office.webp": "Components/BlockCta/Assets/cleardigital-office-c77aca48d8.webp",
+  "Components/BlockImageTwoCol/Assets/Videos/video-dummy.mp4": "Components/BlockImageTwoCol/Assets/Videos/video-dummy-f9236b44fe.mp4",
+  "Components/BlockImageTwoCol/Assets/Videos/video-dummy.webm": "Components/BlockImageTwoCol/Assets/Videos/video-dummy-329c4b7cf5.webm",
+  "Components/BlockImageTwoCol/Assets/girl-in-vr-headset.webp": "Components/BlockImageTwoCol/Assets/girl-in-vr-headset-b0fd137f84.webp",
   "Components/BlockImageTwoCol/Assets/logo-digimarc.png": "Components/BlockImageTwoCol/Assets/logo-digimarc-ec10283978.png",
   "Components/BlockImageTwoCol/Assets/logo-digimarc.webp": "Components/BlockImageTwoCol/Assets/logo-digimarc-05fea19771.webp",
   "Components/BlockImageTwoCol/Assets/logo-leadspace.png": "Components/BlockImageTwoCol/Assets/logo-leadspace-a4e78ef337.png",
@@ -76,7 +79,7 @@
   "assets/icons/quotes-white.svg": "assets/icons/quotes-white-1e206b0675.svg",
   "assets/icons/smartphone-pink.svg": "assets/icons/smartphone-pink-ea236a911c.svg",
   "assets/icons/spinner.svg": "assets/icons/spinner-2e5c842fc5.svg",
-  "assets/main.css": "assets/main-2f73fb94ce.css",
+  "assets/main.css": "assets/main-d011acce64.css",
   "assets/main.js": "assets/main-309d5cab41.js",
   "assets/main.js.LICENSE.txt": "assets/main-538f240528.js.LICENSE.txt"
 }

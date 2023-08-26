@@ -70,6 +70,15 @@
     }
   }
 
+  video {
+    height: 100vh;
+    margin: 0;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
   .content {
     bottom: $component-spacing-mobile;
     left: 0;
