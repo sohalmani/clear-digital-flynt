@@ -14,11 +14,13 @@
   }
 
   &-item {
-    margin-top: 2rem;
+    @media (max-width: $breakpoint-tablet) {
+      margin-top: 2rem;
+    }
   }
 
   &-link {
-    color: currentColor;
+    color: $color-contrast;
     text-decoration: none;
 
     &:hover,
