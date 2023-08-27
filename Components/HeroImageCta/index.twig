@@ -1,12 +1,8 @@
 <div class="flyntComponent componentSpacing {{ options.theme }} themeDark overlay-grid" is="flynt-hero-image-cta">
-  <video class="video" width="640" height="640" aria-hidden="true" autoplay muted loop>
-    <source src="https://media.istockphoto.com/id/1372283447/video/attractive-woman-wearing-virtual-reality-headset-augmented-reality-creative-lady-swiping.mp4?s=mp4-640x640-is&k=20&c=Flz0Jza76gPaFZyEJ8X6114fy__lJc1m_4_yKZRZsVo=" type="video/mp4">
-    <img class="video-fallbackImage lazyload" data-src="{{ theme.link }}/Components/HeroImageCta/Assets/girl-in-vr-headset.png" alt="Banner Fallback Image" aria-hidden="true">
+  <video class="video" width="640" height="640" aria-hidden="true" autoplay muted loop poster="{{ theme.link }}/Components/HeroImageCta/Assets/poster-image.webp">
+    <source src="{{ theme.link }}/Components/HeroImageCta/Assets/video-dummy.mp4" type="video/mp4">
+    <source src="{{ theme.link }}/Components/HeroImageCta/Assets/video-dummy.webm" type="video/mp4">
   </video>
-	{# <picture class="picture" aria-hidden="true">
-    <source srcset="{{ theme.link }}/Components/HeroImageCta/Assets/girl-in-vr-headset.webp" type="image/webp">
-		<img class="picture-fallbackImage" data-src="{{ theme.link }}/Components/HeroImageCta/Assets/girl-in-vr-headset.png" width="3200" height="2180" alt="Banner Fallback Image" aria-hidden="true">
-	</picture> #}
 	<div class="container">
     <div class="intro">
       <p class="intro-eyebrow">Hello! We are Clear Digital.</p>
