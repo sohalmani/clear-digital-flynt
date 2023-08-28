@@ -779,7 +779,7 @@ select {
   display: inline-block;
   position: relative;
 
-  &::before {
+  &::after {
     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
     content: '';
     left: 0;
@@ -792,25 +792,26 @@ select {
 
   &:hover,
   &.draw {
-    &::before {
+    &::after {
       clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
     }
   }
 
   &--crossout {
-    background-image: url('../assets/icons/marker-crossout.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    bottom: 0;
-    height: 100%;
-    width: calc(100% + 1ch);
+    &::after {
+      background-image: url('../assets/icons/marker-crossout.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      bottom: 0;
+      height: 100%;
+    }
   }
 
   &--underline {
-    &::before {
+    &::after {
       background-image: url('../assets/icons/marker-underline-black-1.svg');
       background-repeat: no-repeat;
-      background-size: contain;
+      background-size: 100% 100%;
       bottom: -0.3em;
       height: 0.5em;
     }
@@ -953,7 +954,7 @@ select {
 
   .marker {
     &--underline {
-      &::before {
+      &::after {
         background-image: url('../assets/icons/marker-underline-white-1.svg');
       }
     }
