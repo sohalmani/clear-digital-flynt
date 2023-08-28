@@ -51,7 +51,7 @@ window.customElements.define('flynt-navigation-main', NavigationMain, {
 })
 
 // TODO: Convert code into ES6 classes base
-var $navigation = $('header .navigation')
+var $navigation = $('header .main-navigation')
 
 if ($navigation) {
   var $menu = $('.megamenu')
@@ -93,11 +93,11 @@ if ($navigation) {
     var scrollValue = $(window).scrollTop()
 
     if (scrollValue > lastScrollVal) {
-      $navigation.addClass('navigation--active navigation--hide')
+      $navigation.addClass('main-navigation--active main-navigation--hide')
     } else if (scrollValue === 0) {
-      $navigation.removeClass('navigation--active')
+      $navigation.removeClass('main-navigation--active')
     } else {
-      $navigation.removeClass('navigation--hide')
+      $navigation.removeClass('main-navigation--hide')
     }
 
     lastScrollVal = scrollValue
