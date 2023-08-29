@@ -109,15 +109,14 @@
   .logo {
     @include spacing('medium');
     display: inline-block;
-    height: 40px;
-    max-width: 195px;
+    height: 4rem;
+    max-width: 19.5rem;
     overflow: hidden;
     width: 100%;
 
     .logo-image {
       height: 100%;
       object-fit: contain;
-      width: 100%;
     }
   }
 }

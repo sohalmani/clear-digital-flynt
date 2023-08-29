@@ -1,6 +1,6 @@
 [is='flynt-slider-quote'] {
   overflow: hidden;
-  
+
   .intro {
     @include spacing('medium', margin-bottom);
   }
@@ -28,6 +28,18 @@
 
     &-item {
       @include col;
+    }
+  }
+
+  .logo {
+    height: 8.4rem;
+    margin: auto;
+    max-width: 19.3rem;
+    text-align: center;
+
+    &-image {
+      height: 100%;
+      object-fit: contain;
     }
   }
 
@@ -82,8 +94,13 @@
 
     &-author-logo {
       @include spacing('large');
-      height: 22px;
-      max-width: 157px;
+      height: 2.2rem;
+      max-width: 15.7rem;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+      }
     }
 
     &-link {

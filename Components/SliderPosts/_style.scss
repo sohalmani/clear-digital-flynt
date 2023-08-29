@@ -1,6 +1,6 @@
 [is='flynt-slider-posts'] {
   overflow: hidden;
-  
+
   .content {
     @include row;
 
@@ -53,7 +53,7 @@
     position: relative;
 
     @media (min-width: $breakpoint-tablet) {
-      clip-path: inset(-100vw -100vw -100vw 2px);
+      clip-path: inset(-100vw -100vw -100vw 0.2rem);
     }
 
     &-container-initialized {
@@ -81,23 +81,23 @@
   }
 
   .post {
-    height: 309px;
+    height: 30.9rem;
     position: relative;
 
     @media (min-width: $breakpoint-mobile-horizontal) {
-      height: 493px;
+      height: 49.3rem;
     }
 
     @media (min-width: $breakpoint-tablet-horizontal) {
-      height: 511px;
+      height: 51.1rem;
     }
 
     @media (min-width: $breakpoint-tablet-horizontal) {
-      height: 360px;
+      height: 36rem;
     }
 
     @media (min-width: $breakpoint-desktop) {
-      height: 550px;
+      height: 55rem;
     }
 
     &-outer {
@@ -190,6 +190,7 @@
     }
 
     &-image {
+      height: 100%;
       object-fit: contain;
       overflow: hidden;
     }
