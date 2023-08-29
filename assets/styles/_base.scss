@@ -170,7 +170,7 @@ hr {
   background-color: $color-border;
   border: 0;
   display: block;
-  height: 1px;
+  height: 0.1rem;
   margin: 4rem 0;
 
   @media (min-width: $breakpoint-tablet) {
@@ -201,7 +201,7 @@ code {
 
 blockquote,
 .blockquote {
-  border-left: 4px solid $color-accent;
+  border-left: 0.4rem solid $color-accent;
   font-size: 3rem;
   font-style: italic;
   font-weight: 700;
@@ -286,9 +286,9 @@ th {
 
 thead {
   th {
-    border-bottom: 2px solid $color-accent;
+    border-bottom: 0.2rem solid $color-accent;
     color: $color-headline;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
     vertical-align: bottom;
     white-space: nowrap;
   }
@@ -319,7 +319,7 @@ button {
 .button {
   appearance: none;
   background-color: $color-accent;
-  border: 2px solid $color-accent;
+  border: 0.2rem solid $color-accent;
   color: $color-background;
   cursor: pointer;
   display: inline-block;
@@ -434,7 +434,7 @@ button {
 .feather {
   color: $color-accent;
   position: relative;
-  top: -2px;
+  top: -0.2rem;
   vertical-align: middle;
 }
 
@@ -481,24 +481,24 @@ label {
 #{$input-selectors} {
   appearance: none;
   background-color: $color-background;
-  border: 1px solid rgba(11, 16, 12, 1);
+  border: 0.1rem solid rgba(11, 16, 12, 1);
   border-radius: 0;
   color: $color-headline;
   font-family: inherit;
   font-size: inherit;
-  min-height: 50px;
+  min-height: 5rem;
 }
 
 input,
 select,
 textarea {
   margin: 2rem 0 0;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
 
 textarea {
-  min-height: 150px;
-  padding: 20px;
+  min-height: 15rem;
+  padding: 2rem;
   resize: vertical;
   width: 100%;
 }
@@ -508,11 +508,11 @@ select {
     blue($color-contrast);
 
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='rgb(#{$color-text-rgb})' stroke-width='5'  points='2,9 16,25 30,9 '/%3E%3C/svg%3E");
-  background-position: calc(100% - 18px) center;
+  background-position: calc(100% - 1.8rem) center;
   background-repeat: no-repeat;
-  background-size: 9px;
+  background-size: 0.9rem;
   line-height: 1.75;
-  padding-right: 45px;
+  padding-right: 4.5rem;
 
   &::-ms-expand {
     display: none;
@@ -524,7 +524,7 @@ select {
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  width: 1px;
+  width: 0.1rem;
 
   &,
   &:hover,
@@ -541,18 +541,18 @@ select {
 
     &::before {
       background-color: #fff;
-      border: 1px solid $color-border;
-      border-radius: 2px;
+      border: 0.1rem solid $color-border;
+      border-radius: 0.2rem;
       content: '';
       display: block;
-      height: 15px;
+      height: 1.5rem;
       left: 0;
       margin: 0;
       padding: 0;
       position: absolute;
-      top: 4px;
+      top: 0.4rem;
       transition: border-color 0.2s ease, background-color 0.2s ease;
-      width: 15px;
+      width: 1.5rem;
     }
   }
 
@@ -560,7 +560,7 @@ select {
     + label::before {
       background-color: $color-accent;
       border-color: $color-accent;
-      box-shadow: inset 0 0 0 2px #fff;
+      box-shadow: inset 0 0 0 0.2rem $color-background;
     }
   }
 }
@@ -583,10 +583,10 @@ select {
   height: 100%;
 
   .admin-bar & {
-    padding-top: 46px;
+    padding-top: 4.6rem;
 
     @media (min-width: 782px) {
-      padding-top: 32px;
+      padding-top: 3.2rem;
     }
   }
 }
@@ -634,7 +634,7 @@ select {
 
 .preContent {
   @include reset-content-margins;
-  margin: 0 auto 32px;
+  margin: 0 auto 3.2rem;
   max-width: $content-max-width;
   text-align: center;
 
@@ -649,7 +649,7 @@ select {
 
 .postContent {
   @include reset-content-margins;
-  margin: 32px auto 0;
+  margin: 3.2rem auto 0;
   max-width: $content-max-width;
   text-align: center;
 
@@ -670,12 +670,12 @@ select {
 /* Class for text that should only be visible to screen readers */
 
 .visuallyHidden {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px !important;
+  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
+  height: 0.1rem !important;
   overflow: hidden;
   position: absolute !important;
   white-space: nowrap;
-  width: 1px !important;
+  width: 0.1rem !important;
 }
 
 /* Box Helpers */
@@ -690,7 +690,7 @@ select {
 }
 
 .boxShadow {
-  box-shadow: 0 1px 26px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0.1rem 2.6rem 0 rgba(0, 0, 0, 0.06);
 }
 
 /* Custom styling for single post layouts */
@@ -738,7 +738,7 @@ select {
 
 .skipLink {
   position: fixed;
-  top: -100px;
+  top: -10rem;
   z-index: 999;
 
   &:focus {
