@@ -2,7 +2,7 @@
   $self: &;
   background-color: transparent;
   min-height: 0;
-  padding: 20px 0;
+  padding: 2rem 0;
   position: fixed;
   top: 0;
   transition: background-color 0.3s ease-in-out, top 0.3s linear;
@@ -10,7 +10,7 @@
   z-index: 40;
 
   @media (max-width: $breakpoint-tablet-horizontal) {
-    padding: 30px 0;
+    padding: 3rem 0;
   }
 
   > .container {
@@ -58,8 +58,8 @@
   }
 
   .site-logo {
-    height: 35px;
-    max-width: 111px;
+    height: 3.5rem;
+    max-width: 11.1rem;
     width: 100%;
 
     &-black {
@@ -79,9 +79,9 @@
   nav {
     align-items: center;
     display: flex;
-    flex-basis: calc(100% - 111px);
+    flex-basis: calc(100% - 11.1rem);
     justify-content: flex-end;
-    max-width: calc(100% - 111px);
+    max-width: calc(100% - 11.1rem);
 
     @media (max-width: $breakpoint-tablet-horizontal) {
       background: $white;
@@ -91,11 +91,11 @@
       left: 0;
       max-width: 100%;
       overflow-y: auto;
-      padding-bottom: 100px;
+      padding-bottom: 10rem;
       padding-inline: 1rem;
       position: absolute;
       right: 0;
-      top: 95px;
+      top: 9.5rem;
       width: 100%;
     }
   }
@@ -108,7 +108,7 @@
 
   .nav {
     &-links {
-      column-gap: 50px;
+      column-gap: 5rem;
       display: flex;
 
       @media (max-width: $breakpoint-tablet-horizontal) {
@@ -119,15 +119,15 @@
     }
     
     &-link {
-      padding: 28px 0;
+      padding: 2.8rem 0;
 
       @media (min-width: $breakpoint-tablet-horizontal) {
-        padding: 50px 0;
+        padding: 5rem 0;
       }
 
       @media (max-width: $breakpoint-tablet-horizontal) {
         align-items: center;
-        border-bottom: 1px solid $light-grey;
+        border-bottom: 0.1rem solid $light-grey;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -143,7 +143,7 @@
           background-color: $pink;
           bottom: -222%;
           content: '';
-          height: 8px;
+          height: 0.8rem;
           left: 0;
           position: absolute;
           transition: width 0.3s ease-in-out;
@@ -179,11 +179,11 @@
     }
     
     &-cta {
-      margin-top: 40px;
+      margin-top: 4rem;
 
       @media (min-width: $breakpoint-tablet-horizontal) {
         margin-top: 0;
-        padding-left: 50px;
+        padding-left: 5rem;
       }
     }
 
@@ -201,16 +201,16 @@
 
     &-dropdown {
       background-color: $white;
-      padding: 15px 0 30px;
+      padding: 1.5rem 0 3rem;
       position: relative;
       width: 100%;
 
       @media (min-width: $breakpoint-tablet-horizontal) {
         height: auto;
         left: 0;
-        min-height: 400px;
+        min-height: 40rem;
         overflow: hidden;
-        padding: 50px 0;
+        padding: 5rem 0;
         position: absolute;
         top: 100%;
         transform: scaleY(0);
@@ -238,10 +238,10 @@
     }
 
     &-content {
-      max-width: 450px;
+      max-width: 45rem;
 
       > h2 {
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
         
         @media (max-width: $breakpoint-tablet-horizontal) {
           display: none;
@@ -253,12 +253,12 @@
       ul {
         li {
           @media (max-width: $breakpoint-tablet) {
-            margin-top: 30px;
+            margin-top: 3rem;
           }
 
           &:not(:first-child) {
             @media (min-width: $breakpoint-tablet) {
-              margin-top: 15px;
+              margin-top: 1.5rem;
             }
           }
 
@@ -277,7 +277,7 @@
     }
 
     &-action {
-      margin-top: 30px;
+      margin-top: 3rem;
     }
 
     &--open {
@@ -297,22 +297,22 @@
 
     span {
       background-color: $black;
-      border-radius: 3px;
+      border-radius: 0.3rem;
       display: block;
-      height: 3px;
-      margin-bottom: 5px;
+      height: 0.3rem;
+      margin-bottom: 0.5rem;
       position: relative;
-      transform-origin: 4px 0;
+      transform-origin: 0.4rem 0;
       transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
         background-color 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
         opacity 0.55s ease;
-      width: 30px;
+      width: 3rem;
       z-index: 1;
 
       @media (max-width: $breakpoint-mobile-horizontal) {
-        height: 2.5px;
-        margin-bottom: 3.5px;
-        width: 24px;
+        height: 0.25rem;
+        margin-bottom: 0.35rem;
+        width: 2.4rem;
       }
 
       &:first-child {
@@ -332,7 +332,7 @@
     &.active {
       span {
         &:first-child {
-          transform: rotate(45deg) translate(1px, -4px);
+          transform: rotate(45deg) translate(0.1rem, -0.4rem);
         }
 
         &:nth-child(2) {
@@ -363,13 +363,13 @@
 
     nav {
       @media (max-width: $breakpoint-tablet-horizontal) {
-        border-top: 1px solid $light-grey;
+        border-top: 0.1rem solid $light-grey;
       }
     }
 
     .megamenu {
       @media (min-width: $breakpoint-tablet-horizontal) {
-        border-top: 1px solid $light-grey;
+        border-top: 0.1rem solid $light-grey;
       }
     }
 
@@ -391,10 +391,10 @@
   }
 
   &.main-navigation--hide {
-    top: -95px;
+    top: -9.5rem;
 
     @media (min-width: $breakpoint-tablet-horizontal) {
-      top: -128px;
+      top: -12.8rem;
     }
   }
 }

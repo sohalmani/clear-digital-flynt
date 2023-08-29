@@ -1,4 +1,6 @@
 [is='flynt-slider-posts'] {
+  overflow: hidden;
+  
   .content {
     @include row;
 

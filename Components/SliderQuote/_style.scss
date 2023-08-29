@@ -1,4 +1,6 @@
 [is='flynt-slider-quote'] {
+  overflow: hidden;
+  
   .intro {
     @include spacing('medium', margin-bottom);
   }
