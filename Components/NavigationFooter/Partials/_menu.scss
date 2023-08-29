@@ -8,7 +8,7 @@
   padding: 0;
   
   @media (min-width: $breakpoint-tablet) {
-    column-gap: 15px;
+    column-gap: 1.5rem;
     flex-direction: row;
     justify-content: flex-end;
   }

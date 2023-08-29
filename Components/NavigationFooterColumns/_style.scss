@@ -16,20 +16,20 @@
   .contact-links {
     &-item {
       cursor: pointer;
-      padding-left: 40px;
+      padding-left: 4rem;
       position: relative;
       transition: color 0.3s ease-in-out;
 
       &:not(:first-child) {
-        margin-top: 25px;
+        margin-top: 2.5rem;
       }
 
       &::before {
         content: '';
-        height: 24px;
+        height: 2.4rem;
         left: 0;
         position: absolute;
-        width: 24px;
+        width: 2.4rem;
       }
 
       &:hover {
@@ -54,21 +54,26 @@
 
   .menu {
     &-socialPlatforms {
-      column-gap: 20px;
+      column-gap: 2rem;
       display: flex;
+
+      svg {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
     }
 
     &--level-1 {
       @media (max-width: $breakpoint-tablet) {
-        margin-top: 40px;
+        margin-top: 4rem;
       }
     }
 
     .item {
       @include spacing('medium');
       border-radius: 50%;
-      height: 25px;
-      width: 25px;
+      height: 2.5rem;
+      width: 2.5rem;
       
       path {
         fill: $dark-grey;
@@ -84,7 +89,7 @@
 
     &-item {
       &:not(:first-child) {
-        margin-top: 30px;
+        margin-top: 3rem;
       }
     }
 
@@ -123,7 +128,7 @@
 
   .post {
     @include col(12);
-    margin-top: 40px;
+    margin-top: 4rem;
     
     @media (min-width: $breakpoint-tablet-horizontal) {
       @include col(6);
@@ -143,7 +148,7 @@
     }
 
     &-figure {
-      height: 253px;
+      height: 25.3rem;
       margin-top: 0;
       width: 100%;
 
@@ -173,8 +178,8 @@
     &--level-0 {
       .logo-item {
         @include spacing('large', margin-bottom);
-        height: 35px;
-        width: 111px;
+        height: 3.5rem;
+        width: 11.1rem;
         
         img {
           height: 100%;
@@ -184,21 +189,21 @@
     }
 
     &--level-1 {
-      padding-top: 80px;
+      padding-top: 8rem;
 
       @media (min-width: $breakpoint-tablet) {
-        padding-top: 130px;
+        padding-top: 13rem;
       }
       @media (min-width: $breakpoint-tablet-horizontal) {
-        padding-top: 150px;
+        padding-top: 15rem;
       }
       @media (min-width: $breakpoint-desktop) {
-        padding-top: 260px;
+        padding-top: 26rem;
       }
 
       .intro {
         @include spacing('large', padding-bottom);
-        border-bottom: 1px solid $white;
+        border-bottom: 0.1rem solid $white;
       }
 
       .logo-item {
@@ -210,8 +215,8 @@
         }
 
         .logo {
-          height: 75px;
-          max-width: 115px;
+          height: 7.5rem;
+          max-width: 11.5rem;
           position: relative;
         }
 
