@@ -53,7 +53,12 @@ $(function () {
       var videoBoxHeight = (videoBoxWidth / 16) * 9
 
       if ((videoBoxHeight + 100) > $(window).height()) {
-        videoBoxHeight = $('.video-overlay').height()
+        if ($(window).width() >= 1200 && $(window).height() >= 776) {
+          videoBoxHeight = $(window).height() / 1.25
+        } else {
+          videoBoxHeight = $('.video-overlay').height()
+        }
+
         videoBoxWidth = (videoBoxHeight / 9) * 16
       }
 
@@ -61,12 +66,6 @@ $(function () {
         width: videoBoxWidth + 'px',
         height: videoBoxHeight + 'px'
       })
-      var windowWidth = $(window).width()
-      if (windowWidth >= 1200) {
-        if ($(window).height() >= 776) {
-          $('.video-overlay .video-overlay__item').css({ height: '620px' })
-        }
-      }
     }
   }
 
