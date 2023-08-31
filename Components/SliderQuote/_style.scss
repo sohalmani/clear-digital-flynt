@@ -55,19 +55,22 @@
       @include col(12);
     }
 
-    &-figure {
-      margin: 0;
-    }
-
     &-image {
       @include col(12);
+      height: 100%;
 
       @media (min-width: $breakpoint-tablet-horizontal) {
         @include col(5);
       }
     }
 
+    &-figure {
+      height: 100%;
+      margin: 0;
+    }
+
     &-figureImage {
+      height: 100%;
       object-fit: cover;
       overflow: hidden;
     }
