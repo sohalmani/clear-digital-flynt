@@ -21,7 +21,11 @@
       transition: color 0.3s ease-in-out;
 
       &:not(:first-child) {
-        margin-top: 2.5rem;
+        margin-top: 2rem;
+
+        @media (min-width: $breakpoint-tablet) {
+          margin-top: 3rem;
+        }
       }
 
       &::before {
@@ -53,22 +57,6 @@
   }
 
   .menu {
-    &-socialPlatforms {
-      column-gap: 2rem;
-      display: flex;
-
-      svg {
-        height: 2.5rem;
-        width: 2.5rem;
-      }
-    }
-
-    &--level-1 {
-      @media (max-width: $breakpoint-tablet) {
-        margin-top: 4rem;
-      }
-    }
-
     .item {
       @include spacing('medium');
       border-radius: 50%;
@@ -83,6 +71,28 @@
       &:hover {
         path {
           fill: $pink;
+        }
+      }
+    }
+
+    &--level-1 {
+      @media (max-width: $breakpoint-tablet) {
+        margin-top: 4rem;
+      }
+    }
+
+    &-socialPlatforms {
+      column-gap: 2rem;
+      display: flex;
+
+      svg {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
+      .item {
+        @media (max-width: $breakpoint-tablet) {
+          margin-top: 3rem;
         }
       }
     }
@@ -171,6 +181,12 @@
       @media (min-width: $breakpoint-tablet-horizontal) {
         @include col(7);
       }
+
+      > a {
+        @media (max-width: $breakpoint-tablet) {
+          margin-top: 2rem;
+        }
+      }
     }
   }
 
@@ -189,7 +205,7 @@
     }
 
     &--level-1 {
-      padding-top: 8rem;
+      padding-top: 9rem;
 
       @media (min-width: $breakpoint-tablet) {
         padding-top: 13rem;
@@ -235,7 +251,9 @@
         }
 
         .button {
-          margin-top: 2rem;
+          @media (max-width: $breakpoint-tablet) {
+            margin-top: 2rem;
+          }
         }
       }
     }
