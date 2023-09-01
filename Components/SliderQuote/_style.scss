@@ -77,10 +77,13 @@
 
     &-content {
       @include col;
-      @include offset(1);
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        @include offset(1);
+      }
     }
 
     &-text {

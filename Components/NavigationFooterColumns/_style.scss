@@ -181,12 +181,6 @@
       @media (min-width: $breakpoint-tablet-horizontal) {
         @include col(7);
       }
-
-      > a {
-        @media (max-width: $breakpoint-tablet) {
-          margin-top: 2rem;
-        }
-      }
     }
   }
 
@@ -248,12 +242,6 @@
 
         @media (min-width: $breakpoint-tablet) {
           @include col(10);
-        }
-
-        .button {
-          @media (max-width: $breakpoint-tablet) {
-            margin-top: 2rem;
-          }
         }
       }
     }

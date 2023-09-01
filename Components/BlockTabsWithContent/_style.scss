@@ -40,10 +40,11 @@
       border-bottom: 0.1rem solid rgba($black, 0.5);
       display: flex;
       justify-content: space-between;
-      padding: 5rem 0;
+      padding: 4rem 0;
 
       @media (min-width: $breakpoint-tablet) {
         display: block;
+        padding: 5rem 0;
       }
 
       h4 {
@@ -106,10 +107,6 @@
         object-fit: contain;
         width: 100%;
       }
-    }
-
-    &-contentAction {
-      @include spacing('small');
     }
 
     &-closeButton {
