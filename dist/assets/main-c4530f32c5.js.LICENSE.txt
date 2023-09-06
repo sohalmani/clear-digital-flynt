@@ -208,6 +208,8 @@ PERFORMANCE OF THIS SOFTWARE.
 
 /*! exports provided: xmlns, width, height, viewBox, fill, stroke, stroke-width, stroke-linecap, stroke-linejoin, default */
 
+/*! get-video-id v3.6.5 | @license MIT © Michael Wuergler | https://github.com/radiovisual/get-video-id */
+
 /*! no static exports found */
 
 /*!*********************!*\

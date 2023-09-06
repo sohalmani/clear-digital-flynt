@@ -168,7 +168,8 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.0.4",
-    "bootstrap": "^4.6.2"
+    "bootstrap": "^4.6.2",
+    "get-video-id": "^3.6.5"
   },
   "browserslist": [
     "> 1%",

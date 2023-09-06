@@ -1,0 +1,6 @@
+<div class="flyntComponent d-none {{ options.theme ?: 'themeDark' }}" role="dialog" is="flynt-modal-video-oembed">
+  <div class="container">
+    {% include 'Partials/_video.twig' ignore missing %}
+  </div>
+  <button type="button" class="feather" aria-label="Close" data-feather="x" data-close>{{ closeButtonLabel|e }}</button>
+</div>
