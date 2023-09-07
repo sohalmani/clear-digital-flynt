@@ -14,13 +14,14 @@ class NavigationMain extends window.HTMLElement {
   }
 
   bindFunctions () {
-    // this.triggerMenu = this.triggerMenu.bind(this)
-    // this.triggerMegaMenu = this.triggerMegaMenu.bind(this)
+    this.triggerMenu = this.triggerMenu.bind(this)
+    this.triggerMegaMenu = this.triggerMegaMenu.bind(this)
   }
 
   bindEvents () {
     // this.$.on('click', '[data-toggle-menu]', this.triggerMenu)
     // this.$.on('click', this.$navLink , this.triggerMegaMenu)
+    this.triggerMenu = this.triggerMenu.bind(this)
   }
 
   resolveElements () {
