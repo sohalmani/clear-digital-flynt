@@ -10,9 +10,9 @@ We will discuss on how we can install and configure Flynt to work in Pantheon En
 - Download/Clone the [Flynt Wordpress Starter Theme](https://github.com/flyntwp/flynt) and put it inside `wp-content/themes` folder inside your Wordpress instance.
 - Open the terminal inside your new Flynt theme. Assuming you already have `composer` installed on your system, run `composer install` to install all the vendor packages required for the theme.
 - Inside the `.gitignore` file in your theme, comment out the lines below (line 1-2)
-	`# /Components/PremiumComponents/`
+  `# /Components/PremiumComponents/`
   `# /dist`
-    This is done to include `dist` folder when you push your code to Pantheon environment.
+  This is done to include `dist` folder when you push your code to Pantheon environment.
 - Assuming you have **node = v12** installed, run `npm install` to install all required packages for your theme development.
 - Run `npm run build` to create production-ready files for the installed theme.
 - Activate the theme from your Wordpress Dashboard. **The theme is installed and ready to use**.
