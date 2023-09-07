@@ -409,6 +409,43 @@ button {
       width: 2.2rem;
     }
   }
+
+  &--linkBlack {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: $color-text;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    text-transform: none;
+    transition: color 0.2s ease-out;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: $color-text;
+
+      &::after {
+        background-position: right center;
+      }
+    }
+
+    &::after {
+      $color-background-dark-rgb: red($color-background-dark), green($color-background-dark), blue($color-background-dark);
+
+      background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.16663 10H15.8333" stroke="rgb(#{$color-background-dark-rgb})" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4.16675L15.8333 10.0001L10 15.8334" stroke="rgb(#{$color-background-dark-rgb})" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: inline-block;
+      height: 2rem;
+      margin-left: 0.5rem;
+      transition: background-position 0.2s ease-out;
+      width: 2.2rem;
+    }
+  }
 }
 
 /* Pills */

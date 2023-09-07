@@ -38,7 +38,7 @@
     &-item {
       margin-left: 5rem;
 
-      a {
+      > a {
         color: $color-background;
         font-weight: 700;
         text-decoration: none;
@@ -47,6 +47,16 @@
           color: $color-brand;
         }
       }
+
+
+      // .megamenu {
+      //   &-dropdown {
+      //     // display: block;
+      //     opacity: 1;
+      //     visibility: visible;
+      //     transform: scale(1);
+      //   }
+      // }
     }
 
     &-action {
@@ -107,7 +117,9 @@
   }
 
   .megamenu {
-    display: none;
+    &-items {
+      @include row;
+    }
 
     &-dropdown {
       background-color: $color-background;
@@ -134,16 +146,24 @@
         display: none;
       }
 
-      > .container {
-        @media (min-width: $breakpoint-tablet-horizontal) {
-          opacity: 0;
-          transition: opacity 0.6s ease-in-out;
-        }
+      // > .container {
+      //   @media (min-width: $breakpoint-tablet-horizontal) {
+      //     opacity: 0;
+      //     transition: opacity 0.6s ease-in-out;
+      //   }
 
-        @media (max-width: $breakpoint-tablet-horizontal) {
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-        }
+      //   @media (max-width: $breakpoint-tablet-horizontal) {
+      //     padding-left: 0 !important;
+      //     padding-right: 0 !important;
+      //   }
+      // }
+    }
+
+    &-content-outer {
+      @include col(12);
+
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        @include col(6);
       }
     }
 
@@ -159,7 +179,25 @@
       }
     }
 
+    &-link-lists-outer {
+      @include col(12);
+
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        @include col(6);
+      }
+    }
+
+    &-links-outer {
+      @include row;
+    }
+
     &-links {
+      @include col(12);
+
+      @media (min-width: $breakpoint-mobile-horizontal) {
+        @include col(6);
+      }
+
       ul {
         li {
           @media (max-width: $breakpoint-tablet) {
@@ -177,6 +215,7 @@
         a {
           color: $color-background-dark;
           font-weight: 700;
+          text-decoration: none;
           transition: color 0.3s ease-in-out;
 
           &:hover {
@@ -190,8 +229,8 @@
       margin-top: 3rem;
     }
 
-    &--open {
-      // display: block;
+    &--isOpen {
+      display: block;
       opacity: 1;
       visibility: visible;
     }
