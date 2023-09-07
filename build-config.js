@@ -31,18 +31,6 @@ module.exports = {
         getCopyConfig('./assets/**/*')
       ]
     }
-    // purgeCss: {
-    //   usePurgeCss: false,
-    //   options: {
-    //     paths: [
-    //       require('path').join(__dirname, '*.php'),
-    //       require('path').join(__dirname, 'templates/**/*'),
-    //       require('path').join(__dirname, './Components/**/*.{php,twig}'),
-    //       require('path').join(__dirname, './assets/**/*.js')
-    //     ],
-    //     only: ['main']
-    //   }
-    // }
   },
   browserSync: {
     ghostMode: false,

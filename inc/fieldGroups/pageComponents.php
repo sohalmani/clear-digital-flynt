@@ -19,7 +19,6 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\BlockImage\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
                     Components\BlockImageTwoCol\getACFLayout(),
-                    Components\BlockTextImageSlider\getACFLayout(),
                     Components\BlockTabsWithContent\getACFLayout(),
                     Components\BlockThreeColContent\getACFLayout(),
                     Components\BlockVideoOembed\getACFLayout(),
@@ -31,7 +30,6 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\SliderImages\getACFLayout(),
                     Components\SliderPosts\getACFLayout(),
                     Components\SliderQuote\getACFLayout(),
-                    Components\NavigationFooterColumns\getACFLayout(),
                 ]
             ]
         ],

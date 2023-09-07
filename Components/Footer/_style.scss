@@ -50,7 +50,7 @@
       }
 
       &:hover {
-        color: $pink;
+        color: $color-brand;
       }
 
       &--location {
@@ -82,7 +82,7 @@
 
       svg {
         path {
-          fill: $dark-grey;
+          fill: $color-contrast;
           transition: fill 0.3s ease-in-out;
         }
       }
@@ -90,7 +90,7 @@
       &:hover {
         svg {
           path {
-            fill: $pink;
+            fill: $color-brand;
           }
         }
       }
@@ -106,11 +106,11 @@
   }
 
   &__link {
-    color: $white;
+    color: $color-background;
     transition: color 0.3s ease-in-out;
 
     &:hover {
-      color: $pink;
+      color: $color-brand;
     }
   }
 
@@ -144,7 +144,7 @@
   }
 
   &__main {
-    color: $white;
+    color: $color-background;
     padding-bottom: 94px;
 
     @media (min-width: $breakpoint-tablet) {
@@ -156,7 +156,7 @@
   }
 
   &__primary {
-    color: $white;
+    color: $color-background;
 
     .content-wrapper {
       @media (min-width: $breakpoint-tablet-horizontal) {
@@ -166,7 +166,7 @@
   }
 
   &__primary--wrapper {
-    border-top: 1px solid $white;
+    border-top: 1px solid $color-background;
     padding: 50px 0;
   }
 
@@ -188,11 +188,11 @@
         }
 
         a {
-          color: $dark-grey;
+          color: $color-contrast;
           transition: color 0.3s ease-in-out;
 
           &:hover {
-            color: $pink;
+            color: $color-brand;
           }
         }
       }

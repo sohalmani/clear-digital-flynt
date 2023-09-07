@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const PurgeCSSPlugin = require('purgecss-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const globImporter = require('node-sass-glob-importer')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
@@ -67,9 +66,6 @@ const webpackConfig = {
               ]
             }
           },
-          // {
-          //   loader: 'resolve-url-loader'
-          // },
           {
             loader: 'sass-loader',
             options: {
@@ -126,18 +122,6 @@ if (production) {
       }
     })
   )
-  // if (config.purgeCss.usePurgeCss) {
-  //   webpackConfig.plugins.push(
-  //     new PurgeCSSPlugin({
-  //       paths: () => require('glob-all').sync(config.purgeCss.options.paths),
-  //       only: config.purgeCss.options.only,
-  //       safelist: {
-  //         greedy: [/^swiper.*$/]
-  //       },
-  //       skippedContentGlobs: ['node_modules/**', 'vendor/**']
-  //     })
-  //   )
-  // }
   webpackConfig.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
   webpackConfig.optimization.minimizer = [
     new TerserPlugin({

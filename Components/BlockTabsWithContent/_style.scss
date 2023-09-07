@@ -1,5 +1,5 @@
 [is='flynt-block-tabs-with-content'] {
-  background-color: $light-grey;
+  background-color: $color-background-light;
 
   .intro {
     h3 {
@@ -37,7 +37,7 @@
   .tab {
     &-head {
       align-items: center;
-      border-bottom: 0.1rem solid rgba($black, 0.5);
+      border-bottom: 0.1rem solid rgba($color-background-dark, 0.5);
       display: flex;
       justify-content: space-between;
       padding: 4rem 0;
@@ -54,8 +54,8 @@
     }
 
     &-body {
-      background-color: $light-grey;
-      border-bottom: 0.1rem solid rgba($black, 0.5);
+      background-color: $color-background-light;
+      border-bottom: 0.1rem solid rgba($color-background-dark, 0.5);
       display: none;
       height: 100%;
       padding-bottom: 5rem;
@@ -63,7 +63,7 @@
       width: 100%;
 
       @media (min-width: $breakpoint-tablet) {
-        border-top: 0.1rem solid $black;
+        border-top: 0.1rem solid $color-background-dark;
         padding: 5rem 0;
       }
     }
@@ -127,7 +127,7 @@
     }
 
     &-expandButton {
-      border: 0.4rem solid $pink;
+      border: 0.4rem solid $color-brand;
       border-radius: 50%;
       display: inline-block;
       height: 3.5rem;
@@ -139,7 +139,7 @@
       }
 
       &::before {
-        background-color: $pink;
+        background-color: $color-brand;
         border-radius: 1rem;
         content: '';
         height: 0.4rem;
@@ -151,7 +151,7 @@
       }
 
       &::after {
-        background-color: $pink;
+        background-color: $color-brand;
         border-radius: 1rem;
         content: '';
         height: 1.3rem;

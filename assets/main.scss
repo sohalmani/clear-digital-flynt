@@ -1,12 +1,5 @@
 @import 'easings-css/easings';
 
-$white: #fff;
-$black: #000;
-$pink: #fa198c;
-$light-grey: #e5e4e7;
-$dark-grey: #989898;
-$warm-grey: #d9dfdf;
-
 @import
   'styles/variables',
   'styles/mixins',
@@ -16,9 +9,3 @@ $warm-grey: #d9dfdf;
 @import '../Components/**/_style.scss';
 
 @import 'styles/print';
-
-//* Shame SCSS
-
-header {
-  // display: none;
-}

@@ -37,7 +37,7 @@
       }
 
       &:hover {
-        color: $pink;
+        color: $color-brand;
       }
 
       &--location {
@@ -62,15 +62,15 @@
       border-radius: 50%;
       height: 2.5rem;
       width: 2.5rem;
-      
+
       path {
-        fill: $dark-grey;
+        fill: $color-contrast;
         transition: fill 0.3s ease-in-out;
       }
 
       &:hover {
         path {
-          fill: $pink;
+          fill: $color-brand;
         }
       }
     }
@@ -104,10 +104,10 @@
     }
 
     &-link {
-      color: $white;
+      color: $color-background;
 
       &:hover {
-        color: $pink;
+        color: $color-brand;
       }
     }
   }
@@ -139,7 +139,7 @@
   .post {
     @include col(12);
     margin-top: 4rem;
-    
+
     @media (min-width: $breakpoint-tablet-horizontal) {
       @include col(6);
       margin-top: 0;
@@ -190,7 +190,7 @@
         @include spacing('large', margin-bottom);
         height: 3.5rem;
         width: 11.1rem;
-        
+
         img {
           height: 100%;
           object-fit: contain;
@@ -213,7 +213,7 @@
 
       .intro {
         @include spacing('large', padding-bottom);
-        border-bottom: 0.1rem solid $white;
+        border-bottom: 0.1rem solid $color-background;
       }
 
       .logo-item {

@@ -16,7 +16,7 @@
   > .container {
     @media (min-width: $breakpoint-desktop) {
       position: static !important;
-    } 
+    }
   }
 
   .main-navigation {
@@ -39,7 +39,7 @@
       margin-left: 5rem;
 
       a {
-        color: $white;
+        color: $color-background;
         font-weight: 700;
         text-decoration: none;
 
@@ -84,7 +84,7 @@
     max-width: calc(100% - 11.1rem);
 
     @media (max-width: $breakpoint-tablet-horizontal) {
-      background: $white;
+      background: $color-background;
       display: none;
       flex: 0 0 100%;
       height: 100vh;
@@ -110,7 +110,7 @@
     display: none;
 
     &-dropdown {
-      background-color: $white;
+      background-color: $color-background;
       padding: 1.5rem 0 3rem;
       position: relative;
       width: 100%;
@@ -152,7 +152,7 @@
 
       > h2 {
         margin-bottom: 2rem;
-        
+
         @media (max-width: $breakpoint-tablet-horizontal) {
           display: none;
         }
@@ -175,12 +175,12 @@
         }
 
         a {
-          color: $black;
+          color: $color-background-dark;
           font-weight: 700;
           transition: color 0.3s ease-in-out;
 
           &:hover {
-            color: $pink;
+            color: $color-accent;
           }
         }
       }
@@ -206,7 +206,7 @@
     }
 
     span {
-      background-color: $black;
+      background-color: $color-background-dark;
       border-radius: 0.3rem;
       display: block;
       height: 0.3rem;
@@ -258,12 +258,12 @@
   }
 
   &.main-navigation--active {
-    background-color: $white;
-    color: $black;
+    background-color: $color-background;
+    color: $color-background-dark;
 
     .site-logo {
       &-white {
-        display: none; 
+        display: none;
       }
 
       &-black {
@@ -273,19 +273,19 @@
 
     nav {
       @media (max-width: $breakpoint-tablet-horizontal) {
-        border-top: 0.1rem solid $light-grey;
+        border-top: 0.1rem solid $color-background-light;
       }
     }
 
     .megamenu {
       @media (min-width: $breakpoint-tablet-horizontal) {
-        border-top: 0.1rem solid $light-grey;
+        border-top: 0.1rem solid $color-background-light;
       }
     }
 
     .main-menu-item {
       > a {
-        color: $black;
+        color: $color-background-dark;
 
         &:hover {
           color: $color-brand;
@@ -295,7 +295,7 @@
 
     .hamburger {
       span {
-        background-color: $black;
+        background-color: $color-background-dark;
       }
     }
   }
