@@ -908,14 +908,17 @@ select {
   &--arrowWhite {
     height: 7.5rem;
     position: absolute;
-    width: 10.4rem;
+    right: 0;
+    width: 12rem;
 
     @media (max-width: $breakpoint-tablet-horizontal) {
+      height: 4.6rem;
       top: 0;
     }
 
-    @media (min-width: $breakpoint-tablet) {
+    @media (min-width: $breakpoint-tablet-horizontal) {
       left: -11.4rem;
+      width: 10.4rem;
     }
 
     &::before {
@@ -923,6 +926,10 @@ select {
       background-size: 100% 100%;
       height: 100%;
       width: 100%;
+
+      @media (max-width: $breakpoint-tablet-horizontal) {
+        transform: scaleX(-1) rotate(55deg);
+      }
     }
   }
 
