@@ -61,6 +61,7 @@
   "assets/icons/art-arrow-black.svg": "assets/icons/art-arrow-black-b2e0c2e52e.svg",
   "assets/icons/art-arrow-white.svg": "assets/icons/art-arrow-white-bdb08bf5b6.svg",
   "assets/icons/art-circle.svg": "assets/icons/art-circle-d339777881.svg",
+  "assets/icons/art-quote-white.svg": "assets/icons/art-quote-white-1e206b0675.svg",
   "assets/icons/art-rocket.svg": "assets/icons/art-rocket-589c2bcec5.svg",
   "assets/icons/art-star.svg": "assets/icons/art-star-1f78fd8baa.svg",
   "assets/icons/art-text.svg": "assets/icons/art-text-7697042b8e.svg",
@@ -78,10 +79,9 @@
   "assets/icons/play-circle-pink.svg": "assets/icons/play-circle-pink-15866267fa.svg",
   "assets/icons/play.svg": "assets/icons/play-6c8450887b.svg",
   "assets/icons/plus.svg": "assets/icons/plus-884f9f3f8a.svg",
-  "assets/icons/quotes-white.svg": "assets/icons/quotes-white-1e206b0675.svg",
   "assets/icons/smartphone-pink.svg": "assets/icons/smartphone-pink-ea236a911c.svg",
   "assets/icons/spinner.svg": "assets/icons/spinner-2e5c842fc5.svg",
-  "assets/main.css": "assets/main-b6ed3b0469.css",
+  "assets/main.css": "assets/main-e4b4afe260.css",
   "assets/main.js": "assets/main-3d64085711.js",
   "assets/main.js.LICENSE.txt": "assets/main-c4530f32c5.js.LICENSE.txt"
 }

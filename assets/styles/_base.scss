@@ -905,10 +905,34 @@ select {
     }
   }
 
-  &--quote {
+  &--arrowWhite {
+    height: 7.5rem;
+    position: absolute;
+    width: 10.4rem;
+
     &::before {
-      background-image: url('../assets/icons/art-quote.svg');
+      background-image: url('../assets/icons/art-arrow-white.svg');
+      background-size: 100% 100%;
+      height: 100%;
+      transform: scaleX(-1);
+      width: 100%;
+      
+      @media (min-width: $breakpoint-tablet) {
+        left: -12.4rem;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &--quote {
+    height: 6.1rem;
+    width: 7.1rem;
+
+    &::before {
+      background-image: url('../assets/icons/art-quote-white.svg');
       background-size: cover;
+      height: 100%;
+      width: 100%;
     }
   }
 
