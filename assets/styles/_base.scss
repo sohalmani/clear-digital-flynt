@@ -4,10 +4,10 @@
 * Top level styles every element should inherit.
 */
 
-@include font-face('Montserrat', 'montserrat-v14-latin-regular', '400', 'normal');
-@include font-face('Montserrat', 'montserrat-v14-latin-italic', '400', 'italic');
-@include font-face('Montserrat', 'montserrat-v14-latin-700', '700', 'normal');
-@include font-face('Montserrat', 'montserrat-v14-latin-700italic', '700', 'italic');
+@include font-face('Poppins', 'poppins-regular', '400', 'normal');
+@include font-face('Poppins', 'poppins-regular-italic', '400', 'italic');
+@include font-face('Poppins', 'poppins-bold', '700', 'normal');
+@include font-face('Poppins', 'poppins-bold-italic', '700', 'italic');
 
 html {
   background-color: $color-background;
@@ -934,7 +934,7 @@ select {
       right: 4rem;
       transform: scaleX(-1);
       width: 2.4rem;
-      
+
       @media (min-width: $breakpoint-tablet) {
         left: -3rem;
         transform: scaleX(1);
