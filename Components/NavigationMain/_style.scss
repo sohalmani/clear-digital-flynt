@@ -2,12 +2,33 @@
   $self: &;
   background-color: transparent;
   min-height: 0;
-  padding: 2rem 0;
   position: fixed;
   top: 0;
   transition: background-color 0.3s ease-in-out, top 0.3s linear;
   width: 100%;
   z-index: 40;
+
+  /* stylelint-disable */
+  &:hover, 
+  &:focus-within {
+    background-color: $color-background;
+
+    .site-logo {
+      &-black {
+        display: block;
+      }
+  
+      &-white {
+        display: none;
+      }
+    }
+
+    .main-menu-item {
+      > a {
+        color: $color-text;
+      }
+    }
+  }
 
   @media (max-width: $breakpoint-tablet-horizontal) {
     padding: 3rem 0;
@@ -37,6 +58,8 @@
 
     &-item {
       margin-left: 5rem;
+      padding: 4rem 0;
+
 
       > a {
         color: $color-background;
@@ -49,14 +72,11 @@
       }
 
 
-      // .megamenu {
-      //   &-dropdown {
-      //     // display: block;
-      //     opacity: 1;
-      //     visibility: visible;
-      //     transform: scale(1);
-      //   }
-      // }
+      &:hover {
+        .megamenu-dropdown {
+          height: 400px;
+        }
+      }
     }
 
     &-action {
@@ -119,25 +139,25 @@
   .megamenu {
     &-items {
       @include row;
+      padding: 1.5rem 0 3rem;
+
+      @media (min-width: $breakpoint-tablet-horizontal) {
+        padding: 5rem 0;
+      }
     }
 
     &-dropdown {
       background-color: $color-background;
-      padding: 1.5rem 0 3rem;
       position: relative;
       width: 100%;
 
       @media (min-width: $breakpoint-tablet-horizontal) {
-        height: auto;
+        height: 0;
         left: 0;
-        min-height: 40rem;
         overflow: hidden;
-        padding: 5rem 0;
         position: absolute;
         top: 100%;
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: transform 0.5s ease;
+        transition: height 0.5s ease;
         z-index: 20;
       }
 
@@ -145,18 +165,6 @@
         animation: fadeIn 0.2s ease-in-out;
         display: none;
       }
-
-      // > .container {
-      //   @media (min-width: $breakpoint-tablet-horizontal) {
-      //     opacity: 0;
-      //     transition: opacity 0.6s ease-in-out;
-      //   }
-
-      //   @media (max-width: $breakpoint-tablet-horizontal) {
-      //     padding-left: 0 !important;
-      //     padding-right: 0 !important;
-      //   }
-      // }
     }
 
     &-content-outer {
@@ -232,6 +240,7 @@
     &--isOpen {
       display: block;
       opacity: 1;
+      transform: scaleY(1);
       visibility: visible;
     }
   }
