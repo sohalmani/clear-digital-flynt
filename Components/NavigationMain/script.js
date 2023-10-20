@@ -1,4 +1,5 @@
 import $ from 'jquery'
+
 class NavigationMain extends window.HTMLElement {
   constructor (...args) {
     const self = super(...args)
@@ -16,11 +17,13 @@ class NavigationMain extends window.HTMLElement {
   bindFunctions () {
     // this.triggerMenu = this.triggerMenu.bind(this)
     // this.triggerMegaMenu = this.triggerMegaMenu.bind(this)
+    this.handleHeaderScroll = this.handleHeaderScroll.bind(this)
   }
 
   bindEvents () {
     // this.$.on('click', '[data-toggle-menu]', this.triggerMenu)
     // this.$.on('click', this.$navLink , this.triggerMegaMenu)
+    $(window).on('scroll', this.handleHeaderScroll)
   }
 
   resolveElements () {
@@ -44,6 +47,14 @@ class NavigationMain extends window.HTMLElement {
     $(e.target).toggleClass('nav-link--active')
     $(e.target).find(this.$menu).slideToggle()
   }
+
+  handleHeaderScroll () {
+    if (window.scrollY > 0) {
+      this.classList.add('main-navigation-isScrolled')
+    } else {
+      this.classList.remove('main-navigation-isScrolled')
+    }
+  }
 }
 
 window.customElements.define('flynt-navigation-main', NavigationMain, {
@@ -58,7 +69,6 @@ if ($navigation) {
   var $menuButton = $('.hamburger')
   var $nav = $('nav')
   var $navLink = $('.nav-link')
-  let lastScrollVal
 
   var initMenu = function () {
     $menuButton.removeClass('active')
@@ -89,20 +99,15 @@ if ($navigation) {
     }
   }
 
-  var navTriggerScroll = function () {
-    var scrollValue = $(window).scrollTop()
+  // var  handleHeaderScroll = function() {
+  //   if (window.scrollY > 0) {
+  //     header.classList.add('main-navigation-isScrolled')
+  //   } else {
+  //     header.classList.remove('main-navigation-isScrolled')
+  //   }
+  // }
 
-    if (scrollValue > lastScrollVal) {
-      $navigation.addClass('navigation--active navigation--hide')
-    } else if (scrollValue === 0) {
-      $navigation.removeClass('navigation--active')
-    } else {
-      $navigation.removeClass('navigation--hide')
-    }
-
-    lastScrollVal = scrollValue
-  }
-  $(window).on('scroll', navTriggerScroll)
+  // $(window).on('scroll', handleHeaderScroll)
   $(window).on('orientationchange', initMenu)
   $menuButton.on('click', triggerMenu)
   $navLink.on('click', triggerMegaMenu)
